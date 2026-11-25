@@ -1,0 +1,6 @@
+{
+  "orgName": "inbound-sdr-writeback",
+  "edition": "Developer",
+  "features": ["EnableSetPasswordInApi"],
+  "settings": { "lightningExperienceSettings": { "enableS1DesktopEnabled": true } }
+}
