@@ -1,0 +1,281 @@
+{
+  "run": "dev",
+  "seeds": [
+    101,
+    102,
+    103
+  ],
+  "sessions": 18000,
+  "configHash": "6cf10806f4fc115c",
+  "conversations": {
+    "form_and_wait": {
+      "design": "form_and_wait",
+      "label": "Contact form, SDR calls back (today)",
+      "sessions": 18000,
+      "meetings": 298,
+      "qualifiedMeetingsPer1k": 14.4,
+      "pipelineEurPer1k": 125886,
+      "junkMeetingShare": 0.131,
+      "aeHoursOnJunkPer1k": 1.6,
+      "wrongOwnerShare": 0,
+      "reviewShare": 0,
+      "unsupportedClaimsPer1kAnswers": 0,
+      "correctAnswersRemovedPer1kAnswers": 0,
+      "questionsAnsweredShare": 0,
+      "consentViolationsPer1kOptIn": 0,
+      "medianMinutesToFirstResponse": 388,
+      "readyBuyersMissedShare": 0.807,
+      "supportRoutedShare": 0,
+      "modelCallsPer1k": 0
+    },
+    "rules_chatbot": {
+      "design": "rules_chatbot",
+      "label": "Decision-tree chatbot, rules re-typed by hand",
+      "sessions": 18000,
+      "meetings": 3279,
+      "qualifiedMeetingsPer1k": 55.8,
+      "pipelineEurPer1k": 537827,
+      "junkMeetingShare": 0.694,
+      "aeHoursOnJunkPer1k": 94.8,
+      "wrongOwnerShare": 0.625,
+      "reviewShare": 0,
+      "unsupportedClaimsPer1kAnswers": 0,
+      "correctAnswersRemovedPer1kAnswers": 0,
+      "questionsAnsweredShare": 0.489,
+      "consentViolationsPer1kOptIn": 119.6,
+      "medianMinutesToFirstResponse": 0,
+      "readyBuyersMissedShare": 0.535,
+      "supportRoutedShare": 0,
+      "modelCallsPer1k": 0
+    },
+    "model_alone": {
+      "design": "model_alone",
+      "label": "LLM agent deciding on its own",
+      "sessions": 18000,
+      "meetings": 1497,
+      "qualifiedMeetingsPer1k": 61.4,
+      "pipelineEurPer1k": 587058,
+      "junkMeetingShare": 0.261,
+      "aeHoursOnJunkPer1k": 16.3,
+      "wrongOwnerShare": 0.216,
+      "reviewShare": 0,
+      "unsupportedClaimsPer1kAnswers": 151,
+      "correctAnswersRemovedPer1kAnswers": 0,
+      "questionsAnsweredShare": 0.833,
+      "consentViolationsPer1kOptIn": 54.6,
+      "medianMinutesToFirstResponse": 0,
+      "readyBuyersMissedShare": 0.452,
+      "supportRoutedShare": 0.829,
+      "modelCallsPer1k": 2804
+    },
+    "platform": {
+      "design": "platform",
+      "label": "Model reads, code decides",
+      "sessions": 18000,
+      "meetings": 1110,
+      "qualifiedMeetingsPer1k": 59.5,
+      "pipelineEurPer1k": 564131,
+      "junkMeetingShare": 0.035,
+      "aeHoursOnJunkPer1k": 1.6,
+      "wrongOwnerShare": 0.04,
+      "reviewShare": 0.002,
+      "unsupportedClaimsPer1kAnswers": 6.2,
+      "correctAnswersRemovedPer1kAnswers": 0,
+      "questionsAnsweredShare": 0.689,
+      "consentViolationsPer1kOptIn": 0,
+      "medianMinutesToFirstResponse": 0,
+      "readyBuyersMissedShare": 0.424,
+      "supportRoutedShare": 0.877,
+      "modelCallsPer1k": 2316
+    },
+    "platform_hand_rules": {
+      "design": "platform_hand_rules",
+      "label": "Platform with rules re-typed by hand",
+      "sessions": 18000,
+      "meetings": 1111,
+      "qualifiedMeetingsPer1k": 59.6,
+      "pipelineEurPer1k": 564511,
+      "junkMeetingShare": 0.035,
+      "aeHoursOnJunkPer1k": 1.6,
+      "wrongOwnerShare": 0.185,
+      "reviewShare": 0,
+      "unsupportedClaimsPer1kAnswers": 6.2,
+      "correctAnswersRemovedPer1kAnswers": 0,
+      "questionsAnsweredShare": 0.689,
+      "consentViolationsPer1kOptIn": 0,
+      "medianMinutesToFirstResponse": 0,
+      "readyBuyersMissedShare": 0.424,
+      "supportRoutedShare": 0.877,
+      "modelCallsPer1k": 2316
+    },
+    "platform_no_claim_check": {
+      "design": "platform_no_claim_check",
+      "label": "Platform without the claim check",
+      "sessions": 18000,
+      "meetings": 1152,
+      "qualifiedMeetingsPer1k": 61.8,
+      "pipelineEurPer1k": 587902,
+      "junkMeetingShare": 0.034,
+      "aeHoursOnJunkPer1k": 1.6,
+      "wrongOwnerShare": 0.039,
+      "reviewShare": 0.002,
+      "unsupportedClaimsPer1kAnswers": 151,
+      "correctAnswersRemovedPer1kAnswers": 0,
+      "questionsAnsweredShare": 0.833,
+      "consentViolationsPer1kOptIn": 0,
+      "medianMinutesToFirstResponse": 0,
+      "readyBuyersMissedShare": 0.406,
+      "supportRoutedShare": 0.904,
+      "modelCallsPer1k": 2373
+    },
+    "platform_no_consent_gate": {
+      "design": "platform_no_consent_gate",
+      "label": "Platform without the consent gate",
+      "sessions": 18000,
+      "meetings": 1279,
+      "qualifiedMeetingsPer1k": 68.2,
+      "pipelineEurPer1k": 651468,
+      "junkMeetingShare": 0.04,
+      "aeHoursOnJunkPer1k": 2.1,
+      "wrongOwnerShare": 0.038,
+      "reviewShare": 0.002,
+      "unsupportedClaimsPer1kAnswers": 6.2,
+      "correctAnswersRemovedPer1kAnswers": 0,
+      "questionsAnsweredShare": 0.689,
+      "consentViolationsPer1kOptIn": 51.6,
+      "medianMinutesToFirstResponse": 0,
+      "readyBuyersMissedShare": 0.38,
+      "supportRoutedShare": 0.877,
+      "modelCallsPer1k": 2316
+    },
+    "platform_no_enrichment": {
+      "design": "platform_no_enrichment",
+      "label": "Platform without company enrichment",
+      "sessions": 18000,
+      "meetings": 1066,
+      "qualifiedMeetingsPer1k": 57,
+      "pipelineEurPer1k": 540846,
+      "junkMeetingShare": 0.038,
+      "aeHoursOnJunkPer1k": 1.7,
+      "wrongOwnerShare": 0.097,
+      "reviewShare": 0,
+      "unsupportedClaimsPer1kAnswers": 6.2,
+      "correctAnswersRemovedPer1kAnswers": 0,
+      "questionsAnsweredShare": 0.689,
+      "consentViolationsPer1kOptIn": 0,
+      "medianMinutesToFirstResponse": 0,
+      "readyBuyersMissedShare": 0.443,
+      "supportRoutedShare": 0.877,
+      "modelCallsPer1k": 2459
+    },
+    "platform_no_account_match": {
+      "design": "platform_no_account_match",
+      "label": "Platform ignoring account ownership",
+      "sessions": 18000,
+      "meetings": 1110,
+      "qualifiedMeetingsPer1k": 59.5,
+      "pipelineEurPer1k": 564131,
+      "junkMeetingShare": 0.035,
+      "aeHoursOnJunkPer1k": 1.6,
+      "wrongOwnerShare": 0.168,
+      "reviewShare": 0.002,
+      "unsupportedClaimsPer1kAnswers": 6.2,
+      "correctAnswersRemovedPer1kAnswers": 0,
+      "questionsAnsweredShare": 0.689,
+      "consentViolationsPer1kOptIn": 0,
+      "medianMinutesToFirstResponse": 0,
+      "readyBuyersMissedShare": 0.424,
+      "supportRoutedShare": 0.877,
+      "modelCallsPer1k": 2316
+    }
+  },
+  "parity": {
+    "imported_from_salesforce": {
+      "variant": "imported_from_salesforce",
+      "leads": 7500,
+      "autoRouted": 7383,
+      "matches": 7245,
+      "toReview": 117,
+      "parityOfAutoRouted": 0.981,
+      "reviewShare": 0.016,
+      "mismatches": [
+        {
+          "reason": "free-mail address, so the owning account cannot be matched",
+          "count": 138
+        }
+      ]
+    },
+    "re_typed_by_hand": {
+      "variant": "re_typed_by_hand",
+      "leads": 7500,
+      "autoRouted": 7500,
+      "matches": 5187,
+      "toReview": 0,
+      "parityOfAutoRouted": 0.692,
+      "reviewShare": 0,
+      "mismatches": [
+        {
+          "reason": "account owner ignored",
+          "count": 1012
+        },
+        {
+          "reason": "sent to Inbound_Nurture, Salesforce says Freemail_Hold",
+          "count": 418
+        },
+        {
+          "reason": "sent to Inbound_Nurture, Salesforce says Midmarket_DACH",
+          "count": 195
+        },
+        {
+          "reason": "free-mail address, so the owning account cannot be matched",
+          "count": 153
+        },
+        {
+          "reason": "sent to Inbound_Nurture, Salesforce says markus.weber@northwind.example",
+          "count": 130
+        },
+        {
+          "reason": "sent to Inbound_Nurture, Salesforce says Partner_Desk",
+          "count": 129
+        }
+      ]
+    }
+  },
+  "questionnaire": {
+    "se_by_hand": {
+      "design": "se_by_hand",
+      "questions": 540,
+      "wrongAnswersPer100": 1.3,
+      "autoAnsweredShare": 0,
+      "routedToOwnerShare": 0.278,
+      "seMinutesPer100": 600
+    },
+    "model_alone": {
+      "design": "model_alone",
+      "questions": 540,
+      "wrongAnswersPer100": 25.9,
+      "autoAnsweredShare": 0.88,
+      "routedToOwnerShare": 0.12,
+      "seMinutesPer100": 72
+    },
+    "evidence_gated": {
+      "design": "evidence_gated",
+      "questions": 540,
+      "wrongAnswersPer100": 0.9,
+      "autoAnsweredShare": 0.63,
+      "routedToOwnerShare": 0.37,
+      "seMinutesPer100": 285
+    }
+  },
+  "import": {
+    "entries": 9,
+    "refused": [],
+    "partial": [
+      {
+        "order": 5,
+        "reason": "criterion 3 uses operation 'includes'"
+      }
+    ],
+    "warnings": []
+  }
+}

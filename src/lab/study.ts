@@ -89,9 +89,9 @@ export function score(design: DesignSpec, rows: { s: Session; o: Outcome }[], wo
   };
 }
 
-export function runConversations(world: World, kit: Kit, cfg: PlatformConfig, designs: DesignSpec[], seeds: number[]): DesignMetrics[] {
+export function runConversations(world: World, kit: Kit, cfg: PlatformConfig, designs: DesignSpec[], seeds: number[], perSeed = world.cfg.sessionsPerSeed): DesignMetrics[] {
   const sessions: Session[] = [];
-  for (const seed of seeds) for (let i = 0; i < world.cfg.sessionsPerSeed; i++) sessions.push(world.session(seed, i));
+  for (const seed of seeds) for (let i = 0; i < perSeed; i++) sessions.push(world.session(seed, i));
   return designs.map((d) => {
     const ctx: DesignContext = makeContext(world, kit, cfg);
     const rows = sessions.map((s) => ({ s, o: runDesign(d, s, ctx) }));

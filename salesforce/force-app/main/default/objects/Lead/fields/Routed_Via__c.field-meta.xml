@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Routed_Via__c</fullName>
+    <label>Routed Via</label>
+    <type>Text</type><length>40</length><description>account_owner, rule_entry, default_owner or review.</description>
+</CustomField>

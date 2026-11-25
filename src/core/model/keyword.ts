@@ -21,7 +21,7 @@ export function keywordFacts(message: string): Facts {
   const emp = /(\d[\d.,]*)\s*(\+\s*)?(employees?|people|staff|fte|mitarbeiter(?:innen)?)/i.exec(message);
   if (emp?.[1]) f.employees = Number(emp[1].replace(/[.,]/g, ""));
   for (const name of [...COUNTRY_NAMES, "Deutschland", "Österreich", "Schweiz", "UK"]) {
-    if (new RegExp(`\\b${name}\\b`, "i").test(message)) { f.country = canonicalCountry(name); break; }
+    if (new RegExp(`(?<![\\p{L}])${name}(?![\\p{L}])`, "iu").test(message)) { f.country = canonicalCountry(name); break; }
   }
   for (const [re, role] of ROLE_WORDS) if (re.test(message)) { f.role = role; break; }
   if (/\b(login|error|bug|not syncing|broken|support ticket|our account|we are a customer|already use)\b/.test(m)) f.intent = "support";
