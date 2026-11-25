@@ -1,0 +1,28 @@
+{
+  "name": "inbound-sdr-demo-lab",
+  "private": true,
+  "type": "module",
+  "description": "AI SDR rollout lab for EMEA B2B websites: Salesforce routing import, grounded answers, consent gate, security questionnaires, Apex write-back.",
+  "engines": { "node": ">=22.18" },
+  "scripts": {
+    "typecheck": "tsc -p tsconfig.json",
+    "test": "vitest run",
+    "lab:dev": "node src/lab/cli.ts dev",
+    "lab:heldout": "node src/lab/cli.ts heldout",
+    "lab:check": "node src/lab/cli.ts dev --check && node src/lab/cli.ts gate",
+    "report": "node src/lab/cli.ts report",
+    "demo": "node src/lab/cli.ts demo",
+    "serve": "node src/server/main.ts",
+    "check": "npm run typecheck && npm test && npm run lab:check"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.70.0",
+    "fast-xml-parser": "^5.3.0",
+    "fastify": "^5.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.18.0",
+    "typescript": "~5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

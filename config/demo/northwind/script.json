@@ -1,0 +1,79 @@
+{
+  "conversations": [
+    {
+      "id": "munich-cfo",
+      "title": "CFO in Germany, consent banner not answered",
+      "country": "Germany",
+      "cmp": "unset",
+      "companyDomain": null,
+      "messages": [
+        "Hi, I'm the CFO at Alpenblick Logistik, about 640 employees. We are evaluating tools to replace our month-end close. Do you have a DATEV integration?",
+        "Yes, that's fine.",
+        "anna.schmidt@alpenblick-logistik.de"
+      ]
+    },
+    {
+      "id": "sap-b1",
+      "title": "A tempting answer the content does not support",
+      "country": "Austria",
+      "cmp": "granted",
+      "companyDomain": null,
+      "messages": [
+        {
+          "text": "We run SAP Business One. Do you integrate with SAP Business One?",
+          "recordedDraft": [
+            { "text": "Yes, Northwind Ledger connects to SAP Business One through a certified connector.", "citation": "int-sap" },
+            { "text": "Every object in Northwind Ledger is available through a REST API with OAuth 2.0 and webhooks.", "citation": "int-api" }
+          ]
+        },
+        "I'm the head of finance, 300 employees, and we want a demo this month.",
+        "m.huber@kaprun-holz.at"
+      ]
+    },
+    {
+      "id": "uk-open-opp",
+      "title": "UK visitor from an account an AE already works",
+      "country": "United Kingdom",
+      "cmp": "granted",
+      "companyDomain": "ulmtal-systems.co.uk",
+      "messages": [
+        "Where is our data hosted? Does it stay in the EU?",
+        "I'm the finance director, 711 employees, we'd like to book a demo.",
+        "james.ward@ulmtal-systems.co.uk"
+      ]
+    },
+    {
+      "id": "customer-support",
+      "title": "Existing customer with a support problem",
+      "country": "Germany",
+      "cmp": "denied",
+      "companyDomain": "ulmholm-mobility.de",
+      "messages": [
+        "Our invoices are not syncing to SAP since yesterday, we already use Northwind."
+      ]
+    }
+  ],
+  "questionnaire": [
+    { "id": "q1", "text": "Is your organisation certified to ISO 27001?" },
+    { "id": "q2", "text": "In which countries is customer data stored, including backups?" },
+    { "id": "q3", "text": "When was the last independent penetration test of the web application?" },
+    { "id": "q4", "text": "List all subprocessors that process customer personal data." },
+    { "id": "q5", "text": "Is customer data used to train AI models?" },
+    { "id": "q6", "text": "When is customer data deleted after the contract ends?" },
+    { "id": "q7", "text": "Do you hold a BSI C5 attestation?" },
+    { "id": "q8", "text": "State your recovery time objective and recovery point objective." }
+  ],
+  "discovery": {
+    "themes": ["SAP Business One connector", "Swiss data residency", "Payroll", "Italian UI", "BYOK encryption"],
+    "tags": [
+      { "dealId": "D-1041", "theme": "SAP Business One connector", "pipelineEur": 42000, "quote": "Our subsidiaries run B1; without a connector this is a non-starter." },
+      { "dealId": "D-1052", "theme": "SAP Business One connector", "pipelineEur": 18000, "quote": "We would need B1 for the Austrian entity." },
+      { "dealId": "D-1067", "theme": "Swiss data residency", "pipelineEur": 95000, "quote": "Our bank customers require data in Switzerland." },
+      { "dealId": "D-1070", "theme": "BYOK encryption", "pipelineEur": 95000, "quote": "Security asked whether we can bring our own keys." },
+      { "dealId": "D-1070", "theme": "Swiss data residency", "pipelineEur": 95000, "quote": "Same deal: Swiss hosting came up again in the security review." },
+      { "dealId": "D-1083", "theme": "Payroll", "pipelineEur": 18000, "quote": "Could payroll journals flow in automatically?" },
+      { "dealId": "D-1090", "theme": "Italian UI", "pipelineEur": 42000, "quote": "Our Milan team needs Italian." },
+      { "dealId": "D-1091", "theme": "Discount", "pipelineEur": 18000, "quote": "Can we get a better price?" }
+    ]
+  }
+}

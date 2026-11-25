@@ -1,0 +1,161 @@
+Id,Name,Website,OwnerId,Type,Open_Opportunity__c,NumberOfEmployees,BillingCountry,Industry
+001NW000001,"Solfeld Mobility B.V.",solfeld-mobility.nl,sanne.devries@kestrel.example,Prospect,false,48,Netherlands,Manufacturing
+001NW000002,"Faltal Pharma B.V.",https://www.faltal-pharma.nl,sanne.devries@kestrel.example,Customer,false,2121,Netherlands,Retail
+001NW000003,"Eisstad Maschinenbau SE",eisstad-maschinenbau.de,henrik.vogt@kestrel.example,Prospect,true,1152,Germany,Education
+001NW000004,"Alstad Chemicals B.V.",alstad-chemicals.nl,sanne.devries@kestrel.example,Customer,false,296,Netherlands,Manufacturing
+001NW000005,"Bernstein Logistik SE",bernstein-logistik.de,clara.neumann@kestrel.example,Prospect,false,107,Germany,Media
+001NW000006,"Falkamp Media GmbH",falkamp-media.de,henrik.vogt@kestrel.example,Prospect,false,1337,Germany,Media
+001NW000007,"Marlund Health B.V.",https://www.marlund-health.nl,sanne.devries@kestrel.example,Customer,false,837,Netherlands,Media
+001NW000008,"Lunbach Media GmbH",lunbach-media.de,henrik.vogt@kestrel.example,Customer,false,248,Germany,Government
+001NW000009,"Kalbach Textiles sp. z o.o.",kalbach-textiles.pl,marta.nowak@kestrel.example,Prospect,false,257,Poland,Financial Services
+001NW000010,"Marstad Health B.V.",https://www.marstad-health.nl,sanne.devries@kestrel.example,Customer,false,2077,Netherlands,Manufacturing
+001NW000011,"Jormark Media SE",https://www.jormark-media.de,clara.neumann@kestrel.example,Prospect,false,84,Germany,Energy
+001NW000012,"Zenfeld Health sp. z o.o.",zenfeld-health.pl,marta.nowak@kestrel.example,Customer,false,48,Poland,Media
+001NW000013,"Helvik Textiles sp. z o.o.",https://www.helvik-textiles.pl,marta.nowak@kestrel.example,Prospect,false,497,Poland,Financial Services
+001NW000014,"Solhain Systems sp. z o.o.",solhain-systems.pl,marta.nowak@kestrel.example,Prospect,false,250,Poland,Retail
+001NW000015,"Eiswald Maschinenbau B.V.",eiswald-maschinenbau.nl,sanne.devries@kestrel.example,Prospect,false,1168,Netherlands,Education
+001NW000016,"Norkamp Foods sp. z o.o.",https://www.norkamp-foods.pl,marta.nowak@kestrel.example,Customer,false,1900,Poland,Media
+001NW000017,"Marholm Health GmbH",https://www.marholm-health.de,clara.neumann@kestrel.example,Prospect,false,88,Germany,Energy
+001NW000018,"Marmark Systems B.V.",marmark-systems.nl,sanne.devries@kestrel.example,Prospect,false,2569,Netherlands,Retail
+001NW000019,"Velstad Retail sp. z o.o.",https://www.velstad-retail.pl,marta.nowak@kestrel.example,Customer,false,209,Poland,Financial Services
+001NW000020,"Marwerk Systems GmbH",https://www.marwerk-systems.de,henrik.vogt@kestrel.example,Prospect,false,2988,Germany,Retail
+001NW000021,"Corkamp Retail B.V.",corkamp-retail.nl,sanne.devries@kestrel.example,Prospect,true,3611,Netherlands,Retail
+001NW000022,"Dorheim Energie SE",https://www.dorheim-energie.de,henrik.vogt@kestrel.example,Prospect,false,1135,Germany,Media
+001NW000023,"Marmark Logistik sp. z o.o.",marmark-logistik.pl,marta.nowak@kestrel.example,Prospect,true,1234,Poland,Education
+001NW000024,"Zenmark Energie sp. z o.o.",zenmark-energie.pl,marta.nowak@kestrel.example,Customer,false,87,Poland,Retail
+001NW000025,"Corbach Energie SE",corbach-energie.de,henrik.vogt@kestrel.example,Prospect,false,1983,Germany,Healthcare
+001NW000026,"Dorwald Health B.V.",https://www.dorwald-health.nl,sanne.devries@kestrel.example,Prospect,false,190,Netherlands,Energy
+001NW000027,"Quellkamp Energie GmbH",https://www.quellkamp-energie.de,paul.richter@kestrel.example,Prospect,false,903,Germany,Manufacturing
+001NW000028,"Talwerk Media sp. z o.o.",https://www.talwerk-media.pl,marta.nowak@kestrel.example,Customer,false,187,Poland,Healthcare
+001NW000029,"Falheim Chemicals sp. z o.o.",falheim-chemicals.pl,marta.nowak@kestrel.example,Prospect,true,266,Poland,Retail
+001NW000030,"Lunberg Media B.V.",https://www.lunberg-media.nl,sanne.devries@kestrel.example,Prospect,false,366,Netherlands,Retail
+001NW000031,"Istfeld Energie B.V.",istfeld-energie.nl,sanne.devries@kestrel.example,Customer,false,357,Netherlands,Retail
+001NW000032,"Alstad Mobility sp. z o.o.",alstad-mobility.pl,marta.nowak@kestrel.example,Prospect,true,1184,Poland,Logistics
+001NW000033,"Faldorf Media sp. z o.o.",faldorf-media.pl,marta.nowak@kestrel.example,Prospect,true,146,Poland,Financial Services
+001NW000034,"Talfeld Health sp. z o.o.",talfeld-health.pl,marta.nowak@kestrel.example,Customer,false,238,Poland,Retail
+001NW000035,"Zenhain Pharma SE",zenhain-pharma.de,clara.neumann@kestrel.example,Prospect,true,921,Germany,Manufacturing
+001NW000036,"Almark Chemicals GmbH",https://www.almark-chemicals.de,clara.neumann@kestrel.example,Prospect,true,85,Germany,Financial Services
+001NW000037,"Dorlund Foods GmbH",dorlund-foods.de,clara.neumann@kestrel.example,Prospect,false,253,Germany,Energy
+001NW000038,"Ulmheim Chemicals sp. z o.o.",https://www.ulmheim-chemicals.pl,marta.nowak@kestrel.example,Prospect,false,556,Poland,Healthcare
+001NW000039,"Ulmheim Systems B.V.",https://www.ulmheim-systems.nl,sanne.devries@kestrel.example,Customer,false,87,Netherlands,Logistics
+001NW000040,"Granwerk Foods GmbH",https://www.granwerk-foods.de,henrik.vogt@kestrel.example,Prospect,true,1321,Germany,Media
+001NW000041,"Norstein Mobility SE",https://www.norstein-mobility.de,clara.neumann@kestrel.example,Prospect,true,526,Germany,Media
+001NW000042,"Alhain Systems sp. z o.o.",alhain-systems.pl,marta.nowak@kestrel.example,Prospect,false,433,Poland,Government
+001NW000043,"Helbach Mobility B.V.",helbach-mobility.nl,sanne.devries@kestrel.example,Prospect,true,5725,Netherlands,Manufacturing
+001NW000044,"Quellvik Mobility SE",https://www.quellvik-mobility.de,paul.richter@kestrel.example,Prospect,false,130,Germany,Retail
+001NW000045,"Istwald Health B.V.",https://www.istwald-health.nl,sanne.devries@kestrel.example,Customer,false,71,Netherlands,Government
+001NW000046,"Solstein Foods B.V.",https://www.solstein-foods.nl,sanne.devries@kestrel.example,Prospect,false,1309,Netherlands,Financial Services
+001NW000047,"Taldorf Pharma B.V.",https://www.taldorf-pharma.nl,sanne.devries@kestrel.example,Prospect,false,539,Netherlands,Education
+001NW000048,"Eisbach Chemicals SE",eisbach-chemicals.de,clara.neumann@kestrel.example,Customer,false,147,Germany,Retail
+001NW000049,"Quellvik Energie GmbH",quellvik-energie.de,paul.richter@kestrel.example,Customer,false,146,Germany,Retail
+001NW000050,"Palberg Health sp. z o.o.",https://www.palberg-health.pl,marta.nowak@kestrel.example,Prospect,false,1065,Poland,Education
+001NW000051,"Bernheim Retail B.V.",bernheim-retail.nl,sanne.devries@kestrel.example,Prospect,true,430,Netherlands,Media
+001NW000052,"Granbach Mobility B.V.",https://www.granbach-mobility.nl,sanne.devries@kestrel.example,Prospect,false,841,Netherlands,Government
+001NW000053,"Jorwerk Chemicals GmbH",jorwerk-chemicals.de,henrik.vogt@kestrel.example,Prospect,false,1242,Germany,Education
+001NW000054,"Talhain Energie B.V.",talhain-energie.nl,sanne.devries@kestrel.example,Prospect,false,295,Netherlands,Retail
+001NW000055,"Eiswald Chemicals B.V.",eiswald-chemicals.nl,sanne.devries@kestrel.example,Prospect,false,283,Netherlands,Government
+001NW000056,"Norbach Mobility GmbH",norbach-mobility.de,henrik.vogt@kestrel.example,Customer,false,2847,Germany,Logistics
+001NW000057,"Helmark Chemicals B.V.",helmark-chemicals.nl,sanne.devries@kestrel.example,Customer,false,315,Netherlands,Financial Services
+001NW000058,"Dorheim Textiles SE",dorheim-textiles.de,paul.richter@kestrel.example,Prospect,true,305,Germany,Energy
+001NW000059,"Corvik Logistik SE",corvik-logistik.de,henrik.vogt@kestrel.example,Customer,false,5696,Germany,Energy
+001NW000060,"Jorvik Logistik GmbH",https://www.jorvik-logistik.de,paul.richter@kestrel.example,Prospect,true,738,Germany,Healthcare
+001NW000061,"Wesdorf Media sp. z o.o.",wesdorf-media.pl,marta.nowak@kestrel.example,Prospect,false,269,Poland,Logistics
+001NW000062,"Rhemark Health sp. z o.o.",https://www.rhemark-health.pl,marta.nowak@kestrel.example,Prospect,true,2393,Poland,Government
+001NW000063,"Helmark Foods GmbH",helmark-foods.de,paul.richter@kestrel.example,Prospect,false,687,Germany,Technology
+001NW000064,"Ostkamp Systems GmbH",https://www.ostkamp-systems.de,clara.neumann@kestrel.example,Prospect,false,157,Germany,Retail
+001NW000065,"Solberg Health SE",solberg-health.de,clara.neumann@kestrel.example,Prospect,false,99,Germany,Manufacturing
+001NW000066,"Palkamp Energie B.V.",palkamp-energie.nl,sanne.devries@kestrel.example,Prospect,false,114,Netherlands,Logistics
+001NW000067,"Dorstein Retail B.V.",dorstein-retail.nl,sanne.devries@kestrel.example,Prospect,true,432,Netherlands,Energy
+001NW000068,"Paltal Chemicals SE",https://www.paltal-chemicals.de,henrik.vogt@kestrel.example,Prospect,true,198,Germany,Education
+001NW000069,"Lunstein Logistik B.V.",https://www.lunstein-logistik.nl,sanne.devries@kestrel.example,Prospect,true,960,Netherlands,Financial Services
+001NW000070,"Jorfeld Foods B.V.",jorfeld-foods.nl,sanne.devries@kestrel.example,Prospect,false,218,Netherlands,Retail
+001NW000071,"Lunwerk Pharma sp. z o.o.",https://www.lunwerk-pharma.pl,marta.nowak@kestrel.example,Prospect,true,257,Poland,Manufacturing
+001NW000072,"Solbach Textiles sp. z o.o.",https://www.solbach-textiles.pl,marta.nowak@kestrel.example,Prospect,false,219,Poland,Technology
+001NW000073,"Granholm Energie GmbH",granholm-energie.de,henrik.vogt@kestrel.example,Customer,false,1421,Germany,Logistics
+001NW000074,"Palwerk Textiles B.V.",https://www.palwerk-textiles.nl,sanne.devries@kestrel.example,Prospect,false,643,Netherlands,Healthcare
+001NW000075,"Quellvik Logistik B.V.",https://www.quellvik-logistik.nl,sanne.devries@kestrel.example,Prospect,false,4865,Netherlands,Logistics
+001NW000076,"Sollund Mobility GmbH",sollund-mobility.de,henrik.vogt@kestrel.example,Prospect,false,2095,Germany,Retail
+001NW000077,"Talfeld Energie SE",https://www.talfeld-energie.de,clara.neumann@kestrel.example,Prospect,true,70,Germany,Retail
+001NW000078,"Norfeld Maschinenbau GmbH",https://www.norfeld-maschinenbau.de,clara.neumann@kestrel.example,Customer,false,69,Germany,Financial Services
+001NW000079,"Dortal Textiles B.V.",dortal-textiles.nl,sanne.devries@kestrel.example,Prospect,false,238,Netherlands,Healthcare
+001NW000080,"Rhewald Chemicals sp. z o.o.",rhewald-chemicals.pl,marta.nowak@kestrel.example,Prospect,false,410,Poland,Technology
+001NW000081,"Marfeld Mobility sp. z o.o.",marfeld-mobility.pl,marta.nowak@kestrel.example,Prospect,false,620,Poland,Technology
+001NW000082,"Paldorf Chemicals GmbH",https://www.paldorf-chemicals.de,henrik.vogt@kestrel.example,Prospect,false,150,Germany,Education
+001NW000083,"Zenvik Pharma B.V.",zenvik-pharma.nl,sanne.devries@kestrel.example,Customer,false,279,Netherlands,Technology
+001NW000084,"Lunmark Mobility GmbH",lunmark-mobility.de,paul.richter@kestrel.example,Prospect,false,433,Germany,Energy
+001NW000085,"Corhain Chemicals B.V.",https://www.corhain-chemicals.nl,sanne.devries@kestrel.example,Prospect,false,243,Netherlands,Energy
+001NW000086,"Rhedorf Chemicals B.V.",rhedorf-chemicals.nl,sanne.devries@kestrel.example,Customer,false,222,Netherlands,Logistics
+001NW000087,"Vellund Energie sp. z o.o.",vellund-energie.pl,marta.nowak@kestrel.example,Prospect,false,3161,Poland,Financial Services
+001NW000088,"Bernfeld Textiles SE",bernfeld-textiles.de,paul.richter@kestrel.example,Prospect,true,147,Germany,Financial Services
+001NW000089,"Weshain Systems SE",weshain-systems.de,clara.neumann@kestrel.example,Prospect,true,134,Germany,Retail
+001NW000090,"Helbach Systems B.V.",https://www.helbach-systems.nl,sanne.devries@kestrel.example,Customer,false,156,Netherlands,Logistics
+001NW000091,"Solwerk Health sp. z o.o.",https://www.solwerk-health.pl,marta.nowak@kestrel.example,Prospect,false,1047,Poland,Logistics
+001NW000092,"Helwerk Energie sp. z o.o.",https://www.helwerk-energie.pl,marta.nowak@kestrel.example,Prospect,true,226,Poland,Energy
+001NW000093,"Bernbach Retail B.V.",bernbach-retail.nl,sanne.devries@kestrel.example,Customer,false,705,Netherlands,Retail
+001NW000094,"Alwerk Systems B.V.",https://www.alwerk-systems.nl,sanne.devries@kestrel.example,Customer,false,1017,Netherlands,Energy
+001NW000095,"Norkamp Pharma sp. z o.o.",https://www.norkamp-pharma.pl,marta.nowak@kestrel.example,Customer,false,42,Poland,Retail
+001NW000096,"Istlund Retail sp. z o.o.",istlund-retail.pl,marta.nowak@kestrel.example,Customer,false,88,Poland,Technology
+001NW000097,"Quellheim Mobility B.V.",https://www.quellheim-mobility.nl,sanne.devries@kestrel.example,Customer,false,360,Netherlands,Technology
+001NW000098,"Quellbach Pharma sp. z o.o.",https://www.quellbach-pharma.pl,marta.nowak@kestrel.example,Customer,false,754,Poland,Government
+001NW000099,"Helstad Energie B.V.",https://www.helstad-energie.nl,sanne.devries@kestrel.example,Customer,false,107,Netherlands,Energy
+001NW000100,"Ulmheim Energie GmbH",ulmheim-energie.de,clara.neumann@kestrel.example,Customer,false,366,Germany,Technology
+001NW000101,"Wesbach Retail sp. z o.o.",https://www.wesbach-retail.pl,marta.nowak@kestrel.example,Customer,false,1445,Poland,Healthcare
+001NW000102,"Eisvik Maschinenbau B.V.",eisvik-maschinenbau.nl,sanne.devries@kestrel.example,Prospect,true,405,Netherlands,Energy
+001NW000103,"Zenfeld Media sp. z o.o.",zenfeld-media.pl,marta.nowak@kestrel.example,Prospect,true,180,Poland,Energy
+001NW000104,"Soltal Systems SE",https://www.soltal-systems.de,clara.neumann@kestrel.example,Customer,false,963,Germany,Financial Services
+001NW000105,"Talheim Retail B.V.",talheim-retail.nl,sanne.devries@kestrel.example,Prospect,false,3634,Netherlands,Government
+001NW000106,"Sollund Mobility sp. z o.o.",https://www.sollund-mobility.pl,marta.nowak@kestrel.example,Customer,false,270,Poland,Financial Services
+001NW000107,"Wesfeld Pharma GmbH",wesfeld-pharma.de,clara.neumann@kestrel.example,Prospect,true,319,Germany,Technology
+001NW000108,"Bernwald Mobility sp. z o.o.",bernwald-mobility.pl,marta.nowak@kestrel.example,Prospect,false,655,Poland,Technology
+001NW000109,"Weskamp Foods B.V.",https://www.weskamp-foods.nl,sanne.devries@kestrel.example,Prospect,true,409,Netherlands,Healthcare
+001NW000110,"Helvik Maschinenbau GmbH",helvik-maschinenbau.de,henrik.vogt@kestrel.example,Prospect,false,6989,Germany,Education
+001NW000111,"Kalwerk Media SE",kalwerk-media.de,henrik.vogt@kestrel.example,Prospect,true,181,Germany,Government
+001NW000112,"Osthain Systems sp. z o.o.",https://www.osthain-systems.pl,marta.nowak@kestrel.example,Prospect,false,246,Poland,Manufacturing
+001NW000113,"Quellwald Maschinenbau SE",quellwald-maschinenbau.de,clara.neumann@kestrel.example,Customer,false,136,Germany,Media
+001NW000114,"Bernlund Retail sp. z o.o.",https://www.bernlund-retail.pl,marta.nowak@kestrel.example,Prospect,true,1063,Poland,Financial Services
+001NW000115,"Corvik Energie B.V.",corvik-energie.nl,sanne.devries@kestrel.example,Prospect,false,515,Netherlands,Government
+001NW000116,"Cormark Pharma GmbH",cormark-pharma.de,henrik.vogt@kestrel.example,Prospect,false,547,Germany,Education
+001NW000117,"Lunberg Energie SE",lunberg-energie.de,henrik.vogt@kestrel.example,Prospect,true,1297,Germany,Manufacturing
+001NW000118,"Cortal Energie B.V.",cortal-energie.nl,sanne.devries@kestrel.example,Prospect,true,153,Netherlands,Retail
+001NW000119,"Ulmdorf Pharma B.V.",ulmdorf-pharma.nl,sanne.devries@kestrel.example,Prospect,true,337,Netherlands,Technology
+001NW000120,"Palkamp Retail sp. z o.o.",palkamp-retail.pl,marta.nowak@kestrel.example,Prospect,true,637,Poland,Technology
+001NW000121,"Kalholm Energie sp. z o.o.",kalholm-energie.pl,marta.nowak@kestrel.example,Prospect,false,4238,Poland,Financial Services
+001NW000122,"Eislund Mobility sp. z o.o.",eislund-mobility.pl,marta.nowak@kestrel.example,Customer,false,234,Poland,Government
+001NW000123,"Kalberg Pharma SE",https://www.kalberg-pharma.de,paul.richter@kestrel.example,Prospect,true,437,Germany,Manufacturing
+001NW000124,"Eismark Health SE",eismark-health.de,henrik.vogt@kestrel.example,Prospect,false,73,Germany,Government
+001NW000125,"Helkamp Mobility B.V.",https://www.helkamp-mobility.nl,sanne.devries@kestrel.example,Customer,false,1866,Netherlands,Logistics
+001NW000126,"Jorfeld Media B.V.",https://www.jorfeld-media.nl,sanne.devries@kestrel.example,Customer,false,371,Netherlands,Education
+001NW000127,"Ulmdorf Chemicals GmbH",ulmdorf-chemicals.de,henrik.vogt@kestrel.example,Prospect,false,2210,Germany,Education
+001NW000128,"Albach Retail sp. z o.o.",albach-retail.pl,marta.nowak@kestrel.example,Prospect,false,3538,Poland,Energy
+001NW000129,"Helstein Health B.V.",helstein-health.nl,sanne.devries@kestrel.example,Prospect,false,579,Netherlands,Technology
+001NW000130,"Altal Health B.V.",altal-health.nl,sanne.devries@kestrel.example,Customer,false,380,Netherlands,Manufacturing
+001NW000131,"Norheim Foods B.V.",norheim-foods.nl,sanne.devries@kestrel.example,Prospect,true,143,Netherlands,Logistics
+001NW000132,"Talkamp Pharma B.V.",https://www.talkamp-pharma.nl,sanne.devries@kestrel.example,Prospect,false,290,Netherlands,Healthcare
+001NW000133,"Dorberg Media SE",dorberg-media.de,clara.neumann@kestrel.example,Customer,false,260,Germany,Media
+001NW000134,"Alheim Mobility sp. z o.o.",alheim-mobility.pl,marta.nowak@kestrel.example,Prospect,false,16,Poland,Energy
+001NW000135,"Norberg Media sp. z o.o.",norberg-media.pl,marta.nowak@kestrel.example,Prospect,false,257,Poland,Financial Services
+001NW000136,"Marhain Health SE",marhain-health.de,clara.neumann@kestrel.example,Customer,false,717,Germany,Logistics
+001NW000137,"Jorfeld Chemicals sp. z o.o.",https://www.jorfeld-chemicals.pl,marta.nowak@kestrel.example,Customer,false,2515,Poland,Logistics
+001NW000138,"Rhewald Media GmbH",rhewald-media.de,paul.richter@kestrel.example,Prospect,true,784,Germany,Healthcare
+001NW000139,"Falhain Pharma GmbH",falhain-pharma.de,paul.richter@kestrel.example,Prospect,false,165,Germany,Manufacturing
+001NW000140,"Helberg Retail B.V.",helberg-retail.nl,sanne.devries@kestrel.example,Prospect,true,282,Netherlands,Financial Services
+001NW000141,"Norlund Chemicals sp. z o.o.",norlund-chemicals.pl,marta.nowak@kestrel.example,Prospect,true,67,Poland,Financial Services
+001NW000142,"Weskamp Chemicals SE",weskamp-chemicals.de,henrik.vogt@kestrel.example,Prospect,false,740,Germany,Education
+001NW000143,"Granhain Foods GmbH",granhain-foods.de,paul.richter@kestrel.example,Prospect,false,166,Germany,Financial Services
+001NW000144,"Velheim Energie sp. z o.o.",https://www.velheim-energie.pl,marta.nowak@kestrel.example,Prospect,true,589,Poland,Government
+001NW000145,"Ulmfeld Systems GmbH",https://www.ulmfeld-systems.de,henrik.vogt@kestrel.example,Customer,false,142,Germany,Education
+001NW000146,"Palholm Maschinenbau B.V.",palholm-maschinenbau.nl,sanne.devries@kestrel.example,Customer,false,183,Netherlands,Manufacturing
+001NW000147,"Sollund Media SE",sollund-media.de,henrik.vogt@kestrel.example,Prospect,false,2203,Germany,Energy
+001NW000148,"Falbach Systems sp. z o.o.",falbach-systems.pl,marta.nowak@kestrel.example,Customer,false,374,Poland,Logistics
+001NW000149,"Lunfeld Retail sp. z o.o.",lunfeld-retail.pl,marta.nowak@kestrel.example,Customer,false,1243,Poland,Retail
+001NW000150,"Hellund Chemicals GmbH",hellund-chemicals.de,clara.neumann@kestrel.example,Customer,false,75,Germany,Energy
+001NW000151,"Ostmark Retail sp. z o.o.",https://www.ostmark-retail.pl,marta.nowak@kestrel.example,Prospect,false,455,Poland,Healthcare
+001NW000152,"Talvik Energie sp. z o.o.",talvik-energie.pl,marta.nowak@kestrel.example,Customer,false,96,Poland,Technology
+001NW000153,"Alberg Textiles sp. z o.o.",alberg-textiles.pl,marta.nowak@kestrel.example,Customer,false,62,Poland,Logistics
+001NW000154,"Lunlund Mobility B.V.",https://www.lunlund-mobility.nl,sanne.devries@kestrel.example,Prospect,false,1408,Netherlands,Government
+001NW000155,"Dorwerk Logistik sp. z o.o.",dorwerk-logistik.pl,marta.nowak@kestrel.example,Customer,false,667,Poland,Technology
+001NW000156,"Oststad Textiles sp. z o.o.",https://www.oststad-textiles.pl,marta.nowak@kestrel.example,Prospect,false,5365,Poland,Retail
+001NW000157,"Corberg Energie B.V.",corberg-energie.nl,sanne.devries@kestrel.example,Customer,false,1071,Netherlands,Healthcare
+001NW000158,"Dorheim Mobility GmbH",https://www.dorheim-mobility.de,clara.neumann@kestrel.example,Prospect,false,347,Germany,Manufacturing
+001NW000159,"Jorfeld Health GmbH",https://www.jorfeld-health.de,paul.richter@kestrel.example,Prospect,true,568,Germany,Logistics
+001NW000160,"Falwerk Chemicals B.V.",falwerk-chemicals.nl,sanne.devries@kestrel.example,Prospect,false,792,Netherlands,Education

@@ -1,0 +1,90 @@
+{
+  "_note": "The world's own truth and behaviour. The platform never reads this file, and the world never reads config/platform.json or a playbook.",
+  "sessionsPerSeed": 6000,
+  "historicalLeadsPerSeed": 2500,
+  "orgExport": "config/demo/northwind/salesforce",
+  "truth": {
+    "icpMinEmployees": 200,
+    "servedCountries": ["Germany", "Austria", "Switzerland", "Sweden", "Norway", "Denmark", "Finland", "United Kingdom", "Ireland"],
+    "buyingRoles": ["decision_maker", "influencer"],
+    "routeToAccountOwnerWhen": ["Customer", "OpenOpportunity"],
+    "opportunityRateFromQualifiedMeeting": 0.38,
+    "acvEurByEmployees": [[200, 18000], [1000, 42000], [5000, 95000]]
+  },
+  "visitors": {
+    "country": {
+      "Germany": 34, "Austria": 6, "Switzerland": 6, "Sweden": 5, "Norway": 2, "Denmark": 3, "Finland": 2,
+      "United Kingdom": 13, "Ireland": 2, "Netherlands": 7, "France": 5, "Poland": 3, "United States": 8, "India": 4
+    },
+    "inCrmShare": 0.28,
+    "employeesMedian": 260,
+    "employeesSigma": 1.25,
+    "industry": { "Manufacturing": 22, "Retail": 14, "Healthcare": 10, "Technology": 18, "Logistics": 10, "Energy": 6, "Media": 6, "Government": 4, "Education": 3, "Financial Services": 7 },
+    "role": { "decision_maker": 20, "influencer": 27, "practitioner": 28, "student": 9, "job_seeker": 8, "vendor": 8 },
+    "stage": { "researching": 58, "evaluating": 29, "ready": 13 },
+    "customerSupportShare": 0.55,
+    "researchingWantsMeeting": 0.12,
+    "partnerReferral": 0.05,
+    "freemail": 0.14,
+    "cmpMarketing": { "granted": 0.48, "denied": 0.32, "unset": 0.2 },
+    "questions": { "0": 30, "1": 38, "2": 22, "3": 10 },
+    "businessHoursCET": [8, 18],
+    "weekendShare": 0.12
+  },
+  "behaviour": {
+    "leaveIfUnanswered": 0.22,
+    "leaveIfAskedForField": 0.1,
+    "statesCountryUnprompted": 0.35,
+    "statesEmployeesUnprompted": 0.2,
+    "statesRoleUnprompted": 0.55,
+    "inChatConsentYes": { "fitReady": 0.86, "fitEvaluating": 0.74, "other": 0.45 },
+    "acceptsOfferedSlot": 0.82,
+    "formFill": { "ready": 0.55, "evaluating": 0.32, "researching": 0.08 },
+    "sdrResponseMinutesMedianInHours": 52,
+    "sdrResponseSigma": 0.8,
+    "sdrNextMorningExtraMinutes": 90,
+    "bookingDecayHours": 22,
+    "sdrBooksFromCallback": 0.7,
+    "sdrJunkMeetingShare": 0.06,
+    "chatbotUnderstands": 0.58,
+    "chatbotTalkToSalesBuyers": 0.65,
+    "chatbotTalkToSalesNonBuyers": 0.05
+  },
+  "enrichment": {
+    "reverseIpCompanyMatch": 0.42,
+    "emailDomainMatch": 0.88,
+    "employeesAccuracy": 0.95
+  },
+  "reader": {
+    "_note": "How the simulated model behaves. Errors are drawn from the same luck for every design that uses the model.",
+    "retrievalUsesTruePassage": 0.94,
+    "hallucinateWhenUnsupported": 0.42,
+    "hallucinateWhenSupported": 0.05,
+    "extractCountry": 0.97,
+    "extractEmployees": 0.93,
+    "extractRole": 0.9,
+    "extractIntent": 0.94,
+    "aloneRoutesSimpleEntry": 0.86,
+    "aloneRoutesBooleanFilterEntry": 0.58,
+    "aloneRoutesFormulaEntry": 0.5,
+    "aloneChecksAccountOwner": 0.55,
+    "aloneQualificationFlip": 0.14,
+    "aloneAsksEmailWithoutConsent": 0.9
+  },
+  "handEnteredRules": {
+    "_note": "How the admin re-typed the Salesforce rules into a separate chat tool (the status quo for routing outside the CRM).",
+    "drifts": [
+      { "kind": "dropEntry", "order": 1, "why": "formula could not be expressed in the tool" },
+      { "kind": "dropBooleanFilter", "order": 3, "why": "tool has no booleanFilter; all criteria AND-ed" },
+      { "kind": "removeValue", "order": 4, "field": "Country", "value": "Switzerland", "why": "typo when copying the list" },
+      { "kind": "dropEntry", "order": 5, "why": "multi-select picklist criteria not supported" },
+      { "kind": "setValue", "order": 6, "field": "NumberOfEmployees", "value": "250", "why": "old threshold kept" },
+      { "kind": "dropEntry", "order": 8, "why": "regex not supported" }
+    ]
+  },
+  "questionnaire": {
+    "questionsPerSeed": 180,
+    "reader": { "usesCorrectEvidence": 0.9, "citesExpiredAnyway": 0.85, "hallucinateWhenNoEvidence": 0.5, "wrongWhenEvidence": 0.04 },
+    "manualErrorRate": 0.02
+  }
+}

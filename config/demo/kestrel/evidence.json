@@ -1,0 +1,10 @@
+{
+  "library": "Kestrel security evidence library",
+  "items": [
+    { "id": "kev-iso", "title": "ISO 27001 certificate", "owner": "security@kestrel.example", "approved": true, "validUntil": "2027-05-31", "text": "Kestrel Freight OS is certified to ISO 27001:2022 for the platform and customer support." },
+    { "id": "kev-tisax", "title": "TISAX label", "owner": "security@kestrel.example", "approved": true, "validUntil": "2026-08-31", "text": "Kestrel holds a TISAX assessment level 2 label for information with high protection needs." },
+    { "id": "kev-hosting", "title": "Hosting", "owner": "security@kestrel.example", "approved": true, "validUntil": "2027-12-31", "text": "Production and backups run in Microsoft Azure Germany West Central and Germany North." },
+    { "id": "kev-dpa", "title": "DPA", "owner": "legal@kestrel.example", "approved": true, "validUntil": "2027-12-31", "text": "A data processing agreement under Article 28 GDPR is signed with every customer." },
+    { "id": "kev-sso", "title": "SSO", "owner": "security@kestrel.example", "approved": true, "validUntil": "2027-12-31", "text": "Single sign-on supports SAML 2.0 and Microsoft Entra ID." }
+  ]
+}

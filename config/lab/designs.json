@@ -1,0 +1,15 @@
+{
+  "designs": [
+    { "name": "form_and_wait", "kind": "form_and_wait", "label": "Contact form, SDR calls back (today)" },
+    { "name": "rules_chatbot", "kind": "rules_chatbot", "label": "Decision-tree chatbot, rules re-typed by hand" },
+    { "name": "model_alone", "kind": "model_alone", "label": "LLM agent deciding on its own" },
+    { "name": "platform", "kind": "platform", "label": "Model reads, code decides" },
+    { "name": "platform_hand_rules", "kind": "platform", "label": "Platform with rules re-typed by hand", "ablate": ["imported_rules"] },
+    { "name": "platform_no_claim_check", "kind": "platform", "label": "Platform without the claim check", "ablate": ["claim_check"] },
+    { "name": "platform_no_consent_gate", "kind": "platform", "label": "Platform without the consent gate", "ablate": ["consent_gate"] },
+    { "name": "platform_no_enrichment", "kind": "platform", "label": "Platform without company enrichment", "ablate": ["enrichment"] },
+    { "name": "platform_no_account_match", "kind": "platform", "label": "Platform ignoring account ownership", "ablate": ["account_match"] }
+  ],
+  "baseline": "form_and_wait",
+  "candidate": "platform"
+}

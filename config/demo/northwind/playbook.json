@@ -1,0 +1,32 @@
+{
+  "prospect": "northwind",
+  "company": "Northwind Ledger",
+  "tagline": "Finance automation for multi-entity companies in Europe",
+  "domain": "northwind.example",
+  "brandTerms": ["northwind", "ledger", "we", "our", "us"],
+  "brand": { "primary": "#1F3A5F", "accent": "#E4A72C" },
+  "qualification": {
+    "minEmployees": 200,
+    "servedCountries": ["Germany", "Austria", "Switzerland", "Sweden", "Norway", "Denmark", "Finland", "United Kingdom", "Ireland"],
+    "buyingRoles": ["decision_maker", "influencer"],
+    "bookFromStage": "evaluating"
+  },
+  "rulesOfEngagement": {
+    "routeToAccountOwnerWhen": ["Customer", "OpenOpportunity"],
+    "existingCustomerSupportTo": "support@northwind.example",
+    "neverDiscuss": ["discount", "competitor pricing"]
+  },
+  "consent": {
+    "prompt": "Before I take your details: may Northwind Ledger store your name and work email to arrange this meeting? You can withdraw at any time.",
+    "fallback": "No problem. Here is our guide on multi-entity close, and you can book any time from the pricing page."
+  },
+  "salesforce": {
+    "assignmentRules": "salesforce/Lead.assignmentRules",
+    "org": "salesforce/org.json",
+    "accounts": "salesforce/accounts.csv",
+    "activeRule": "Inbound EMEA",
+    "leadSource": "Web Chat"
+  },
+  "content": "content.json",
+  "evidence": "evidence.json"
+}

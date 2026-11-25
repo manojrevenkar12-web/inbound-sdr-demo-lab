@@ -1,0 +1,12 @@
+[
+  {
+    "prospect": "kestrel",
+    "company": "Kestrel Freight OS",
+    "tagline": "Transport management for shippers in Germany, Benelux and Poland"
+  },
+  {
+    "prospect": "northwind",
+    "company": "Northwind Ledger",
+    "tagline": "Finance automation for multi-entity companies in Europe"
+  }
+]

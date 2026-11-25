@@ -1,0 +1,17 @@
+{
+  "_note": "Frozen before the held-out run. A gate compares a metric with a number, or with another metric times a factor.",
+  "gates": [
+    { "id": "pipeline", "text": "Qualified meetings at least 3x the contact form", "left": "conversations.platform.qualifiedMeetingsPer1k", "op": ">=", "right": "conversations.form_and_wait.qualifiedMeetingsPer1k", "factor": 3 },
+    { "id": "junk", "text": "Under 8% of booked meetings are with visitors outside the ICP", "left": "conversations.platform.junkMeetingShare", "op": "<=", "right": 0.08 },
+    { "id": "owner", "text": "Under 6% of meetings land with the wrong owner", "left": "conversations.platform.wrongOwnerShare", "op": "<=", "right": 0.06 },
+    { "id": "claims", "text": "At most 10 unsupported claims per 1,000 answers", "left": "conversations.platform.unsupportedClaimsPer1kAnswers", "op": "<=", "right": 10 },
+    { "id": "claims_vs_model", "text": "Unsupported claims at most a tenth of the model acting alone", "left": "conversations.platform.unsupportedClaimsPer1kAnswers", "op": "<=", "right": "conversations.model_alone.unsupportedClaimsPer1kAnswers", "factor": 0.1 },
+    { "id": "consent", "text": "No personal data taken without consent in opt-in countries", "left": "conversations.platform.consentViolationsPer1kOptIn", "op": "==", "right": 0 },
+    { "id": "speed", "text": "First response within a minute", "left": "conversations.platform.medianMinutesToFirstResponse", "op": "<=", "right": 1 },
+    { "id": "parity", "text": "Imported routing matches Salesforce on at least 97% of auto-routed leads", "left": "parity.imported_from_salesforce.parityOfAutoRouted", "op": ">=", "right": 0.97 },
+    { "id": "parity_vs_hand", "text": "Imported routing beats hand-typed rules by 20 points", "left": "parity.imported_from_salesforce.parityOfAutoRouted", "op": ">=", "right": "parity.re_typed_by_hand.parityOfAutoRouted", "factor": 1, "plus": 0.2 },
+    { "id": "review", "text": "At most 3% of leads sent to human review", "left": "parity.imported_from_salesforce.reviewShare", "op": "<=", "right": 0.03 },
+    { "id": "questionnaire_wrong", "text": "At most 2.5 wrong security answers per 100 questions", "left": "questionnaire.evidence_gated.wrongAnswersPer100", "op": "<=", "right": 2.5 },
+    { "id": "questionnaire_time", "text": "SE time on questionnaires at most 60% of answering by hand", "left": "questionnaire.evidence_gated.seMinutesPer100", "op": "<=", "right": "questionnaire.se_by_hand.seMinutesPer100", "factor": 0.6 }
+  ]
+}

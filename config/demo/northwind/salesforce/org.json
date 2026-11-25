@@ -1,0 +1,28 @@
+{
+  "orgName": "Northwind Ledger (fictional demo org)",
+  "defaultLeadOwner": { "type": "Queue", "id": "Inbound_Nurture" },
+  "users": {
+    "anna.becker@northwind.example": { "name": "Anna Becker", "role": "AE Strategic DACH" },
+    "jonas.koch@northwind.example": { "name": "Jonas Koch", "role": "AE Strategic DACH" },
+    "markus.weber@northwind.example": { "name": "Markus Weber", "role": "AE Public Sector DACH" },
+    "lea.wolf@northwind.example": { "name": "Lea Wolf", "role": "AE Midmarket DACH" },
+    "tim.braun@northwind.example": { "name": "Tim Braun", "role": "AE Midmarket DACH" },
+    "nina.hoff@northwind.example": { "name": "Nina Hoff", "role": "AE Midmarket DACH" },
+    "sofia.lind@northwind.example": { "name": "Sofia Lind", "role": "AE Nordics" },
+    "oliver.grant@northwind.example": { "name": "Oliver Grant", "role": "AE UK & Ireland" },
+    "emma.hale@northwind.example": { "name": "Emma Hale", "role": "AE UK & Ireland" },
+    "petra.lang@northwind.example": { "name": "Petra Lang", "role": "Partner Manager" },
+    "inbound.sdr@northwind.example": { "name": "Inbound SDR team", "role": "SDR" }
+  },
+  "queues": {
+    "Strategic_DACH": ["anna.becker@northwind.example", "jonas.koch@northwind.example"],
+    "Midmarket_DACH": ["lea.wolf@northwind.example", "tim.braun@northwind.example", "nina.hoff@northwind.example"],
+    "Nordics": ["sofia.lind@northwind.example"],
+    "UKI": ["oliver.grant@northwind.example", "emma.hale@northwind.example"],
+    "Partner_Desk": ["petra.lang@northwind.example"],
+    "Inbound_Nurture": ["inbound.sdr@northwind.example"],
+    "Freemail_Hold": ["inbound.sdr@northwind.example"],
+    "Healthcare_Payroll": ["nina.hoff@northwind.example"],
+    "Inbound_Review": ["inbound.sdr@northwind.example"]
+  }
+}

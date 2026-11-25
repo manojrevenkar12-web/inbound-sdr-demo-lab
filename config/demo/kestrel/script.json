@@ -1,0 +1,38 @@
+{
+  "conversations": [
+    {
+      "id": "nl-shipper",
+      "title": "Dutch shipper asking about CO2 reporting",
+      "country": "Netherlands",
+      "cmp": "granted",
+      "companyDomain": null,
+      "messages": [
+        "Do you calculate CO2 emissions per shipment for our CSRD reporting?",
+        "I'm the head of logistics at a 450 employee manufacturer, we are comparing three vendors and want a demo.",
+        "lotte.bakker@zeeland-cables.example"
+      ]
+    },
+    {
+      "id": "de-enterprise",
+      "title": "German enterprise, consent asked in chat",
+      "country": "Germany",
+      "cmp": "unset",
+      "companyDomain": null,
+      "messages": [
+        "We are a 2,400 employee chemicals company. I'm the CFO and we are replacing our TMS. Do you have an SAP S/4HANA add-on?",
+        "Yes, that's fine.",
+        "j.krause@rheinchem.example"
+      ]
+    }
+  ],
+  "questionnaire": [
+    { "id": "k1", "text": "Is Kestrel certified to ISO 27001?" },
+    { "id": "k2", "text": "Do you hold a TISAX label?" },
+    { "id": "k3", "text": "Where are production and backups hosted?" },
+    { "id": "k4", "text": "Do you support customer-managed encryption keys?" }
+  ],
+  "discovery": { "themes": ["Rail freight tenders", "TISAX renewal"], "tags": [
+    { "dealId": "K-201", "theme": "Rail freight tenders", "pipelineEur": 60000, "quote": "Half our volume moves by rail." },
+    { "dealId": "K-209", "theme": "TISAX renewal", "pipelineEur": 120000, "quote": "Our OEM customer needs a current TISAX label." }
+  ] }
+}

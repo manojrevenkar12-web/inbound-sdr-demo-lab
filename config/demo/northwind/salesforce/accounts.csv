@@ -1,0 +1,361 @@
+Id,Name,Website,OwnerId,Type,Open_Opportunity__c,NumberOfEmployees,BillingCountry,Industry
+001NW000001,"Dormark Energie plc",https://www.dormark-energie.co.uk,emma.hale@northwind.example,Prospect,false,699,United Kingdom,Logistics
+001NW000002,"Helmark Energie AG",helmark-energie.at,jonas.koch@northwind.example,Prospect,false,1335,Austria,Media
+001NW000003,"Bernstad Mobility AG",https://www.bernstad-mobility.at,lea.wolf@northwind.example,Prospect,false,560,Austria,Education
+001NW000004,"Quellberg Health GmbH",https://www.quellberg-health.at,lea.wolf@northwind.example,Prospect,false,277,Austria,Financial Services
+001NW000005,"Zenfeld Mobility AB",zenfeld-mobility.se,sofia.lind@northwind.example,Prospect,false,437,Sweden,Education
+001NW000006,"Helvik Chemicals GmbH",https://www.helvik-chemicals.at,nina.hoff@northwind.example,Prospect,false,457,Austria,Logistics
+001NW000007,"Helkamp Retail SE",helkamp-retail.de,nina.hoff@northwind.example,Prospect,false,184,Germany,Technology
+001NW000008,"Ulmholm Mobility GmbH & Co. KG",ulmholm-mobility.de,jonas.koch@northwind.example,Customer,false,17424,Germany,Financial Services
+001NW000009,"Sollund Mobility GmbH",sollund-mobility.de,nina.hoff@northwind.example,Customer,false,154,Germany,Financial Services
+001NW000010,"Ulmkamp Energie AB",ulmkamp-energie.se,sofia.lind@northwind.example,Prospect,false,1860,Sweden,Technology
+001NW000011,"Istbach Mobility AG",https://www.istbach-mobility.de,tim.braun@northwind.example,Customer,false,800,Germany,Manufacturing
+001NW000012,"Wesberg Systems GmbH",wesberg-systems.at,lea.wolf@northwind.example,Customer,false,621,Austria,Financial Services
+001NW000013,"Quelllund Chemicals AB",quelllund-chemicals.se,sofia.lind@northwind.example,Prospect,true,963,Sweden,Retail
+001NW000014,"Pallund Textiles GmbH",pallund-textiles.at,jonas.koch@northwind.example,Prospect,false,2565,Austria,Media
+001NW000015,"Ostkamp Retail AG",ostkamp-retail.at,nina.hoff@northwind.example,Prospect,false,104,Austria,Government
+001NW000016,"Solholm Retail AB",solholm-retail.se,sofia.lind@northwind.example,Prospect,true,93,Sweden,Retail
+001NW000017,"Paldorf Foods AB",paldorf-foods.se,sofia.lind@northwind.example,Prospect,true,1259,Sweden,Energy
+001NW000018,"Kalholm Chemicals SA",https://www.kalholm-chemicals.ch,anna.becker@northwind.example,Prospect,false,2294,Switzerland,Retail
+001NW000019,"Quelldorf Systems AG",quelldorf-systems.at,tim.braun@northwind.example,Prospect,false,341,Austria,Logistics
+001NW000020,"Istbach Pharma plc",istbach-pharma.co.uk,emma.hale@northwind.example,Prospect,false,571,United Kingdom,Financial Services
+001NW000021,"Paltal Textiles GmbH & Co. KG",https://www.paltal-textiles.de,lea.wolf@northwind.example,Prospect,false,560,Germany,Media
+001NW000022,"Granbach Retail GmbH",granbach-retail.de,anna.becker@northwind.example,Prospect,false,4252,Germany,Technology
+001NW000023,"Weswald Maschinenbau AG",weswald-maschinenbau.at,nina.hoff@northwind.example,Prospect,true,204,Austria,Logistics
+001NW000024,"Velhain Pharma GmbH",https://www.velhain-pharma.de,nina.hoff@northwind.example,Prospect,false,137,Germany,Logistics
+001NW000025,"Norheim Maschinenbau SE",https://www.norheim-maschinenbau.de,tim.braun@northwind.example,Customer,false,165,Germany,Media
+001NW000026,"Velstad Media GmbH",velstad-media.de,markus.weber@northwind.example,Prospect,false,241,Germany,Government
+001NW000027,"Rheholm Systems Ltd",rheholm-systems.co.uk,emma.hale@northwind.example,Prospect,true,223,United Kingdom,Energy
+001NW000028,"Talhain Media GmbH",talhain-media.at,nina.hoff@northwind.example,Prospect,false,651,Austria,Logistics
+001NW000029,"Lunlund Energie AG",lunlund-energie.ch,lea.wolf@northwind.example,Customer,false,90,Switzerland,Education
+001NW000030,"Solfeld Energie AG",solfeld-energie.at,anna.becker@northwind.example,Prospect,false,1087,Austria,Healthcare
+001NW000031,"Wesbach Chemicals plc",https://www.wesbach-chemicals.co.uk,emma.hale@northwind.example,Prospect,false,779,United Kingdom,Media
+001NW000032,"Quellholm Maschinenbau AG",quellholm-maschinenbau.ch,nina.hoff@northwind.example,Prospect,true,690,Switzerland,Healthcare
+001NW000033,"Corfeld Retail AG",corfeld-retail.de,anna.becker@northwind.example,Customer,false,2125,Germany,Technology
+001NW000034,"Norvik Chemicals GmbH",https://www.norvik-chemicals.de,markus.weber@northwind.example,Customer,false,114,Germany,Education
+001NW000035,"Marstad Media AB",marstad-media.se,sofia.lind@northwind.example,Customer,false,1805,Sweden,Media
+001NW000036,"Bernmark Retail AG",bernmark-retail.de,lea.wolf@northwind.example,Prospect,false,207,Germany,Retail
+001NW000037,"Quellmark Maschinenbau GmbH & Co. KG",quellmark-maschinenbau.de,nina.hoff@northwind.example,Customer,false,598,Germany,Retail
+001NW000038,"Ulmtal Systems Ltd",https://www.ulmtal-systems.co.uk,emma.hale@northwind.example,Prospect,true,711,United Kingdom,Healthcare
+001NW000039,"Solwerk Textiles GmbH",solwerk-textiles.at,tim.braun@northwind.example,Prospect,true,302,Austria,Retail
+001NW000040,"Dorwald Textiles plc",https://www.dorwald-textiles.co.uk,emma.hale@northwind.example,Prospect,false,401,United Kingdom,Financial Services
+001NW000041,"Hellund Logistik AB",hellund-logistik.se,sofia.lind@northwind.example,Customer,false,1834,Sweden,Media
+001NW000042,"Cordorf Systems AG",cordorf-systems.ch,anna.becker@northwind.example,Prospect,false,1384,Switzerland,Energy
+001NW000043,"Corhain Mobility AG",https://www.corhain-mobility.ch,tim.braun@northwind.example,Prospect,false,791,Switzerland,Logistics
+001NW000044,"Lunberg Logistik AB",lunberg-logistik.se,sofia.lind@northwind.example,Prospect,false,3603,Sweden,Logistics
+001NW000045,"Norlund Media GmbH",https://www.norlund-media.at,lea.wolf@northwind.example,Customer,false,384,Austria,Education
+001NW000046,"Velmark Maschinenbau plc",https://www.velmark-maschinenbau.co.uk,oliver.grant@northwind.example,Prospect,false,1294,United Kingdom,Media
+001NW000047,"Ostwerk Health plc",https://www.ostwerk-health.co.uk,emma.hale@northwind.example,Prospect,false,118,United Kingdom,Government
+001NW000048,"Corstad Textiles AB",corstad-textiles.se,sofia.lind@northwind.example,Prospect,false,171,Sweden,Government
+001NW000049,"Paltal Logistik AG",paltal-logistik.de,markus.weber@northwind.example,Prospect,false,482,Germany,Education
+001NW000050,"Jorberg Pharma SA",jorberg-pharma.ch,lea.wolf@northwind.example,Prospect,false,271,Switzerland,Government
+001NW000051,"Palkamp Chemicals AB",palkamp-chemicals.se,sofia.lind@northwind.example,Prospect,false,552,Sweden,Financial Services
+001NW000052,"Norheim Mobility GmbH",norheim-mobility.de,markus.weber@northwind.example,Customer,false,465,Germany,Government
+001NW000053,"Zenstad Logistik AG",https://www.zenstad-logistik.de,markus.weber@northwind.example,Customer,false,350,Germany,Government
+001NW000054,"Palwald Textiles GmbH",palwald-textiles.de,tim.braun@northwind.example,Customer,false,138,Germany,Manufacturing
+001NW000055,"Jorberg Chemicals GmbH",jorberg-chemicals.de,lea.wolf@northwind.example,Customer,false,389,Germany,Logistics
+001NW000056,"Jortal Logistik plc",https://www.jortal-logistik.co.uk,oliver.grant@northwind.example,Customer,false,2573,United Kingdom,Technology
+001NW000057,"Granheim Retail plc",granheim-retail.co.uk,emma.hale@northwind.example,Prospect,false,214,United Kingdom,Logistics
+001NW000058,"Corkamp Pharma AB",corkamp-pharma.se,sofia.lind@northwind.example,Customer,false,455,Sweden,Education
+001NW000059,"Talholm Energie AG",talholm-energie.de,tim.braun@northwind.example,Prospect,false,449,Germany,Healthcare
+001NW000060,"Alvik Mobility AB",alvik-mobility.se,sofia.lind@northwind.example,Customer,false,2362,Sweden,Government
+001NW000061,"Norlund Energie GmbH",norlund-energie.de,anna.becker@northwind.example,Prospect,false,1300,Germany,Technology
+001NW000062,"Corkamp Energie GmbH",https://www.corkamp-energie.de,tim.braun@northwind.example,Prospect,false,145,Germany,Retail
+001NW000063,"Helwerk Energie GmbH",helwerk-energie.at,nina.hoff@northwind.example,Prospect,true,696,Austria,Media
+001NW000064,"Ulmmark Energie GmbH",ulmmark-energie.de,tim.braun@northwind.example,Customer,false,504,Germany,Healthcare
+001NW000065,"Palfeld Health SA",palfeld-health.ch,tim.braun@northwind.example,Prospect,false,227,Switzerland,Education
+001NW000066,"Velkamp Pharma AG",velkamp-pharma.ch,tim.braun@northwind.example,Prospect,false,89,Switzerland,Media
+001NW000067,"Ulmfeld Maschinenbau AG",https://www.ulmfeld-maschinenbau.de,anna.becker@northwind.example,Customer,false,8820,Germany,Media
+001NW000068,"Quellholm Energie Ltd",https://www.quellholm-energie.co.uk,emma.hale@northwind.example,Prospect,true,463,United Kingdom,Energy
+001NW000069,"Helheim Retail AG",https://www.helheim-retail.at,nina.hoff@northwind.example,Customer,false,646,Austria,Technology
+001NW000070,"Jorberg Energie GmbH",jorberg-energie.at,tim.braun@northwind.example,Prospect,false,32,Austria,Financial Services
+001NW000071,"Quellmark Systems AG",quellmark-systems.de,lea.wolf@northwind.example,Prospect,false,681,Germany,Energy
+001NW000072,"Ulmwald Foods SA",ulmwald-foods.ch,nina.hoff@northwind.example,Prospect,true,506,Switzerland,Healthcare
+001NW000073,"Rhefeld Health Ltd",https://www.rhefeld-health.co.uk,emma.hale@northwind.example,Prospect,false,425,United Kingdom,Government
+001NW000074,"Fallund Logistik GmbH",https://www.fallund-logistik.de,lea.wolf@northwind.example,Prospect,true,656,Germany,Financial Services
+001NW000075,"Bernholm Mobility GmbH & Co. KG",https://www.bernholm-mobility.de,lea.wolf@northwind.example,Customer,false,302,Germany,Manufacturing
+001NW000076,"Bernlund Pharma GmbH & Co. KG",bernlund-pharma.de,lea.wolf@northwind.example,Customer,false,353,Germany,Healthcare
+001NW000077,"Bernstein Textiles AG",bernstein-textiles.at,nina.hoff@northwind.example,Prospect,false,226,Austria,Energy
+001NW000078,"Dorwerk Foods AB",dorwerk-foods.se,sofia.lind@northwind.example,Customer,false,261,Sweden,Financial Services
+001NW000079,"Markamp Systems GmbH",markamp-systems.de,nina.hoff@northwind.example,Prospect,false,129,Germany,Technology
+001NW000080,"Corbach Retail AB",corbach-retail.se,sofia.lind@northwind.example,Prospect,false,356,Sweden,Manufacturing
+001NW000081,"Eisbach Energie plc",eisbach-energie.co.uk,emma.hale@northwind.example,Prospect,false,303,United Kingdom,Government
+001NW000082,"Marstad Textiles GmbH",https://www.marstad-textiles.de,jonas.koch@northwind.example,Prospect,false,1119,Germany,Logistics
+001NW000083,"Dorbach Chemicals AG",https://www.dorbach-chemicals.de,jonas.koch@northwind.example,Prospect,true,2489,Germany,Energy
+001NW000084,"Eiskamp Media GmbH",eiskamp-media.de,markus.weber@northwind.example,Prospect,false,996,Germany,Education
+001NW000085,"Velvik Maschinenbau plc",velvik-maschinenbau.co.uk,emma.hale@northwind.example,Customer,false,674,United Kingdom,Retail
+001NW000086,"Velwald Chemicals AG",velwald-chemicals.ch,anna.becker@northwind.example,Prospect,false,2436,Switzerland,Technology
+001NW000087,"Kallund Pharma AG",kallund-pharma.de,tim.braun@northwind.example,Customer,false,39,Germany,Financial Services
+001NW000088,"Talkamp Systems AB",talkamp-systems.se,sofia.lind@northwind.example,Prospect,false,4574,Sweden,Technology
+001NW000089,"Heltal Pharma SA",https://www.heltal-pharma.ch,tim.braun@northwind.example,Customer,false,852,Switzerland,Manufacturing
+001NW000090,"Luntal Textiles AG",luntal-textiles.at,jonas.koch@northwind.example,Customer,false,4561,Austria,Logistics
+001NW000091,"Bernholm Chemicals GmbH",bernholm-chemicals.de,tim.braun@northwind.example,Prospect,false,651,Germany,Manufacturing
+001NW000092,"Isttal Maschinenbau AB",isttal-maschinenbau.se,sofia.lind@northwind.example,Customer,false,52,Sweden,Financial Services
+001NW000093,"Dorheim Energie Ltd",https://www.dorheim-energie.co.uk,oliver.grant@northwind.example,Prospect,false,1208,United Kingdom,Media
+001NW000094,"Ulmvik Retail GmbH",https://www.ulmvik-retail.de,markus.weber@northwind.example,Prospect,false,81,Germany,Government
+001NW000095,"Palwerk Mobility GmbH",palwerk-mobility.de,tim.braun@northwind.example,Customer,false,803,Germany,Media
+001NW000096,"Jorfeld Health Ltd",https://www.jorfeld-health.co.uk,oliver.grant@northwind.example,Customer,false,1219,United Kingdom,Retail
+001NW000097,"Rhelund Logistik plc",https://www.rhelund-logistik.co.uk,emma.hale@northwind.example,Prospect,true,117,United Kingdom,Financial Services
+001NW000098,"Isttal Pharma GmbH",https://www.isttal-pharma.de,tim.braun@northwind.example,Prospect,false,238,Germany,Retail
+001NW000099,"Quelltal Logistik AB",quelltal-logistik.se,sofia.lind@northwind.example,Prospect,true,462,Sweden,Technology
+001NW000100,"Alkamp Media Ltd",https://www.alkamp-media.co.uk,emma.hale@northwind.example,Prospect,false,997,United Kingdom,Education
+001NW000101,"Luntal Systems GmbH & Co. KG",https://www.luntal-systems.de,nina.hoff@northwind.example,Prospect,false,732,Germany,Energy
+001NW000102,"Norbach Logistik SA",https://www.norbach-logistik.ch,lea.wolf@northwind.example,Prospect,true,137,Switzerland,Financial Services
+001NW000103,"Almark Energie AB",almark-energie.se,sofia.lind@northwind.example,Customer,false,1142,Sweden,Financial Services
+001NW000104,"Velberg Health GmbH",velberg-health.de,lea.wolf@northwind.example,Prospect,false,379,Germany,Technology
+001NW000105,"Granlund Retail AB",https://www.granlund-retail.se,sofia.lind@northwind.example,Customer,false,235,Sweden,Media
+001NW000106,"Granwerk Energie AG",granwerk-energie.de,nina.hoff@northwind.example,Customer,false,501,Germany,Technology
+001NW000107,"Talmark Chemicals AB",https://www.talmark-chemicals.se,sofia.lind@northwind.example,Customer,false,374,Sweden,Media
+001NW000108,"Quellholm Mobility SE",quellholm-mobility.de,anna.becker@northwind.example,Customer,false,1391,Germany,Logistics
+001NW000109,"Talkamp Foods AB",https://www.talkamp-foods.se,sofia.lind@northwind.example,Prospect,false,728,Sweden,Media
+001NW000110,"Dorbach Logistik AG",dorbach-logistik.ch,lea.wolf@northwind.example,Customer,false,225,Switzerland,Retail
+001NW000111,"Istwald Chemicals SE",https://www.istwald-chemicals.de,jonas.koch@northwind.example,Prospect,false,3831,Germany,Technology
+001NW000112,"Quellkamp Media AG",quellkamp-media.ch,jonas.koch@northwind.example,Customer,false,1418,Switzerland,Energy
+001NW000113,"Helberg Pharma Ltd",helberg-pharma.co.uk,emma.hale@northwind.example,Prospect,false,300,United Kingdom,Media
+001NW000114,"Zental Mobility AG",zental-mobility.de,lea.wolf@northwind.example,Prospect,false,348,Germany,Financial Services
+001NW000115,"Palfeld Health GmbH",palfeld-health.at,nina.hoff@northwind.example,Prospect,false,501,Austria,Education
+001NW000116,"Dorwald Systems plc",dorwald-systems.co.uk,emma.hale@northwind.example,Prospect,false,513,United Kingdom,Education
+001NW000117,"Kalstad Chemicals plc",kalstad-chemicals.co.uk,emma.hale@northwind.example,Prospect,false,389,United Kingdom,Retail
+001NW000118,"Ulmwerk Mobility AG",ulmwerk-mobility.de,lea.wolf@northwind.example,Customer,false,950,Germany,Technology
+001NW000119,"Falholm Pharma GmbH",https://www.falholm-pharma.de,lea.wolf@northwind.example,Customer,false,65,Germany,Energy
+001NW000120,"Kalmark Mobility AG",kalmark-mobility.de,nina.hoff@northwind.example,Prospect,true,458,Germany,Financial Services
+001NW000121,"Jorbach Media AG",jorbach-media.de,tim.braun@northwind.example,Customer,false,479,Germany,Healthcare
+001NW000122,"Talbach Foods AG",talbach-foods.de,nina.hoff@northwind.example,Prospect,true,406,Germany,Technology
+001NW000123,"Quellberg Logistik SE",https://www.quellberg-logistik.de,anna.becker@northwind.example,Prospect,true,1543,Germany,Logistics
+001NW000124,"Dorbach Pharma AB",https://www.dorbach-pharma.se,sofia.lind@northwind.example,Prospect,true,284,Sweden,Financial Services
+001NW000125,"Eiswald Retail AG",https://www.eiswald-retail.de,nina.hoff@northwind.example,Prospect,false,75,Germany,Healthcare
+001NW000126,"Corhain Energie GmbH",https://www.corhain-energie.de,tim.braun@northwind.example,Prospect,false,775,Germany,Technology
+001NW000127,"Palhain Energie AG",https://www.palhain-energie.de,anna.becker@northwind.example,Prospect,false,1936,Germany,Education
+001NW000128,"Sollund Health AG",sollund-health.ch,lea.wolf@northwind.example,Customer,false,649,Switzerland,Government
+001NW000129,"Ulmwerk Retail Ltd",ulmwerk-retail.co.uk,emma.hale@northwind.example,Customer,false,216,United Kingdom,Energy
+001NW000130,"Zenbach Retail AB",zenbach-retail.se,sofia.lind@northwind.example,Prospect,false,33,Sweden,Technology
+001NW000131,"Velstad Maschinenbau GmbH",velstad-maschinenbau.de,markus.weber@northwind.example,Customer,false,174,Germany,Education
+001NW000132,"Granhain Logistik AB",granhain-logistik.se,sofia.lind@northwind.example,Customer,false,102,Sweden,Education
+001NW000133,"Helwald Textiles AG",https://www.helwald-textiles.at,lea.wolf@northwind.example,Customer,false,332,Austria,Media
+001NW000134,"Eisstad Chemicals AG",https://www.eisstad-chemicals.ch,tim.braun@northwind.example,Prospect,false,185,Switzerland,Technology
+001NW000135,"Granbach Logistik AB",https://www.granbach-logistik.se,sofia.lind@northwind.example,Prospect,false,3245,Sweden,Retail
+001NW000136,"Rhewerk Pharma AG",rhewerk-pharma.de,nina.hoff@northwind.example,Customer,false,365,Germany,Financial Services
+001NW000137,"Fallund Systems Ltd",https://www.fallund-systems.co.uk,oliver.grant@northwind.example,Customer,false,2184,United Kingdom,Education
+001NW000138,"Jormark Chemicals SE",https://www.jormark-chemicals.de,markus.weber@northwind.example,Customer,false,404,Germany,Education
+001NW000139,"Kalbach Health AB",https://www.kalbach-health.se,sofia.lind@northwind.example,Prospect,false,455,Sweden,Financial Services
+001NW000140,"Dorbach Maschinenbau Ltd",dorbach-maschinenbau.co.uk,emma.hale@northwind.example,Customer,false,899,United Kingdom,Energy
+001NW000141,"Zenwald Systems GmbH",https://www.zenwald-systems.de,jonas.koch@northwind.example,Customer,false,2345,Germany,Energy
+001NW000142,"Lunberg Retail AG",lunberg-retail.ch,tim.braun@northwind.example,Prospect,false,433,Switzerland,Energy
+001NW000143,"Talbach Logistik GmbH & Co. KG",talbach-logistik.de,anna.becker@northwind.example,Prospect,false,1337,Germany,Retail
+001NW000144,"Lundorf Health GmbH",https://www.lundorf-health.de,lea.wolf@northwind.example,Prospect,false,271,Germany,Technology
+001NW000145,"Jorvik Mobility SA",https://www.jorvik-mobility.ch,tim.braun@northwind.example,Prospect,false,290,Switzerland,Energy
+001NW000146,"Norfeld Energie Ltd",https://www.norfeld-energie.co.uk,emma.hale@northwind.example,Prospect,true,91,United Kingdom,Education
+001NW000147,"Rhevik Health SE",rhevik-health.de,markus.weber@northwind.example,Prospect,true,565,Germany,Education
+001NW000148,"Zenfeld Pharma AG",https://www.zenfeld-pharma.at,nina.hoff@northwind.example,Prospect,false,161,Austria,Retail
+001NW000149,"Marbach Mobility AG",https://www.marbach-mobility.de,nina.hoff@northwind.example,Prospect,true,548,Germany,Technology
+001NW000150,"Iststad Foods SA",https://www.iststad-foods.ch,lea.wolf@northwind.example,Prospect,false,88,Switzerland,Education
+001NW000151,"Helwald Chemicals GmbH",helwald-chemicals.de,jonas.koch@northwind.example,Customer,false,1230,Germany,Retail
+001NW000152,"Palhain Pharma AB",palhain-pharma.se,sofia.lind@northwind.example,Prospect,false,3058,Sweden,Government
+001NW000153,"Zenheim Pharma AG",zenheim-pharma.ch,nina.hoff@northwind.example,Prospect,false,667,Switzerland,Financial Services
+001NW000154,"Lunfeld Textiles AG",lunfeld-textiles.at,lea.wolf@northwind.example,Prospect,false,511,Austria,Healthcare
+001NW000155,"Rhewald Pharma AB",rhewald-pharma.se,sofia.lind@northwind.example,Prospect,true,439,Sweden,Financial Services
+001NW000156,"Eisberg Retail SE",https://www.eisberg-retail.de,tim.braun@northwind.example,Prospect,false,578,Germany,Manufacturing
+001NW000157,"Heldorf Health AG",heldorf-health.de,anna.becker@northwind.example,Prospect,false,2304,Germany,Financial Services
+001NW000158,"Lunvik Chemicals AG",lunvik-chemicals.ch,lea.wolf@northwind.example,Prospect,false,236,Switzerland,Technology
+001NW000159,"Markamp Systems SA",markamp-systems.ch,tim.braun@northwind.example,Prospect,true,373,Switzerland,Media
+001NW000160,"Talstein Chemicals AB",https://www.talstein-chemicals.se,sofia.lind@northwind.example,Prospect,true,47,Sweden,Government
+001NW000161,"Wesstein Chemicals AB",wesstein-chemicals.se,sofia.lind@northwind.example,Prospect,false,623,Sweden,Retail
+001NW000162,"Ostbach Energie GmbH",ostbach-energie.de,lea.wolf@northwind.example,Prospect,true,265,Germany,Financial Services
+001NW000163,"Kallund Media SA",https://www.kallund-media.ch,nina.hoff@northwind.example,Prospect,false,485,Switzerland,Government
+001NW000164,"Lunwald Pharma GmbH",lunwald-pharma.de,tim.braun@northwind.example,Customer,false,152,Germany,Logistics
+001NW000165,"Zenbach Pharma SA",zenbach-pharma.ch,lea.wolf@northwind.example,Prospect,false,208,Switzerland,Media
+001NW000166,"Corbach Foods Ltd",https://www.corbach-foods.co.uk,oliver.grant@northwind.example,Prospect,false,1400,United Kingdom,Government
+001NW000167,"Marfeld Media Ltd",marfeld-media.co.uk,emma.hale@northwind.example,Prospect,true,897,United Kingdom,Logistics
+001NW000168,"Solhain Energie GmbH",solhain-energie.de,markus.weber@northwind.example,Prospect,false,325,Germany,Government
+001NW000169,"Norheim Logistik AG",norheim-logistik.ch,lea.wolf@northwind.example,Customer,false,677,Switzerland,Media
+001NW000170,"Rhekamp Foods GmbH",rhekamp-foods.de,anna.becker@northwind.example,Prospect,true,2786,Germany,Media
+001NW000171,"Alstad Pharma AG",https://www.alstad-pharma.de,tim.braun@northwind.example,Customer,false,124,Germany,Energy
+001NW000172,"Soltal Retail AG",soltal-retail.ch,lea.wolf@northwind.example,Customer,false,330,Switzerland,Retail
+001NW000173,"Wesdorf Media GmbH",https://www.wesdorf-media.de,anna.becker@northwind.example,Prospect,false,1173,Germany,Logistics
+001NW000174,"Cordorf Logistik AG",cordorf-logistik.de,anna.becker@northwind.example,Customer,false,1099,Germany,Retail
+001NW000175,"Kaltal Textiles GmbH",kaltal-textiles.at,lea.wolf@northwind.example,Customer,false,816,Austria,Logistics
+001NW000176,"Faldorf Health Ltd",https://www.faldorf-health.co.uk,emma.hale@northwind.example,Prospect,false,54,United Kingdom,Technology
+001NW000177,"Markamp Health plc",https://www.markamp-health.co.uk,emma.hale@northwind.example,Prospect,false,285,United Kingdom,Manufacturing
+001NW000178,"Talholm Textiles Ltd",talholm-textiles.co.uk,emma.hale@northwind.example,Prospect,true,61,United Kingdom,Financial Services
+001NW000179,"Eiswald Logistik Ltd",eiswald-logistik.co.uk,emma.hale@northwind.example,Customer,false,150,United Kingdom,Media
+001NW000180,"Eiswerk Health SA",https://www.eiswerk-health.ch,tim.braun@northwind.example,Prospect,false,174,Switzerland,Government
+001NW000181,"Kalheim Chemicals AG",https://www.kalheim-chemicals.de,anna.becker@northwind.example,Customer,false,1659,Germany,Manufacturing
+001NW000182,"Helwerk Energie plc",helwerk-energie.co.uk,emma.hale@northwind.example,Prospect,true,82,United Kingdom,Manufacturing
+001NW000183,"Rhedorf Foods AG",rhedorf-foods.ch,nina.hoff@northwind.example,Prospect,false,268,Switzerland,Media
+001NW000184,"Kalwerk Energie AG",https://www.kalwerk-energie.de,tim.braun@northwind.example,Customer,false,128,Germany,Manufacturing
+001NW000185,"Lunhain Energie GmbH",https://www.lunhain-energie.de,nina.hoff@northwind.example,Customer,false,673,Germany,Manufacturing
+001NW000186,"Falholm Maschinenbau GmbH",falholm-maschinenbau.de,nina.hoff@northwind.example,Prospect,true,238,Germany,Retail
+001NW000187,"Oststad Media Ltd",https://www.oststad-media.co.uk,emma.hale@northwind.example,Prospect,true,249,United Kingdom,Healthcare
+001NW000188,"Lunstein Foods AB",lunstein-foods.se,sofia.lind@northwind.example,Prospect,false,631,Sweden,Retail
+001NW000189,"Iststad Textiles SA",https://www.iststad-textiles.ch,lea.wolf@northwind.example,Prospect,true,773,Switzerland,Healthcare
+001NW000190,"Marmark Retail GmbH & Co. KG",marmark-retail.de,jonas.koch@northwind.example,Prospect,false,1727,Germany,Education
+001NW000191,"Ostdorf Media AB",ostdorf-media.se,sofia.lind@northwind.example,Prospect,false,17,Sweden,Retail
+001NW000192,"Istlund Chemicals AB",istlund-chemicals.se,sofia.lind@northwind.example,Customer,false,437,Sweden,Education
+001NW000193,"Kalbach Health AG",kalbach-health.at,jonas.koch@northwind.example,Customer,false,1313,Austria,Logistics
+001NW000194,"Quelltal Pharma SE",https://www.quelltal-pharma.de,markus.weber@northwind.example,Customer,false,332,Germany,Government
+001NW000195,"Alberg Systems Ltd",alberg-systems.co.uk,emma.hale@northwind.example,Prospect,true,273,United Kingdom,Healthcare
+001NW000196,"Hellund Foods Ltd",hellund-foods.co.uk,emma.hale@northwind.example,Customer,false,473,United Kingdom,Technology
+001NW000197,"Rhedorf Systems AB",rhedorf-systems.se,sofia.lind@northwind.example,Customer,false,721,Sweden,Financial Services
+001NW000198,"Kalmark Pharma AB",https://www.kalmark-pharma.se,sofia.lind@northwind.example,Prospect,true,272,Sweden,Media
+001NW000199,"Lunholm Pharma plc",lunholm-pharma.co.uk,emma.hale@northwind.example,Prospect,false,186,United Kingdom,Healthcare
+001NW000200,"Lunvik Mobility AG",lunvik-mobility.at,anna.becker@northwind.example,Prospect,true,1438,Austria,Retail
+001NW000201,"Eiswald Foods Ltd",eiswald-foods.co.uk,emma.hale@northwind.example,Customer,false,470,United Kingdom,Energy
+001NW000202,"Marholm Mobility AG",https://www.marholm-mobility.de,anna.becker@northwind.example,Customer,false,1356,Germany,Retail
+001NW000203,"Martal Foods SA",martal-foods.ch,tim.braun@northwind.example,Customer,false,160,Switzerland,Logistics
+001NW000204,"Rhestein Systems Ltd",rhestein-systems.co.uk,emma.hale@northwind.example,Prospect,false,853,United Kingdom,Technology
+001NW000205,"Ulmstad Maschinenbau Ltd",ulmstad-maschinenbau.co.uk,emma.hale@northwind.example,Prospect,false,486,United Kingdom,Healthcare
+001NW000206,"Cormark Textiles AB",cormark-textiles.se,sofia.lind@northwind.example,Customer,false,211,Sweden,Financial Services
+001NW000207,"Corkamp Systems AB",https://www.corkamp-systems.se,sofia.lind@northwind.example,Customer,false,489,Sweden,Retail
+001NW000208,"Granfeld Textiles GmbH",https://www.granfeld-textiles.at,anna.becker@northwind.example,Prospect,true,1705,Austria,Financial Services
+001NW000209,"Isttal Mobility SE",https://www.isttal-mobility.de,lea.wolf@northwind.example,Customer,false,735,Germany,Manufacturing
+001NW000210,"Granholm Maschinenbau SE",https://www.granholm-maschinenbau.de,nina.hoff@northwind.example,Prospect,true,98,Germany,Financial Services
+001NW000211,"Quellkamp Textiles AG",https://www.quellkamp-textiles.de,lea.wolf@northwind.example,Prospect,false,439,Germany,Manufacturing
+001NW000212,"Talbach Systems AG",talbach-systems.ch,lea.wolf@northwind.example,Prospect,false,830,Switzerland,Healthcare
+001NW000213,"Cordorf Health AG",cordorf-health.at,tim.braun@northwind.example,Customer,false,285,Austria,Healthcare
+001NW000214,"Jorvik Pharma GmbH",jorvik-pharma.at,tim.braun@northwind.example,Customer,false,86,Austria,Manufacturing
+001NW000215,"Ulmberg Retail AG",https://www.ulmberg-retail.at,lea.wolf@northwind.example,Prospect,true,252,Austria,Government
+001NW000216,"Solbach Energie Ltd",https://www.solbach-energie.co.uk,oliver.grant@northwind.example,Prospect,false,1042,United Kingdom,Logistics
+001NW000217,"Jorstad Maschinenbau AG",https://www.jorstad-maschinenbau.de,tim.braun@northwind.example,Customer,false,381,Germany,Technology
+001NW000218,"Bernhain Mobility Ltd",bernhain-mobility.co.uk,emma.hale@northwind.example,Customer,false,458,United Kingdom,Energy
+001NW000219,"Talberg Media GmbH",talberg-media.de,nina.hoff@northwind.example,Customer,false,685,Germany,Energy
+001NW000220,"Lunstein Health AB",https://www.lunstein-health.se,sofia.lind@northwind.example,Customer,false,767,Sweden,Energy
+001NW000221,"Ostberg Pharma SA",ostberg-pharma.ch,jonas.koch@northwind.example,Prospect,false,1215,Switzerland,Manufacturing
+001NW000222,"Ulmheim Pharma AG",ulmheim-pharma.de,markus.weber@northwind.example,Prospect,true,214,Germany,Education
+001NW000223,"Velberg Maschinenbau AB",velberg-maschinenbau.se,sofia.lind@northwind.example,Prospect,false,1597,Sweden,Education
+001NW000224,"Norwerk Logistik AG",https://www.norwerk-logistik.ch,anna.becker@northwind.example,Prospect,true,2041,Switzerland,Energy
+001NW000225,"Kalberg Maschinenbau SA",kalberg-maschinenbau.ch,tim.braun@northwind.example,Prospect,true,383,Switzerland,Media
+001NW000226,"Eisholm Foods AB",eisholm-foods.se,sofia.lind@northwind.example,Prospect,false,101,Sweden,Energy
+001NW000227,"Zenhain Health GmbH",zenhain-health.de,nina.hoff@northwind.example,Prospect,true,183,Germany,Manufacturing
+001NW000228,"Hellund Media AG",hellund-media.de,tim.braun@northwind.example,Prospect,false,147,Germany,Media
+001NW000229,"Ulmhain Pharma SE",ulmhain-pharma.de,lea.wolf@northwind.example,Prospect,false,374,Germany,Healthcare
+001NW000230,"Eisstein Maschinenbau GmbH",https://www.eisstein-maschinenbau.de,tim.braun@northwind.example,Prospect,false,804,Germany,Logistics
+001NW000231,"Weslund Systems AG",https://www.weslund-systems.at,jonas.koch@northwind.example,Prospect,false,1284,Austria,Media
+001NW000232,"Lunheim Health AG",lunheim-health.de,markus.weber@northwind.example,Prospect,false,411,Germany,Education
+001NW000233,"Rhefeld Retail AG",rhefeld-retail.de,anna.becker@northwind.example,Customer,false,2023,Germany,Government
+001NW000234,"Jorstein Retail AG",jorstein-retail.de,tim.braun@northwind.example,Prospect,true,445,Germany,Manufacturing
+001NW000235,"Ostwald Maschinenbau AB",ostwald-maschinenbau.se,sofia.lind@northwind.example,Prospect,true,357,Sweden,Education
+001NW000236,"Marholm Chemicals AG",https://www.marholm-chemicals.de,nina.hoff@northwind.example,Prospect,false,731,Germany,Manufacturing
+001NW000237,"Talstad Foods GmbH",talstad-foods.at,tim.braun@northwind.example,Prospect,true,839,Austria,Government
+001NW000238,"Granholm Maschinenbau plc",https://www.granholm-maschinenbau.co.uk,oliver.grant@northwind.example,Prospect,true,1201,United Kingdom,Logistics
+001NW000239,"Palholm Retail plc",https://www.palholm-retail.co.uk,emma.hale@northwind.example,Prospect,true,348,United Kingdom,Healthcare
+001NW000240,"Quellberg Foods AB",quellberg-foods.se,sofia.lind@northwind.example,Prospect,true,313,Sweden,Financial Services
+001NW000241,"Marholm Foods GmbH",https://www.marholm-foods.de,anna.becker@northwind.example,Prospect,false,1597,Germany,Education
+001NW000242,"Veltal Media GmbH",veltal-media.de,anna.becker@northwind.example,Prospect,false,4413,Germany,Healthcare
+001NW000243,"Heltal Textiles AG",https://www.heltal-textiles.de,lea.wolf@northwind.example,Customer,false,535,Germany,Retail
+001NW000244,"Alhain Textiles AG",https://www.alhain-textiles.ch,jonas.koch@northwind.example,Prospect,false,4977,Switzerland,Media
+001NW000245,"Rheholm Textiles SE",https://www.rheholm-textiles.de,lea.wolf@northwind.example,Prospect,true,257,Germany,Media
+001NW000246,"Lunwald Foods plc",https://www.lunwald-foods.co.uk,oliver.grant@northwind.example,Customer,false,3285,United Kingdom,Logistics
+001NW000247,"Kalheim Systems GmbH",https://www.kalheim-systems.de,nina.hoff@northwind.example,Prospect,false,32,Germany,Energy
+001NW000248,"Kalbach Media AG",kalbach-media.de,nina.hoff@northwind.example,Prospect,false,796,Germany,Logistics
+001NW000249,"Quellmark Systems AG",https://www.quellmark-systems.at,tim.braun@northwind.example,Customer,false,311,Austria,Energy
+001NW000250,"Bernhain Retail GmbH",https://www.bernhain-retail.de,tim.braun@northwind.example,Prospect,false,349,Germany,Energy
+001NW000251,"Solmark Mobility GmbH",https://www.solmark-mobility.at,tim.braun@northwind.example,Prospect,false,520,Austria,Education
+001NW000252,"Velstad Mobility plc",velstad-mobility.co.uk,emma.hale@northwind.example,Prospect,false,211,United Kingdom,Energy
+001NW000253,"Alkamp Energie GmbH",alkamp-energie.de,nina.hoff@northwind.example,Customer,false,182,Germany,Energy
+001NW000254,"Talhain Health AG",talhain-health.at,tim.braun@northwind.example,Prospect,false,208,Austria,Government
+001NW000255,"Jorstad Foods AB",jorstad-foods.se,sofia.lind@northwind.example,Prospect,false,283,Sweden,Healthcare
+001NW000256,"Marholm Textiles AB",https://www.marholm-textiles.se,sofia.lind@northwind.example,Prospect,false,226,Sweden,Energy
+001NW000257,"Kallund Maschinenbau GmbH",kallund-maschinenbau.at,lea.wolf@northwind.example,Customer,false,153,Austria,Logistics
+001NW000258,"Istmark Foods GmbH",istmark-foods.at,lea.wolf@northwind.example,Prospect,false,551,Austria,Retail
+001NW000259,"Ulmholm Foods GmbH",ulmholm-foods.de,lea.wolf@northwind.example,Customer,false,267,Germany,Financial Services
+001NW000260,"Bernkamp Logistik Ltd",bernkamp-logistik.co.uk,oliver.grant@northwind.example,Prospect,false,1912,United Kingdom,Government
+001NW000261,"Helwald Pharma GmbH",helwald-pharma.de,jonas.koch@northwind.example,Customer,false,1513,Germany,Media
+001NW000262,"Falheim Mobility AG",https://www.falheim-mobility.at,tim.braun@northwind.example,Prospect,false,500,Austria,Technology
+001NW000263,"Weswerk Pharma GmbH",https://www.weswerk-pharma.at,nina.hoff@northwind.example,Prospect,false,76,Austria,Government
+001NW000264,"Ulmbach Energie GmbH",ulmbach-energie.de,anna.becker@northwind.example,Customer,false,2292,Germany,Logistics
+001NW000265,"Alhain Health AB",alhain-health.se,sofia.lind@northwind.example,Prospect,false,70,Sweden,Technology
+001NW000266,"Iststein Pharma AG",https://www.iststein-pharma.at,lea.wolf@northwind.example,Prospect,false,154,Austria,Healthcare
+001NW000267,"Quellwerk Media AB",quellwerk-media.se,sofia.lind@northwind.example,Customer,false,977,Sweden,Technology
+001NW000268,"Soldorf Health GmbH & Co. KG",soldorf-health.de,tim.braun@northwind.example,Customer,false,231,Germany,Technology
+001NW000269,"Lunbach Maschinenbau AB",lunbach-maschinenbau.se,sofia.lind@northwind.example,Prospect,true,208,Sweden,Manufacturing
+001NW000270,"Helberg Systems GmbH",helberg-systems.de,nina.hoff@northwind.example,Prospect,false,442,Germany,Media
+001NW000271,"Veldorf Textiles AG",veldorf-textiles.ch,tim.braun@northwind.example,Customer,false,831,Switzerland,Energy
+001NW000272,"Bernfeld Chemicals GmbH",bernfeld-chemicals.de,nina.hoff@northwind.example,Prospect,false,321,Germany,Manufacturing
+001NW000273,"Velfeld Health GmbH",velfeld-health.at,tim.braun@northwind.example,Prospect,false,581,Austria,Financial Services
+001NW000274,"Lunwerk Pharma GmbH",https://www.lunwerk-pharma.de,markus.weber@northwind.example,Customer,false,366,Germany,Government
+001NW000275,"Ostfeld Maschinenbau GmbH",ostfeld-maschinenbau.at,nina.hoff@northwind.example,Prospect,false,464,Austria,Healthcare
+001NW000276,"Quellmark Foods Ltd",quellmark-foods.co.uk,emma.hale@northwind.example,Customer,false,746,United Kingdom,Logistics
+001NW000277,"Helstad Media SE",https://www.helstad-media.de,lea.wolf@northwind.example,Prospect,false,148,Germany,Retail
+001NW000278,"Paltal Maschinenbau GmbH",paltal-maschinenbau.de,tim.braun@northwind.example,Prospect,false,286,Germany,Technology
+001NW000279,"Velstad Retail SE",velstad-retail.de,lea.wolf@northwind.example,Customer,false,150,Germany,Retail
+001NW000280,"Eishain Retail GmbH",eishain-retail.at,tim.braun@northwind.example,Prospect,false,951,Austria,Retail
+001NW000281,"Corberg Maschinenbau AG",corberg-maschinenbau.at,lea.wolf@northwind.example,Prospect,true,443,Austria,Government
+001NW000282,"Quellwerk Retail AG",quellwerk-retail.de,nina.hoff@northwind.example,Prospect,false,368,Germany,Energy
+001NW000283,"Rhestein Energie AG",rhestein-energie.at,tim.braun@northwind.example,Prospect,true,487,Austria,Retail
+001NW000284,"Isthain Maschinenbau GmbH",isthain-maschinenbau.at,jonas.koch@northwind.example,Customer,false,2128,Austria,Energy
+001NW000285,"Istberg Media AB",istberg-media.se,sofia.lind@northwind.example,Prospect,false,397,Sweden,Financial Services
+001NW000286,"Falstein Retail GmbH",falstein-retail.de,nina.hoff@northwind.example,Customer,false,766,Germany,Financial Services
+001NW000287,"Helberg Chemicals AG",https://www.helberg-chemicals.at,nina.hoff@northwind.example,Customer,false,533,Austria,Manufacturing
+001NW000288,"Falbach Textiles GmbH",falbach-textiles.de,anna.becker@northwind.example,Prospect,false,1465,Germany,Education
+001NW000289,"Helvik Retail GmbH",helvik-retail.at,tim.braun@northwind.example,Customer,false,289,Austria,Energy
+001NW000290,"Talhain Energie AG",https://www.talhain-energie.at,nina.hoff@northwind.example,Prospect,false,87,Austria,Education
+001NW000291,"Heltal Systems Ltd",https://www.heltal-systems.co.uk,oliver.grant@northwind.example,Customer,false,2577,United Kingdom,Education
+001NW000292,"Weslund Pharma GmbH",weslund-pharma.at,jonas.koch@northwind.example,Prospect,false,7947,Austria,Education
+001NW000293,"Taltal Textiles AG",taltal-textiles.de,markus.weber@northwind.example,Prospect,false,215,Germany,Education
+001NW000294,"Falstein Textiles AB",falstein-textiles.se,sofia.lind@northwind.example,Prospect,false,424,Sweden,Media
+001NW000295,"Lunfeld Energie Ltd",lunfeld-energie.co.uk,emma.hale@northwind.example,Customer,false,133,United Kingdom,Technology
+001NW000296,"Faltal Mobility GmbH & Co. KG",faltal-mobility.de,nina.hoff@northwind.example,Customer,false,348,Germany,Manufacturing
+001NW000297,"Faltal Systems GmbH",faltal-systems.at,nina.hoff@northwind.example,Prospect,false,554,Austria,Retail
+001NW000298,"Talheim Mobility plc",https://www.talheim-mobility.co.uk,emma.hale@northwind.example,Prospect,false,337,United Kingdom,Logistics
+001NW000299,"Jormark Pharma GmbH & Co. KG",https://www.jormark-pharma.de,lea.wolf@northwind.example,Prospect,false,961,Germany,Technology
+001NW000300,"Osthain Media AB",https://www.osthain-media.se,sofia.lind@northwind.example,Customer,false,25,Sweden,Media
+001NW000301,"Zenfeld Mobility GmbH",zenfeld-mobility.de,tim.braun@northwind.example,Prospect,false,185,Germany,Media
+001NW000302,"Jorhain Chemicals AG",jorhain-chemicals.at,tim.braun@northwind.example,Prospect,false,172,Austria,Logistics
+001NW000303,"Zenwerk Textiles GmbH",zenwerk-textiles.de,markus.weber@northwind.example,Customer,false,235,Germany,Education
+001NW000304,"Granwald Systems Ltd",granwald-systems.co.uk,oliver.grant@northwind.example,Customer,false,1510,United Kingdom,Education
+001NW000305,"Rhewald Mobility AG",rhewald-mobility.de,lea.wolf@northwind.example,Customer,false,820,Germany,Financial Services
+001NW000306,"Zenkamp Health AB",https://www.zenkamp-health.se,sofia.lind@northwind.example,Prospect,false,379,Sweden,Healthcare
+001NW000307,"Marstein Retail AB",marstein-retail.se,sofia.lind@northwind.example,Prospect,true,1912,Sweden,Energy
+001NW000308,"Helmark Logistik Ltd",helmark-logistik.co.uk,oliver.grant@northwind.example,Customer,false,2353,United Kingdom,Healthcare
+001NW000309,"Zenholm Pharma Ltd",zenholm-pharma.co.uk,emma.hale@northwind.example,Prospect,false,53,United Kingdom,Manufacturing
+001NW000310,"Wesfeld Logistik AG",wesfeld-logistik.at,nina.hoff@northwind.example,Customer,false,355,Austria,Energy
+001NW000311,"Ulmstad Media Ltd",https://www.ulmstad-media.co.uk,oliver.grant@northwind.example,Customer,false,2365,United Kingdom,Government
+001NW000312,"Bernkamp Logistik AB",https://www.bernkamp-logistik.se,sofia.lind@northwind.example,Customer,false,2800,Sweden,Media
+001NW000313,"Normark Energie GmbH",normark-energie.at,lea.wolf@northwind.example,Customer,false,292,Austria,Retail
+001NW000314,"Falholm Maschinenbau AG",falholm-maschinenbau.at,nina.hoff@northwind.example,Prospect,false,712,Austria,Logistics
+001NW000315,"Wesheim Pharma AB",https://www.wesheim-pharma.se,sofia.lind@northwind.example,Prospect,false,130,Sweden,Financial Services
+001NW000316,"Helmark Maschinenbau AB",helmark-maschinenbau.se,sofia.lind@northwind.example,Customer,false,776,Sweden,Financial Services
+001NW000317,"Dorholm Textiles AG",dorholm-textiles.de,tim.braun@northwind.example,Prospect,false,123,Germany,Manufacturing
+001NW000318,"Istlund Health SA",istlund-health.ch,tim.braun@northwind.example,Prospect,true,34,Switzerland,Healthcare
+001NW000319,"Kalwerk Logistik SA",kalwerk-logistik.ch,jonas.koch@northwind.example,Customer,false,2016,Switzerland,Energy
+001NW000320,"Corheim Energie AB",corheim-energie.se,sofia.lind@northwind.example,Prospect,true,524,Sweden,Media
+001NW000321,"Marholm Retail AG",https://www.marholm-retail.de,markus.weber@northwind.example,Prospect,false,919,Germany,Education
+001NW000322,"Jorstein Textiles AG",jorstein-textiles.de,markus.weber@northwind.example,Customer,false,160,Germany,Government
+001NW000323,"Kaldorf Textiles GmbH & Co. KG",kaldorf-textiles.de,lea.wolf@northwind.example,Prospect,true,779,Germany,Energy
+001NW000324,"Istwald Systems AG",https://www.istwald-systems.de,nina.hoff@northwind.example,Customer,false,397,Germany,Healthcare
+001NW000325,"Osthain Pharma AB",osthain-pharma.se,sofia.lind@northwind.example,Prospect,false,884,Sweden,Manufacturing
+001NW000326,"Velholm Mobility plc",velholm-mobility.co.uk,oliver.grant@northwind.example,Customer,false,1032,United Kingdom,Financial Services
+001NW000327,"Jortal Textiles GmbH",https://www.jortal-textiles.de,markus.weber@northwind.example,Prospect,false,176,Germany,Government
+001NW000328,"Ulmhain Energie GmbH",https://www.ulmhain-energie.de,markus.weber@northwind.example,Customer,false,481,Germany,Government
+001NW000329,"Falbach Mobility AG",falbach-mobility.ch,jonas.koch@northwind.example,Prospect,true,2747,Switzerland,Manufacturing
+001NW000330,"Zental Chemicals AG",zental-chemicals.ch,lea.wolf@northwind.example,Prospect,false,398,Switzerland,Government
+001NW000331,"Helvik Health plc",helvik-health.co.uk,emma.hale@northwind.example,Customer,false,638,United Kingdom,Retail
+001NW000332,"Lunwald Logistik GmbH",https://www.lunwald-logistik.de,tim.braun@northwind.example,Prospect,true,97,Germany,Technology
+001NW000333,"Quelltal Chemicals AB",https://www.quelltal-chemicals.se,sofia.lind@northwind.example,Prospect,false,1046,Sweden,Retail
+001NW000334,"Istwald Systems Ltd",https://www.istwald-systems.co.uk,emma.hale@northwind.example,Customer,false,88,United Kingdom,Government
+001NW000335,"Martal Systems Ltd",https://www.martal-systems.co.uk,emma.hale@northwind.example,Customer,false,314,United Kingdom,Government
+001NW000336,"Alfeld Textiles AB",alfeld-textiles.se,sofia.lind@northwind.example,Prospect,false,222,Sweden,Technology
+001NW000337,"Luntal Maschinenbau SA",luntal-maschinenbau.ch,tim.braun@northwind.example,Prospect,true,61,Switzerland,Retail
+001NW000338,"Helmark Logistik SA",https://www.helmark-logistik.ch,nina.hoff@northwind.example,Prospect,false,942,Switzerland,Retail
+001NW000339,"Lunmark Foods AG",lunmark-foods.de,anna.becker@northwind.example,Prospect,true,2567,Germany,Manufacturing
+001NW000340,"Dorstein Foods SA",https://www.dorstein-foods.ch,nina.hoff@northwind.example,Prospect,false,249,Switzerland,Energy
+001NW000341,"Norholm Chemicals SE",norholm-chemicals.de,tim.braun@northwind.example,Prospect,false,305,Germany,Technology
+001NW000342,"Dorberg Pharma SA",dorberg-pharma.ch,lea.wolf@northwind.example,Prospect,false,619,Switzerland,Manufacturing
+001NW000343,"Jordorf Systems plc",jordorf-systems.co.uk,oliver.grant@northwind.example,Prospect,false,3663,United Kingdom,Healthcare
+001NW000344,"Falheim Pharma AB",falheim-pharma.se,sofia.lind@northwind.example,Prospect,true,313,Sweden,Healthcare
+001NW000345,"Ostwerk Textiles AG",ostwerk-textiles.de,lea.wolf@northwind.example,Prospect,true,836,Germany,Technology
+001NW000346,"Talbach Pharma AB",https://www.talbach-pharma.se,sofia.lind@northwind.example,Prospect,false,58,Sweden,Government
+001NW000347,"Helvik Systems AG",helvik-systems.ch,tim.braun@northwind.example,Customer,false,34,Switzerland,Media
+001NW000348,"Solholm Maschinenbau SA",https://www.solholm-maschinenbau.ch,jonas.koch@northwind.example,Prospect,false,1227,Switzerland,Logistics
+001NW000349,"Granfeld Textiles AB",https://www.granfeld-textiles.se,sofia.lind@northwind.example,Prospect,true,2370,Sweden,Education
+001NW000350,"Norkamp Mobility GmbH",norkamp-mobility.de,markus.weber@northwind.example,Prospect,false,73,Germany,Government
+001NW000351,"Mardorf Pharma AB",mardorf-pharma.se,sofia.lind@northwind.example,Customer,false,220,Sweden,Education
+001NW000352,"Ostkamp Media AG",https://www.ostkamp-media.ch,nina.hoff@northwind.example,Prospect,false,41,Switzerland,Manufacturing
+001NW000353,"Velberg Health Ltd",velberg-health.co.uk,emma.hale@northwind.example,Customer,false,229,United Kingdom,Financial Services
+001NW000354,"Lunwald Foods AB",lunwald-foods.se,sofia.lind@northwind.example,Prospect,false,258,Sweden,Government
+001NW000355,"Bernhain Systems SA",bernhain-systems.ch,lea.wolf@northwind.example,Prospect,true,132,Switzerland,Financial Services
+001NW000356,"Alvik Systems AG",alvik-systems.at,lea.wolf@northwind.example,Prospect,false,557,Austria,Media
+001NW000357,"Helvik Media GmbH",https://www.helvik-media.at,tim.braun@northwind.example,Prospect,false,964,Austria,Government
+001NW000358,"Falwald Pharma GmbH & Co. KG",falwald-pharma.de,nina.hoff@northwind.example,Prospect,false,96,Germany,Energy
+001NW000359,"Granberg Energie GmbH",https://www.granberg-energie.at,tim.braun@northwind.example,Prospect,false,305,Austria,Education
+001NW000360,"Kalwald Pharma AG",kalwald-pharma.de,jonas.koch@northwind.example,Prospect,false,5472,Germany,Media

@@ -1,0 +1,32 @@
+{
+  "prospect": "kestrel",
+  "company": "Kestrel Freight OS",
+  "tagline": "Transport management for shippers in Germany, Benelux and Poland",
+  "domain": "kestrel.example",
+  "brandTerms": ["kestrel", "freight", "os", "we", "our", "us"],
+  "brand": { "primary": "#0E4D4A", "accent": "#F06B3F" },
+  "qualification": {
+    "minEmployees": 100,
+    "servedCountries": ["Germany", "Netherlands", "Belgium", "Poland", "Austria"],
+    "buyingRoles": ["decision_maker", "influencer"],
+    "bookFromStage": "evaluating"
+  },
+  "rulesOfEngagement": {
+    "routeToAccountOwnerWhen": ["Customer", "OpenOpportunity"],
+    "existingCustomerSupportTo": "help@kestrel.example",
+    "neverDiscuss": ["discount"]
+  },
+  "consent": {
+    "prompt": "Before I take your details: may Kestrel store your name and work email to set up this call? You can withdraw at any time.",
+    "fallback": "Understood. Our carrier tender checklist is a good next read, and you can book from the contact page whenever you like."
+  },
+  "salesforce": {
+    "assignmentRules": "salesforce/Lead.assignmentRules",
+    "org": "salesforce/org.json",
+    "accounts": "salesforce/accounts.csv",
+    "activeRule": "Website Leads",
+    "leadSource": "Web Chat"
+  },
+  "content": "content.json",
+  "evidence": "evidence.json"
+}

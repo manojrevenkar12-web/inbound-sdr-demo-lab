@@ -1,0 +1,29 @@
+{
+  "approvedBy": "Product Marketing, Northwind Ledger",
+  "approvedOn": "2026-10-15",
+  "passages": [
+    { "id": "int-datev", "topic": "integrations", "text": "Northwind Ledger exports bookings to DATEV Unternehmen online through a DATEV-certified interface, so tax advisors receive postings without manual re-entry." },
+    { "id": "int-sap", "topic": "integrations", "text": "Northwind Ledger connects to SAP S/4HANA Cloud and S/4HANA on-premise through a certified connector that syncs journal entries, vendors and cost centers every 15 minutes." },
+    { "id": "int-dynamics", "topic": "integrations", "text": "Microsoft Dynamics 365 Business Central is supported with a two-way connector for vendors, purchase orders and posted invoices." },
+    { "id": "int-netsuite", "topic": "integrations", "text": "NetSuite customers use the Northwind Ledger SuiteApp to sync subsidiaries, intercompany journals and exchange rates." },
+    { "id": "int-api", "topic": "integrations", "text": "Every object in Northwind Ledger is available through a REST API with OAuth 2.0 and webhooks, documented at the developer portal." },
+    { "id": "sec-certs", "topic": "security", "text": "Northwind Ledger holds an ISO 27001 certificate and a SOC 2 Type II report, both renewed every year and available under NDA." },
+    { "id": "sec-sso", "topic": "security", "text": "Single sign-on works with any SAML 2.0 identity provider, including Microsoft Entra ID and Okta, and user provisioning is available through SCIM." },
+    { "id": "sec-encryption", "topic": "security", "text": "Customer data is encrypted in transit with TLS 1.2 or higher and at rest with AES-256." },
+    { "id": "res-hosting", "topic": "data_residency", "text": "Customer data is hosted in AWS eu-central-1 in Frankfurt with backups in AWS eu-west-1 in Dublin, so data stays in the European Union." },
+    { "id": "gdpr-dpa", "topic": "gdpr", "text": "A data processing agreement under Article 28 GDPR is part of every contract, and the current list of subprocessors is published on the trust page." },
+    { "id": "gdpr-ai", "topic": "ai", "text": "Northwind Ledger does not use customer data to train AI models, and AI features can be switched off per entity." },
+    { "id": "ai-coding", "topic": "ai", "text": "AI invoice coding suggests the general ledger account and cost center for each incoming invoice, and a person approves every suggestion before posting." },
+    { "id": "einv", "topic": "e_invoicing", "text": "Northwind Ledger sends and receives XRechnung and ZUGFeRD invoices and connects to the Peppol network for cross-border e-invoicing." },
+    { "id": "einv-2025", "topic": "e_invoicing", "text": "Northwind Ledger supports the German B2B e-invoicing obligation that started on 1 January 2025, including receipt of structured invoices." },
+    { "id": "close", "topic": "close", "text": "Multi-entity consolidation runs intercompany eliminations and currency translation, and most customers close the month in five working days." },
+    { "id": "gobd", "topic": "compliance", "text": "The audit trail records every change with user and time stamp and follows the GoBD requirements for German bookkeeping." },
+    { "id": "banking", "topic": "banking", "text": "Bank statements are imported through EBICS for German, Austrian and Swiss banks and through PSD2 connections for most other European banks." },
+    { "id": "impl", "topic": "implementation", "text": "Implementation takes 6 to 10 weeks for most customers, led by a named onboarding manager and a certified partner where needed." },
+    { "id": "languages", "topic": "languages", "text": "The product is available in German, English and French, and support answers in German and English." },
+    { "id": "support", "topic": "support", "text": "Support is available on working days from 8:00 to 18:00 CET by chat, email and phone, with a 4-hour first response target." },
+    { "id": "pricing", "topic": "pricing", "text": "Pricing depends on the number of entities and invoice volume, and our team shares a written quote after a short call." },
+    { "id": "trial", "topic": "pricing", "text": "We do not offer a self-service trial; instead we run a guided pilot with your own data for qualified companies." },
+    { "id": "size", "topic": "fit", "text": "Northwind Ledger is built for companies with 200 or more employees and several legal entities." }
+  ]
+}

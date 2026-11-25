@@ -1,0 +1,278 @@
+{
+  "prospect": "kestrel",
+  "company": "Kestrel Freight OS",
+  "tagline": "Transport management for shippers in Germany, Benelux and Poland",
+  "brand": {
+    "primary": "#0E4D4A",
+    "accent": "#F06B3F"
+  },
+  "org": "Kestrel Freight OS (fictional demo org)",
+  "accounts": 160,
+  "passages": 10,
+  "evidenceItems": 5,
+  "routingPlan": {
+    "rule": "Website Leads",
+    "entries": [
+      {
+        "order": 1,
+        "owner": "Queue Enterprise_DE",
+        "when": "Country equals Germany [(1 OR 2) AND 3] Country equals Austria [(1 OR 2) AND 3] NumberOfEmployees greaterOrEqual 500",
+        "status": "imported",
+        "note": ""
+      },
+      {
+        "order": 2,
+        "owner": "Queue Mittelstand_DE",
+        "when": "Country equals Germany, Austria",
+        "status": "imported",
+        "note": ""
+      },
+      {
+        "order": 3,
+        "owner": "Queue Benelux",
+        "when": "Country equals Netherlands, Belgium",
+        "status": "imported",
+        "note": ""
+      },
+      {
+        "order": 4,
+        "owner": "User marta.nowak@kestrel.example",
+        "when": "Country equals Poland",
+        "status": "imported",
+        "note": ""
+      },
+      {
+        "order": 5,
+        "owner": "Queue Carrier_Partners",
+        "when": "Company_Type__c within Carrier",
+        "status": "partial",
+        "note": "criterion 1 uses operation 'within'"
+      }
+    ],
+    "warnings": [],
+    "inactiveRules": []
+  },
+  "conversations": [
+    {
+      "id": "nl-shipper",
+      "title": "Dutch shipper asking about CO2 reporting",
+      "country": "Netherlands",
+      "cmp": "granted",
+      "turns": [
+        {
+          "visitor": "Do you calculate CO2 emissions per shipment for our CSRD reporting?",
+          "recordedDraft": false,
+          "reply": "CO2e per shipment is calculated with the GLEC Framework and ISO 14083 for reporting. Roughly how many people work at your company?",
+          "shown": [
+            {
+              "text": "CO2e per shipment is calculated with the GLEC Framework and ISO 14083 for reporting.",
+              "citation": "co2",
+              "reason": "100% of terms in co2"
+            }
+          ],
+          "removed": [],
+          "decision": "ask",
+          "decisionReasons": [
+            "company size unknown"
+          ],
+          "consent": {
+            "region": "EU",
+            "mayCollect": true,
+            "reason": "consent banner: marketing granted"
+          },
+          "routing": null,
+          "next": "ask_employees"
+        },
+        {
+          "visitor": "I'm the head of logistics at a 450 employee manufacturer, we are comparing three vendors and want a demo.",
+          "recordedDraft": false,
+          "reply": "What is your work email, so I can send the invite?",
+          "shown": [],
+          "removed": [],
+          "decision": "book",
+          "decisionReasons": [
+            "Netherlands, 450 employees, influencer, evaluating"
+          ],
+          "consent": {
+            "region": "EU",
+            "mayCollect": true,
+            "reason": "consent banner: marketing granted"
+          },
+          "routing": null,
+          "next": "ask_email"
+        },
+        {
+          "visitor": "lotte.bakker@zeeland-cables.example",
+          "recordedDraft": false,
+          "reply": "You are booked with Sanne de Vries. The invite is on its way.",
+          "shown": [],
+          "removed": [],
+          "decision": "book",
+          "decisionReasons": [
+            "Netherlands, 450 employees, influencer, evaluating"
+          ],
+          "consent": {
+            "region": "EU",
+            "mayCollect": true,
+            "reason": "consent banner: marketing granted"
+          },
+          "routing": {
+            "owner": "Sanne de Vries",
+            "via": "rule_entry",
+            "explanation": [
+              "Website Leads entry 3 matched -> Queue Benelux"
+            ]
+          },
+          "next": "booked"
+        }
+      ]
+    },
+    {
+      "id": "de-enterprise",
+      "title": "German enterprise, consent asked in chat",
+      "country": "Germany",
+      "cmp": "unset",
+      "turns": [
+        {
+          "visitor": "We are a 2,400 employee chemicals company. I'm the CFO and we are replacing our TMS. Do you have an SAP S/4HANA add-on?",
+          "recordedDraft": false,
+          "reply": "A certified SAP S/4HANA add-on creates transport orders from deliveries and posts freight costs back to SAP. Before I take your details: may Kestrel store your name and work email to set up this call? You can withdraw at any time.",
+          "shown": [
+            {
+              "text": "A certified SAP S/4HANA add-on creates transport orders from deliveries and posts freight costs back to SAP.",
+              "citation": "sap",
+              "reason": "100% of terms in sap"
+            }
+          ],
+          "removed": [],
+          "decision": "book",
+          "decisionReasons": [
+            "Germany, 2400 employees, decision_maker, evaluating"
+          ],
+          "consent": {
+            "region": "EU",
+            "mayCollect": false,
+            "reason": "EU: ask for consent before personal data"
+          },
+          "routing": null,
+          "next": "ask_consent"
+        },
+        {
+          "visitor": "Yes, that's fine.",
+          "recordedDraft": false,
+          "reply": "What is your work email, so I can send the invite?",
+          "shown": [],
+          "removed": [],
+          "decision": "book",
+          "decisionReasons": [
+            "Germany, 2400 employees, decision_maker, evaluating"
+          ],
+          "consent": {
+            "region": "EU",
+            "mayCollect": true,
+            "reason": "visitor agreed in chat"
+          },
+          "routing": null,
+          "next": "ask_email"
+        },
+        {
+          "visitor": "j.krause@rheinchem.example",
+          "recordedDraft": false,
+          "reply": "You are booked with Henrik Vogt. The invite is on its way.",
+          "shown": [],
+          "removed": [],
+          "decision": "book",
+          "decisionReasons": [
+            "Germany, 2400 employees, decision_maker, evaluating"
+          ],
+          "consent": {
+            "region": "EU",
+            "mayCollect": true,
+            "reason": "visitor agreed in chat"
+          },
+          "routing": {
+            "owner": "Henrik Vogt",
+            "via": "rule_entry",
+            "explanation": [
+              "Website Leads entry 1 matched -> Queue Enterprise_DE"
+            ]
+          },
+          "next": "booked"
+        }
+      ]
+    }
+  ],
+  "questionnaire": [
+    {
+      "question": "Is Kestrel certified to ISO 27001?",
+      "questionId": "k1",
+      "status": "auto",
+      "answer": "Kestrel Freight OS is certified to ISO 27001:2022 for the platform and customer support.",
+      "citations": [
+        "kev-iso"
+      ],
+      "routeTo": null,
+      "reasons": [
+        "every sentence supported by in-date, approved evidence"
+      ]
+    },
+    {
+      "question": "Do you hold a TISAX label?",
+      "questionId": "k2",
+      "status": "owner",
+      "answer": null,
+      "citations": [
+        "kev-tisax"
+      ],
+      "routeTo": "security@kestrel.example",
+      "reasons": [
+        "kev-tisax expired on 2026-08-31"
+      ]
+    },
+    {
+      "question": "Where are production and backups hosted?",
+      "questionId": "k3",
+      "status": "auto",
+      "answer": "Production and backups run in Microsoft Azure Germany West Central and Germany North.",
+      "citations": [
+        "kev-hosting"
+      ],
+      "routeTo": null,
+      "reasons": [
+        "every sentence supported by in-date, approved evidence"
+      ]
+    },
+    {
+      "question": "Do you support customer-managed encryption keys?",
+      "questionId": "k4",
+      "status": "owner",
+      "answer": null,
+      "citations": [],
+      "routeTo": "security@kestrel.example",
+      "reasons": [
+        "model did not draft an answer"
+      ]
+    }
+  ],
+  "voiceOfCustomer": {
+    "themes": [
+      {
+        "theme": "TISAX renewal",
+        "deals": 1,
+        "pipelineEur": 120000,
+        "quotes": [
+          "Our OEM customer needs a current TISAX label."
+        ]
+      },
+      {
+        "theme": "Rail freight tenders",
+        "deals": 1,
+        "pipelineEur": 60000,
+        "quotes": [
+          "Half our volume moves by rail."
+        ]
+      }
+    ],
+    "rejected": []
+  }
+}

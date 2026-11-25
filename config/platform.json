@@ -1,0 +1,35 @@
+{
+  "consent": {
+    "optInRegions": ["EU", "EEA", "UK", "CH"],
+    "acceptCmpCategory": "marketing",
+    "companyLevelEnrichmentWithoutConsent": true,
+    "personalFields": ["email", "name", "phone", "title"]
+  },
+  "claims": {
+    "minContentCoverage": 0.8,
+    "guardWords": ["only", "never", "always", "all", "every", "guarantee", "guaranteed", "unlimited", "free", "any", "fully", "100"],
+    "fallbackSentence": "I want to give you an exact answer on that, so I will ask a specialist to follow up."
+  },
+  "retrieval": { "topK": 3, "k1": 1.2, "b": 0.75 },
+  "routing": {
+    "reviewQueue": "Inbound_Review",
+    "onRefusedEntry": "review",
+    "roundRobin": "least_recent"
+  },
+  "questionnaire": {
+    "today": "2026-11-01",
+    "minutesPerManualAnswer": 6,
+    "minutesPerReviewedAnswer": 1
+  },
+  "model": {
+    "provider": "anthropic",
+    "model": "claude-haiku-5-5",
+    "maxTokens": 600,
+    "timeoutMs": 8000
+  },
+  "service": {
+    "port": 8787,
+    "apiKeys": "SDR_API_KEYS",
+    "eventLog": "var/events.jsonl"
+  }
+}

@@ -1,0 +1,20 @@
+{
+  "orgName": "Kestrel Freight OS (fictional demo org)",
+  "defaultLeadOwner": { "type": "Queue", "id": "Website_Inbound" },
+  "users": {
+    "henrik.vogt@kestrel.example": { "name": "Henrik Vogt", "role": "AE Enterprise DACH" },
+    "clara.neumann@kestrel.example": { "name": "Clara Neumann", "role": "AE Mittelstand" },
+    "paul.richter@kestrel.example": { "name": "Paul Richter", "role": "AE Mittelstand" },
+    "sanne.devries@kestrel.example": { "name": "Sanne de Vries", "role": "AE Benelux" },
+    "marta.nowak@kestrel.example": { "name": "Marta Nowak", "role": "AE Poland" },
+    "inbound@kestrel.example": { "name": "Inbound team", "role": "SDR" }
+  },
+  "queues": {
+    "Enterprise_DE": ["henrik.vogt@kestrel.example"],
+    "Mittelstand_DE": ["clara.neumann@kestrel.example", "paul.richter@kestrel.example"],
+    "Benelux": ["sanne.devries@kestrel.example"],
+    "Carrier_Partners": ["inbound@kestrel.example"],
+    "Website_Inbound": ["inbound@kestrel.example"],
+    "Inbound_Review": ["inbound@kestrel.example"]
+  }
+}

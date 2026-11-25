@@ -1,0 +1,5 @@
+{
+  "dev": [101, 102, 103],
+  "heldout": [9101, 9102],
+  "_note": "Held-out seeds run once, after the dev results and the gates are frozen. reports/heldout.lock records when and on which config."
+}

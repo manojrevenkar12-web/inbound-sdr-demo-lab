@@ -1,0 +1,16 @@
+{
+  "approvedBy": "Marketing, Kestrel Freight OS",
+  "approvedOn": "2026-09-30",
+  "passages": [
+    { "id": "tender", "topic": "tendering", "text": "Kestrel runs spot and annual carrier tenders and compares bids by lane, price and on-time history." },
+    { "id": "tracking", "topic": "tracking", "text": "Shipment tracking combines carrier status messages and GPS data from telematics providers such as project44." },
+    { "id": "edi", "topic": "integrations", "text": "Orders arrive by EDIFACT IFTMIN, API or CSV upload, and status goes back to the ERP through webhooks." },
+    { "id": "sap", "topic": "integrations", "text": "A certified SAP S/4HANA add-on creates transport orders from deliveries and posts freight costs back to SAP." },
+    { "id": "freightaudit", "topic": "freight_audit", "text": "Freight invoices are matched against agreed rates automatically, and only deviations go to a person for approval." },
+    { "id": "co2", "topic": "emissions", "text": "CO2e per shipment is calculated with the GLEC Framework and ISO 14083 for reporting." },
+    { "id": "hosting", "topic": "data_residency", "text": "Kestrel is hosted in Microsoft Azure Germany West Central in Frankfurt." },
+    { "id": "pricing", "topic": "pricing", "text": "Pricing is based on shipments per year, and the sales team sends a quote after a scoping call." },
+    { "id": "languages", "topic": "languages", "text": "The interface is available in German, English, Dutch and Polish." },
+    { "id": "rollout", "topic": "implementation", "text": "A typical rollout takes 8 to 12 weeks, including carrier onboarding." }
+  ]
+}
