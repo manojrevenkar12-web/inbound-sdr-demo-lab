@@ -1,0 +1,72 @@
+/* Theme tokens. Components use these variables only; no raw colours or sizes elsewhere. */
+:root {
+  --paper: #f3f5f7;
+  --panel: #ffffff;
+  --ink: #17212b;
+  --ink-2: #4c5866;
+  --ink-3: #7a8594;
+  --line: #d7dde3;
+  --line-soft: #e7ebef;
+  --brass: #b7791f;
+  --brass-soft: #f6ead6;
+  --verdigris: #2f7d6d;
+  --verdigris-soft: #dcefe9;
+  --oxide: #b4432f;
+  --oxide-soft: #f7e1dc;
+  --focus: #1f5fbf;
+
+  /* Set per prospect from the demo kit; used only inside the widget preview. */
+  --brand: #1f3a5f;
+  --brand-accent: #e4a72c;
+
+  --font-display: "Bricolage Grotesque Variable", "Avenir Next", system-ui, sans-serif;
+  --font-body: "Public Sans Variable", "Segoe UI", system-ui, sans-serif;
+
+  --text-xs: 0.8125rem;
+  --text-sm: 0.875rem;
+  --text-md: 1rem;
+  --text-lg: 1.1875rem;
+  --text-xl: 1.5rem;
+  --text-2xl: 2.125rem;
+  --text-3xl: 3.25rem;
+  --leading-tight: 1.15;
+  --leading-body: 1.55;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4.5rem;
+
+  --radius-control: 6px;
+  --radius-panel: 12px;
+  --radius-pill: 999px;
+  --rule: 1px solid var(--line);
+  --shadow-lift: 0 1px 0 var(--line-soft), 0 12px 32px -20px rgb(23 33 43 / 0.35);
+
+  --measure: 68ch;
+  --content-max: 1240px;
+  --cord-width: 3px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper: #12181f;
+    --panel: #1a222b;
+    --ink: #e8edf2;
+    --ink-2: #b4beca;
+    --ink-3: #8592a1;
+    --line: #2e3a46;
+    --line-soft: #24303b;
+    --brass: #e0a24a;
+    --brass-soft: #3a2c16;
+    --verdigris: #5fb8a3;
+    --verdigris-soft: #173a33;
+    --oxide: #e0806d;
+    --oxide-soft: #3e211b;
+    --focus: #7aa7f0;
+  }
+}

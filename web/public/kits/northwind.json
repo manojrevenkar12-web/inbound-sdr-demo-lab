@@ -30,7 +30,7 @@
       {
         "order": 3,
         "owner": "User markus.weber@northwind.example",
-        "when": "Country equals Germany, Austria, Switzerland [1 AND (2 OR 3)] Industry equals Government [1 AND (2 OR 3)] Industry equals Education",
+        "when": "(1) Country equals Germany, Austria, Switzerland; (2) Industry equals Government; (3) Industry equals Education; filter 1 AND (2 OR 3)",
         "status": "imported",
         "note": ""
       },
@@ -80,6 +80,4331 @@
     "warnings": [],
     "inactiveRules": [
       "Legacy Trade Shows 2023"
+    ]
+  },
+  "router": {
+    "rule": {
+      "name": "Inbound EMEA",
+      "active": true,
+      "entries": [
+        {
+          "order": 1,
+          "assignedTo": {
+            "type": "Queue",
+            "id": "Partner_Desk"
+          },
+          "criteria": [],
+          "formulaSource": "AND(Partner_Referral__c, NOT(ISBLANK(Partner_Name__c)))",
+          "formula": {
+            "kind": "and",
+            "args": [
+              {
+                "kind": "checkbox",
+                "field": "Partner_Referral__c"
+              },
+              {
+                "kind": "not",
+                "arg": {
+                  "kind": "isblank",
+                  "field": "Partner_Name__c"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "order": 2,
+          "assignedTo": {
+            "type": "Queue",
+            "id": "Strategic_DACH"
+          },
+          "criteria": [
+            {
+              "index": 1,
+              "field": "Country",
+              "operation": "equals",
+              "values": [
+                "Germany",
+                "Austria",
+                "Switzerland"
+              ]
+            },
+            {
+              "index": 2,
+              "field": "NumberOfEmployees",
+              "operation": "greaterOrEqual",
+              "values": [
+                "1000"
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "assignedTo": {
+            "type": "User",
+            "id": "markus.weber@northwind.example"
+          },
+          "criteria": [
+            {
+              "index": 1,
+              "field": "Country",
+              "operation": "equals",
+              "values": [
+                "Germany",
+                "Austria",
+                "Switzerland"
+              ]
+            },
+            {
+              "index": 2,
+              "field": "Industry",
+              "operation": "equals",
+              "values": [
+                "Government"
+              ]
+            },
+            {
+              "index": 3,
+              "field": "Industry",
+              "operation": "equals",
+              "values": [
+                "Education"
+              ]
+            }
+          ],
+          "booleanFilter": "1 AND (2 OR 3)"
+        },
+        {
+          "order": 4,
+          "assignedTo": {
+            "type": "Queue",
+            "id": "Midmarket_DACH"
+          },
+          "criteria": [
+            {
+              "index": 1,
+              "field": "Country",
+              "operation": "equals",
+              "values": [
+                "Germany",
+                "Austria",
+                "Switzerland"
+              ]
+            },
+            {
+              "index": 2,
+              "field": "NumberOfEmployees",
+              "operation": "greaterOrEqual",
+              "values": [
+                "200"
+              ]
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "assignedTo": {
+            "type": "Queue",
+            "id": "Healthcare_Payroll"
+          },
+          "criteria": [
+            {
+              "index": 1,
+              "field": "Country",
+              "operation": "equals",
+              "values": [
+                "Germany",
+                "Austria",
+                "Switzerland"
+              ]
+            },
+            {
+              "index": 2,
+              "field": "Industry",
+              "operation": "equals",
+              "values": [
+                "Healthcare"
+              ]
+            },
+            {
+              "index": 3,
+              "field": "Products_Interested__c",
+              "operation": "includes",
+              "values": [
+                "Payroll"
+              ],
+              "unsupported": "criterion 3 uses operation 'includes'"
+            }
+          ],
+          "partial": [
+            "criterion 3 uses operation 'includes'"
+          ]
+        },
+        {
+          "order": 6,
+          "assignedTo": {
+            "type": "Queue",
+            "id": "Nordics"
+          },
+          "criteria": [
+            {
+              "index": 1,
+              "field": "Country",
+              "operation": "equals",
+              "values": [
+                "Sweden",
+                "Norway",
+                "Denmark",
+                "Finland"
+              ]
+            },
+            {
+              "index": 2,
+              "field": "NumberOfEmployees",
+              "operation": "greaterOrEqual",
+              "values": [
+                "200"
+              ]
+            }
+          ]
+        },
+        {
+          "order": 7,
+          "assignedTo": {
+            "type": "Queue",
+            "id": "UKI"
+          },
+          "criteria": [
+            {
+              "index": 1,
+              "field": "Country",
+              "operation": "equals",
+              "values": [
+                "United Kingdom",
+                "Ireland"
+              ]
+            },
+            {
+              "index": 2,
+              "field": "NumberOfEmployees",
+              "operation": "greaterOrEqual",
+              "values": [
+                "200"
+              ]
+            }
+          ]
+        },
+        {
+          "order": 8,
+          "assignedTo": {
+            "type": "Queue",
+            "id": "Freemail_Hold"
+          },
+          "criteria": [],
+          "formulaSource": "REGEX(Email, \".*@(gmail|googlemail|gmx|web|yahoo|outlook)\\\\.[a-z]+\")",
+          "formula": {
+            "kind": "regex",
+            "field": "Email",
+            "pattern": ".*@(gmail|googlemail|gmx|web|yahoo|outlook)\\.[a-z]+"
+          }
+        },
+        {
+          "order": 9,
+          "assignedTo": {
+            "type": "Queue",
+            "id": "Inbound_Nurture"
+          },
+          "criteria": [
+            {
+              "index": 1,
+              "field": "LeadSource",
+              "operation": "equals",
+              "values": [
+                "Web Chat",
+                "Website"
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    "accounts": [
+      {
+        "id": "001NW000001",
+        "name": "Dormark Energie plc",
+        "domain": "dormark-energie.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 699,
+        "country": "United Kingdom",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000002",
+        "name": "Helmark Energie AG",
+        "domain": "helmark-energie.at",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1335,
+        "country": "Austria",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000003",
+        "name": "Bernstad Mobility AG",
+        "domain": "bernstad-mobility.at",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 560,
+        "country": "Austria",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000004",
+        "name": "Quellberg Health GmbH",
+        "domain": "quellberg-health.at",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 277,
+        "country": "Austria",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000005",
+        "name": "Zenfeld Mobility AB",
+        "domain": "zenfeld-mobility.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 437,
+        "country": "Sweden",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000006",
+        "name": "Helvik Chemicals GmbH",
+        "domain": "helvik-chemicals.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 457,
+        "country": "Austria",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000007",
+        "name": "Helkamp Retail SE",
+        "domain": "helkamp-retail.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 184,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000008",
+        "name": "Ulmholm Mobility GmbH & Co. KG",
+        "domain": "ulmholm-mobility.de",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 17424,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000009",
+        "name": "Sollund Mobility GmbH",
+        "domain": "sollund-mobility.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 154,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000010",
+        "name": "Ulmkamp Energie AB",
+        "domain": "ulmkamp-energie.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1860,
+        "country": "Sweden",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000011",
+        "name": "Istbach Mobility AG",
+        "domain": "istbach-mobility.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 800,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000012",
+        "name": "Wesberg Systems GmbH",
+        "domain": "wesberg-systems.at",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 621,
+        "country": "Austria",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000013",
+        "name": "Quelllund Chemicals AB",
+        "domain": "quelllund-chemicals.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 963,
+        "country": "Sweden",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000014",
+        "name": "Pallund Textiles GmbH",
+        "domain": "pallund-textiles.at",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 2565,
+        "country": "Austria",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000015",
+        "name": "Ostkamp Retail AG",
+        "domain": "ostkamp-retail.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 104,
+        "country": "Austria",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000016",
+        "name": "Solholm Retail AB",
+        "domain": "solholm-retail.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 93,
+        "country": "Sweden",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000017",
+        "name": "Paldorf Foods AB",
+        "domain": "paldorf-foods.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 1259,
+        "country": "Sweden",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000018",
+        "name": "Kalholm Chemicals SA",
+        "domain": "kalholm-chemicals.ch",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 2294,
+        "country": "Switzerland",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000019",
+        "name": "Quelldorf Systems AG",
+        "domain": "quelldorf-systems.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 341,
+        "country": "Austria",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000020",
+        "name": "Istbach Pharma plc",
+        "domain": "istbach-pharma.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 571,
+        "country": "United Kingdom",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000021",
+        "name": "Paltal Textiles GmbH & Co. KG",
+        "domain": "paltal-textiles.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 560,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000022",
+        "name": "Granbach Retail GmbH",
+        "domain": "granbach-retail.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 4252,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000023",
+        "name": "Weswald Maschinenbau AG",
+        "domain": "weswald-maschinenbau.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 204,
+        "country": "Austria",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000024",
+        "name": "Velhain Pharma GmbH",
+        "domain": "velhain-pharma.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 137,
+        "country": "Germany",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000025",
+        "name": "Norheim Maschinenbau SE",
+        "domain": "norheim-maschinenbau.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 165,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000026",
+        "name": "Velstad Media GmbH",
+        "domain": "velstad-media.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 241,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000027",
+        "name": "Rheholm Systems Ltd",
+        "domain": "rheholm-systems.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 223,
+        "country": "United Kingdom",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000028",
+        "name": "Talhain Media GmbH",
+        "domain": "talhain-media.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 651,
+        "country": "Austria",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000029",
+        "name": "Lunlund Energie AG",
+        "domain": "lunlund-energie.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 90,
+        "country": "Switzerland",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000030",
+        "name": "Solfeld Energie AG",
+        "domain": "solfeld-energie.at",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1087,
+        "country": "Austria",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000031",
+        "name": "Wesbach Chemicals plc",
+        "domain": "wesbach-chemicals.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 779,
+        "country": "United Kingdom",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000032",
+        "name": "Quellholm Maschinenbau AG",
+        "domain": "quellholm-maschinenbau.ch",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 690,
+        "country": "Switzerland",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000033",
+        "name": "Corfeld Retail AG",
+        "domain": "corfeld-retail.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2125,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000034",
+        "name": "Norvik Chemicals GmbH",
+        "domain": "norvik-chemicals.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 114,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000035",
+        "name": "Marstad Media AB",
+        "domain": "marstad-media.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1805,
+        "country": "Sweden",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000036",
+        "name": "Bernmark Retail AG",
+        "domain": "bernmark-retail.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 207,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000037",
+        "name": "Quellmark Maschinenbau GmbH & Co. KG",
+        "domain": "quellmark-maschinenbau.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 598,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000038",
+        "name": "Ulmtal Systems Ltd",
+        "domain": "ulmtal-systems.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 711,
+        "country": "United Kingdom",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000039",
+        "name": "Solwerk Textiles GmbH",
+        "domain": "solwerk-textiles.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 302,
+        "country": "Austria",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000040",
+        "name": "Dorwald Textiles plc",
+        "domain": "dorwald-textiles.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 401,
+        "country": "United Kingdom",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000041",
+        "name": "Hellund Logistik AB",
+        "domain": "hellund-logistik.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1834,
+        "country": "Sweden",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000042",
+        "name": "Cordorf Systems AG",
+        "domain": "cordorf-systems.ch",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1384,
+        "country": "Switzerland",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000043",
+        "name": "Corhain Mobility AG",
+        "domain": "corhain-mobility.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 791,
+        "country": "Switzerland",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000044",
+        "name": "Lunberg Logistik AB",
+        "domain": "lunberg-logistik.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 3603,
+        "country": "Sweden",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000045",
+        "name": "Norlund Media GmbH",
+        "domain": "norlund-media.at",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 384,
+        "country": "Austria",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000046",
+        "name": "Velmark Maschinenbau plc",
+        "domain": "velmark-maschinenbau.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1294,
+        "country": "United Kingdom",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000047",
+        "name": "Ostwerk Health plc",
+        "domain": "ostwerk-health.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 118,
+        "country": "United Kingdom",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000048",
+        "name": "Corstad Textiles AB",
+        "domain": "corstad-textiles.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 171,
+        "country": "Sweden",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000049",
+        "name": "Paltal Logistik AG",
+        "domain": "paltal-logistik.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 482,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000050",
+        "name": "Jorberg Pharma SA",
+        "domain": "jorberg-pharma.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 271,
+        "country": "Switzerland",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000051",
+        "name": "Palkamp Chemicals AB",
+        "domain": "palkamp-chemicals.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 552,
+        "country": "Sweden",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000052",
+        "name": "Norheim Mobility GmbH",
+        "domain": "norheim-mobility.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 465,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000053",
+        "name": "Zenstad Logistik AG",
+        "domain": "zenstad-logistik.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 350,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000054",
+        "name": "Palwald Textiles GmbH",
+        "domain": "palwald-textiles.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 138,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000055",
+        "name": "Jorberg Chemicals GmbH",
+        "domain": "jorberg-chemicals.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 389,
+        "country": "Germany",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000056",
+        "name": "Jortal Logistik plc",
+        "domain": "jortal-logistik.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2573,
+        "country": "United Kingdom",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000057",
+        "name": "Granheim Retail plc",
+        "domain": "granheim-retail.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 214,
+        "country": "United Kingdom",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000058",
+        "name": "Corkamp Pharma AB",
+        "domain": "corkamp-pharma.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 455,
+        "country": "Sweden",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000059",
+        "name": "Talholm Energie AG",
+        "domain": "talholm-energie.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 449,
+        "country": "Germany",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000060",
+        "name": "Alvik Mobility AB",
+        "domain": "alvik-mobility.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2362,
+        "country": "Sweden",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000061",
+        "name": "Norlund Energie GmbH",
+        "domain": "norlund-energie.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1300,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000062",
+        "name": "Corkamp Energie GmbH",
+        "domain": "corkamp-energie.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 145,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000063",
+        "name": "Helwerk Energie GmbH",
+        "domain": "helwerk-energie.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 696,
+        "country": "Austria",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000064",
+        "name": "Ulmmark Energie GmbH",
+        "domain": "ulmmark-energie.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 504,
+        "country": "Germany",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000065",
+        "name": "Palfeld Health SA",
+        "domain": "palfeld-health.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 227,
+        "country": "Switzerland",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000066",
+        "name": "Velkamp Pharma AG",
+        "domain": "velkamp-pharma.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 89,
+        "country": "Switzerland",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000067",
+        "name": "Ulmfeld Maschinenbau AG",
+        "domain": "ulmfeld-maschinenbau.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 8820,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000068",
+        "name": "Quellholm Energie Ltd",
+        "domain": "quellholm-energie.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 463,
+        "country": "United Kingdom",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000069",
+        "name": "Helheim Retail AG",
+        "domain": "helheim-retail.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 646,
+        "country": "Austria",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000070",
+        "name": "Jorberg Energie GmbH",
+        "domain": "jorberg-energie.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 32,
+        "country": "Austria",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000071",
+        "name": "Quellmark Systems AG",
+        "domain": "quellmark-systems.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 681,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000072",
+        "name": "Ulmwald Foods SA",
+        "domain": "ulmwald-foods.ch",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 506,
+        "country": "Switzerland",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000073",
+        "name": "Rhefeld Health Ltd",
+        "domain": "rhefeld-health.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 425,
+        "country": "United Kingdom",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000074",
+        "name": "Fallund Logistik GmbH",
+        "domain": "fallund-logistik.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 656,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000075",
+        "name": "Bernholm Mobility GmbH & Co. KG",
+        "domain": "bernholm-mobility.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 302,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000076",
+        "name": "Bernlund Pharma GmbH & Co. KG",
+        "domain": "bernlund-pharma.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 353,
+        "country": "Germany",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000077",
+        "name": "Bernstein Textiles AG",
+        "domain": "bernstein-textiles.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 226,
+        "country": "Austria",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000078",
+        "name": "Dorwerk Foods AB",
+        "domain": "dorwerk-foods.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 261,
+        "country": "Sweden",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000079",
+        "name": "Markamp Systems GmbH",
+        "domain": "markamp-systems.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 129,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000080",
+        "name": "Corbach Retail AB",
+        "domain": "corbach-retail.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 356,
+        "country": "Sweden",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000081",
+        "name": "Eisbach Energie plc",
+        "domain": "eisbach-energie.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 303,
+        "country": "United Kingdom",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000082",
+        "name": "Marstad Textiles GmbH",
+        "domain": "marstad-textiles.de",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1119,
+        "country": "Germany",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000083",
+        "name": "Dorbach Chemicals AG",
+        "domain": "dorbach-chemicals.de",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 2489,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000084",
+        "name": "Eiskamp Media GmbH",
+        "domain": "eiskamp-media.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 996,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000085",
+        "name": "Velvik Maschinenbau plc",
+        "domain": "velvik-maschinenbau.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 674,
+        "country": "United Kingdom",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000086",
+        "name": "Velwald Chemicals AG",
+        "domain": "velwald-chemicals.ch",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 2436,
+        "country": "Switzerland",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000087",
+        "name": "Kallund Pharma AG",
+        "domain": "kallund-pharma.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 39,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000088",
+        "name": "Talkamp Systems AB",
+        "domain": "talkamp-systems.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 4574,
+        "country": "Sweden",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000089",
+        "name": "Heltal Pharma SA",
+        "domain": "heltal-pharma.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 852,
+        "country": "Switzerland",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000090",
+        "name": "Luntal Textiles AG",
+        "domain": "luntal-textiles.at",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 4561,
+        "country": "Austria",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000091",
+        "name": "Bernholm Chemicals GmbH",
+        "domain": "bernholm-chemicals.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 651,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000092",
+        "name": "Isttal Maschinenbau AB",
+        "domain": "isttal-maschinenbau.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 52,
+        "country": "Sweden",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000093",
+        "name": "Dorheim Energie Ltd",
+        "domain": "dorheim-energie.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1208,
+        "country": "United Kingdom",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000094",
+        "name": "Ulmvik Retail GmbH",
+        "domain": "ulmvik-retail.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 81,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000095",
+        "name": "Palwerk Mobility GmbH",
+        "domain": "palwerk-mobility.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 803,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000096",
+        "name": "Jorfeld Health Ltd",
+        "domain": "jorfeld-health.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1219,
+        "country": "United Kingdom",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000097",
+        "name": "Rhelund Logistik plc",
+        "domain": "rhelund-logistik.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 117,
+        "country": "United Kingdom",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000098",
+        "name": "Isttal Pharma GmbH",
+        "domain": "isttal-pharma.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 238,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000099",
+        "name": "Quelltal Logistik AB",
+        "domain": "quelltal-logistik.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 462,
+        "country": "Sweden",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000100",
+        "name": "Alkamp Media Ltd",
+        "domain": "alkamp-media.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 997,
+        "country": "United Kingdom",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000101",
+        "name": "Luntal Systems GmbH & Co. KG",
+        "domain": "luntal-systems.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 732,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000102",
+        "name": "Norbach Logistik SA",
+        "domain": "norbach-logistik.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 137,
+        "country": "Switzerland",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000103",
+        "name": "Almark Energie AB",
+        "domain": "almark-energie.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1142,
+        "country": "Sweden",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000104",
+        "name": "Velberg Health GmbH",
+        "domain": "velberg-health.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 379,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000105",
+        "name": "Granlund Retail AB",
+        "domain": "granlund-retail.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 235,
+        "country": "Sweden",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000106",
+        "name": "Granwerk Energie AG",
+        "domain": "granwerk-energie.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 501,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000107",
+        "name": "Talmark Chemicals AB",
+        "domain": "talmark-chemicals.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 374,
+        "country": "Sweden",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000108",
+        "name": "Quellholm Mobility SE",
+        "domain": "quellholm-mobility.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1391,
+        "country": "Germany",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000109",
+        "name": "Talkamp Foods AB",
+        "domain": "talkamp-foods.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 728,
+        "country": "Sweden",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000110",
+        "name": "Dorbach Logistik AG",
+        "domain": "dorbach-logistik.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 225,
+        "country": "Switzerland",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000111",
+        "name": "Istwald Chemicals SE",
+        "domain": "istwald-chemicals.de",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 3831,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000112",
+        "name": "Quellkamp Media AG",
+        "domain": "quellkamp-media.ch",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1418,
+        "country": "Switzerland",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000113",
+        "name": "Helberg Pharma Ltd",
+        "domain": "helberg-pharma.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 300,
+        "country": "United Kingdom",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000114",
+        "name": "Zental Mobility AG",
+        "domain": "zental-mobility.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 348,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000115",
+        "name": "Palfeld Health GmbH",
+        "domain": "palfeld-health.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 501,
+        "country": "Austria",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000116",
+        "name": "Dorwald Systems plc",
+        "domain": "dorwald-systems.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 513,
+        "country": "United Kingdom",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000117",
+        "name": "Kalstad Chemicals plc",
+        "domain": "kalstad-chemicals.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 389,
+        "country": "United Kingdom",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000118",
+        "name": "Ulmwerk Mobility AG",
+        "domain": "ulmwerk-mobility.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 950,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000119",
+        "name": "Falholm Pharma GmbH",
+        "domain": "falholm-pharma.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 65,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000120",
+        "name": "Kalmark Mobility AG",
+        "domain": "kalmark-mobility.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 458,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000121",
+        "name": "Jorbach Media AG",
+        "domain": "jorbach-media.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 479,
+        "country": "Germany",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000122",
+        "name": "Talbach Foods AG",
+        "domain": "talbach-foods.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 406,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000123",
+        "name": "Quellberg Logistik SE",
+        "domain": "quellberg-logistik.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 1543,
+        "country": "Germany",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000124",
+        "name": "Dorbach Pharma AB",
+        "domain": "dorbach-pharma.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 284,
+        "country": "Sweden",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000125",
+        "name": "Eiswald Retail AG",
+        "domain": "eiswald-retail.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 75,
+        "country": "Germany",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000126",
+        "name": "Corhain Energie GmbH",
+        "domain": "corhain-energie.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 775,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000127",
+        "name": "Palhain Energie AG",
+        "domain": "palhain-energie.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1936,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000128",
+        "name": "Sollund Health AG",
+        "domain": "sollund-health.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 649,
+        "country": "Switzerland",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000129",
+        "name": "Ulmwerk Retail Ltd",
+        "domain": "ulmwerk-retail.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 216,
+        "country": "United Kingdom",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000130",
+        "name": "Zenbach Retail AB",
+        "domain": "zenbach-retail.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 33,
+        "country": "Sweden",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000131",
+        "name": "Velstad Maschinenbau GmbH",
+        "domain": "velstad-maschinenbau.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 174,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000132",
+        "name": "Granhain Logistik AB",
+        "domain": "granhain-logistik.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 102,
+        "country": "Sweden",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000133",
+        "name": "Helwald Textiles AG",
+        "domain": "helwald-textiles.at",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 332,
+        "country": "Austria",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000134",
+        "name": "Eisstad Chemicals AG",
+        "domain": "eisstad-chemicals.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 185,
+        "country": "Switzerland",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000135",
+        "name": "Granbach Logistik AB",
+        "domain": "granbach-logistik.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 3245,
+        "country": "Sweden",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000136",
+        "name": "Rhewerk Pharma AG",
+        "domain": "rhewerk-pharma.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 365,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000137",
+        "name": "Fallund Systems Ltd",
+        "domain": "fallund-systems.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2184,
+        "country": "United Kingdom",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000138",
+        "name": "Jormark Chemicals SE",
+        "domain": "jormark-chemicals.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 404,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000139",
+        "name": "Kalbach Health AB",
+        "domain": "kalbach-health.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 455,
+        "country": "Sweden",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000140",
+        "name": "Dorbach Maschinenbau Ltd",
+        "domain": "dorbach-maschinenbau.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 899,
+        "country": "United Kingdom",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000141",
+        "name": "Zenwald Systems GmbH",
+        "domain": "zenwald-systems.de",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2345,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000142",
+        "name": "Lunberg Retail AG",
+        "domain": "lunberg-retail.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 433,
+        "country": "Switzerland",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000143",
+        "name": "Talbach Logistik GmbH & Co. KG",
+        "domain": "talbach-logistik.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1337,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000144",
+        "name": "Lundorf Health GmbH",
+        "domain": "lundorf-health.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 271,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000145",
+        "name": "Jorvik Mobility SA",
+        "domain": "jorvik-mobility.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 290,
+        "country": "Switzerland",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000146",
+        "name": "Norfeld Energie Ltd",
+        "domain": "norfeld-energie.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 91,
+        "country": "United Kingdom",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000147",
+        "name": "Rhevik Health SE",
+        "domain": "rhevik-health.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 565,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000148",
+        "name": "Zenfeld Pharma AG",
+        "domain": "zenfeld-pharma.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 161,
+        "country": "Austria",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000149",
+        "name": "Marbach Mobility AG",
+        "domain": "marbach-mobility.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 548,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000150",
+        "name": "Iststad Foods SA",
+        "domain": "iststad-foods.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 88,
+        "country": "Switzerland",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000151",
+        "name": "Helwald Chemicals GmbH",
+        "domain": "helwald-chemicals.de",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1230,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000152",
+        "name": "Palhain Pharma AB",
+        "domain": "palhain-pharma.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 3058,
+        "country": "Sweden",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000153",
+        "name": "Zenheim Pharma AG",
+        "domain": "zenheim-pharma.ch",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 667,
+        "country": "Switzerland",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000154",
+        "name": "Lunfeld Textiles AG",
+        "domain": "lunfeld-textiles.at",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 511,
+        "country": "Austria",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000155",
+        "name": "Rhewald Pharma AB",
+        "domain": "rhewald-pharma.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 439,
+        "country": "Sweden",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000156",
+        "name": "Eisberg Retail SE",
+        "domain": "eisberg-retail.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 578,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000157",
+        "name": "Heldorf Health AG",
+        "domain": "heldorf-health.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 2304,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000158",
+        "name": "Lunvik Chemicals AG",
+        "domain": "lunvik-chemicals.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 236,
+        "country": "Switzerland",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000159",
+        "name": "Markamp Systems SA",
+        "domain": "markamp-systems.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 373,
+        "country": "Switzerland",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000160",
+        "name": "Talstein Chemicals AB",
+        "domain": "talstein-chemicals.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 47,
+        "country": "Sweden",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000161",
+        "name": "Wesstein Chemicals AB",
+        "domain": "wesstein-chemicals.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 623,
+        "country": "Sweden",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000162",
+        "name": "Ostbach Energie GmbH",
+        "domain": "ostbach-energie.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 265,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000163",
+        "name": "Kallund Media SA",
+        "domain": "kallund-media.ch",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 485,
+        "country": "Switzerland",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000164",
+        "name": "Lunwald Pharma GmbH",
+        "domain": "lunwald-pharma.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 152,
+        "country": "Germany",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000165",
+        "name": "Zenbach Pharma SA",
+        "domain": "zenbach-pharma.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 208,
+        "country": "Switzerland",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000166",
+        "name": "Corbach Foods Ltd",
+        "domain": "corbach-foods.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1400,
+        "country": "United Kingdom",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000167",
+        "name": "Marfeld Media Ltd",
+        "domain": "marfeld-media.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 897,
+        "country": "United Kingdom",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000168",
+        "name": "Solhain Energie GmbH",
+        "domain": "solhain-energie.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 325,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000169",
+        "name": "Norheim Logistik AG",
+        "domain": "norheim-logistik.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 677,
+        "country": "Switzerland",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000170",
+        "name": "Rhekamp Foods GmbH",
+        "domain": "rhekamp-foods.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 2786,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000171",
+        "name": "Alstad Pharma AG",
+        "domain": "alstad-pharma.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 124,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000172",
+        "name": "Soltal Retail AG",
+        "domain": "soltal-retail.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 330,
+        "country": "Switzerland",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000173",
+        "name": "Wesdorf Media GmbH",
+        "domain": "wesdorf-media.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1173,
+        "country": "Germany",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000174",
+        "name": "Cordorf Logistik AG",
+        "domain": "cordorf-logistik.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1099,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000175",
+        "name": "Kaltal Textiles GmbH",
+        "domain": "kaltal-textiles.at",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 816,
+        "country": "Austria",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000176",
+        "name": "Faldorf Health Ltd",
+        "domain": "faldorf-health.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 54,
+        "country": "United Kingdom",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000177",
+        "name": "Markamp Health plc",
+        "domain": "markamp-health.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 285,
+        "country": "United Kingdom",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000178",
+        "name": "Talholm Textiles Ltd",
+        "domain": "talholm-textiles.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 61,
+        "country": "United Kingdom",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000179",
+        "name": "Eiswald Logistik Ltd",
+        "domain": "eiswald-logistik.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 150,
+        "country": "United Kingdom",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000180",
+        "name": "Eiswerk Health SA",
+        "domain": "eiswerk-health.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 174,
+        "country": "Switzerland",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000181",
+        "name": "Kalheim Chemicals AG",
+        "domain": "kalheim-chemicals.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1659,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000182",
+        "name": "Helwerk Energie plc",
+        "domain": "helwerk-energie.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 82,
+        "country": "United Kingdom",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000183",
+        "name": "Rhedorf Foods AG",
+        "domain": "rhedorf-foods.ch",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 268,
+        "country": "Switzerland",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000184",
+        "name": "Kalwerk Energie AG",
+        "domain": "kalwerk-energie.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 128,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000185",
+        "name": "Lunhain Energie GmbH",
+        "domain": "lunhain-energie.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 673,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000186",
+        "name": "Falholm Maschinenbau GmbH",
+        "domain": "falholm-maschinenbau.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 238,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000187",
+        "name": "Oststad Media Ltd",
+        "domain": "oststad-media.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 249,
+        "country": "United Kingdom",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000188",
+        "name": "Lunstein Foods AB",
+        "domain": "lunstein-foods.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 631,
+        "country": "Sweden",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000189",
+        "name": "Iststad Textiles SA",
+        "domain": "iststad-textiles.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 773,
+        "country": "Switzerland",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000190",
+        "name": "Marmark Retail GmbH & Co. KG",
+        "domain": "marmark-retail.de",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1727,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000191",
+        "name": "Ostdorf Media AB",
+        "domain": "ostdorf-media.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 17,
+        "country": "Sweden",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000192",
+        "name": "Istlund Chemicals AB",
+        "domain": "istlund-chemicals.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 437,
+        "country": "Sweden",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000193",
+        "name": "Kalbach Health AG",
+        "domain": "kalbach-health.at",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1313,
+        "country": "Austria",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000194",
+        "name": "Quelltal Pharma SE",
+        "domain": "quelltal-pharma.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 332,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000195",
+        "name": "Alberg Systems Ltd",
+        "domain": "alberg-systems.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 273,
+        "country": "United Kingdom",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000196",
+        "name": "Hellund Foods Ltd",
+        "domain": "hellund-foods.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 473,
+        "country": "United Kingdom",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000197",
+        "name": "Rhedorf Systems AB",
+        "domain": "rhedorf-systems.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 721,
+        "country": "Sweden",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000198",
+        "name": "Kalmark Pharma AB",
+        "domain": "kalmark-pharma.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 272,
+        "country": "Sweden",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000199",
+        "name": "Lunholm Pharma plc",
+        "domain": "lunholm-pharma.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 186,
+        "country": "United Kingdom",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000200",
+        "name": "Lunvik Mobility AG",
+        "domain": "lunvik-mobility.at",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 1438,
+        "country": "Austria",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000201",
+        "name": "Eiswald Foods Ltd",
+        "domain": "eiswald-foods.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 470,
+        "country": "United Kingdom",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000202",
+        "name": "Marholm Mobility AG",
+        "domain": "marholm-mobility.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1356,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000203",
+        "name": "Martal Foods SA",
+        "domain": "martal-foods.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 160,
+        "country": "Switzerland",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000204",
+        "name": "Rhestein Systems Ltd",
+        "domain": "rhestein-systems.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 853,
+        "country": "United Kingdom",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000205",
+        "name": "Ulmstad Maschinenbau Ltd",
+        "domain": "ulmstad-maschinenbau.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 486,
+        "country": "United Kingdom",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000206",
+        "name": "Cormark Textiles AB",
+        "domain": "cormark-textiles.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 211,
+        "country": "Sweden",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000207",
+        "name": "Corkamp Systems AB",
+        "domain": "corkamp-systems.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 489,
+        "country": "Sweden",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000208",
+        "name": "Granfeld Textiles GmbH",
+        "domain": "granfeld-textiles.at",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 1705,
+        "country": "Austria",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000209",
+        "name": "Isttal Mobility SE",
+        "domain": "isttal-mobility.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 735,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000210",
+        "name": "Granholm Maschinenbau SE",
+        "domain": "granholm-maschinenbau.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 98,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000211",
+        "name": "Quellkamp Textiles AG",
+        "domain": "quellkamp-textiles.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 439,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000212",
+        "name": "Talbach Systems AG",
+        "domain": "talbach-systems.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 830,
+        "country": "Switzerland",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000213",
+        "name": "Cordorf Health AG",
+        "domain": "cordorf-health.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 285,
+        "country": "Austria",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000214",
+        "name": "Jorvik Pharma GmbH",
+        "domain": "jorvik-pharma.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 86,
+        "country": "Austria",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000215",
+        "name": "Ulmberg Retail AG",
+        "domain": "ulmberg-retail.at",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 252,
+        "country": "Austria",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000216",
+        "name": "Solbach Energie Ltd",
+        "domain": "solbach-energie.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1042,
+        "country": "United Kingdom",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000217",
+        "name": "Jorstad Maschinenbau AG",
+        "domain": "jorstad-maschinenbau.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 381,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000218",
+        "name": "Bernhain Mobility Ltd",
+        "domain": "bernhain-mobility.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 458,
+        "country": "United Kingdom",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000219",
+        "name": "Talberg Media GmbH",
+        "domain": "talberg-media.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 685,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000220",
+        "name": "Lunstein Health AB",
+        "domain": "lunstein-health.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 767,
+        "country": "Sweden",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000221",
+        "name": "Ostberg Pharma SA",
+        "domain": "ostberg-pharma.ch",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1215,
+        "country": "Switzerland",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000222",
+        "name": "Ulmheim Pharma AG",
+        "domain": "ulmheim-pharma.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 214,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000223",
+        "name": "Velberg Maschinenbau AB",
+        "domain": "velberg-maschinenbau.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1597,
+        "country": "Sweden",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000224",
+        "name": "Norwerk Logistik AG",
+        "domain": "norwerk-logistik.ch",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 2041,
+        "country": "Switzerland",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000225",
+        "name": "Kalberg Maschinenbau SA",
+        "domain": "kalberg-maschinenbau.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 383,
+        "country": "Switzerland",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000226",
+        "name": "Eisholm Foods AB",
+        "domain": "eisholm-foods.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 101,
+        "country": "Sweden",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000227",
+        "name": "Zenhain Health GmbH",
+        "domain": "zenhain-health.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 183,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000228",
+        "name": "Hellund Media AG",
+        "domain": "hellund-media.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 147,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000229",
+        "name": "Ulmhain Pharma SE",
+        "domain": "ulmhain-pharma.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 374,
+        "country": "Germany",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000230",
+        "name": "Eisstein Maschinenbau GmbH",
+        "domain": "eisstein-maschinenbau.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 804,
+        "country": "Germany",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000231",
+        "name": "Weslund Systems AG",
+        "domain": "weslund-systems.at",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1284,
+        "country": "Austria",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000232",
+        "name": "Lunheim Health AG",
+        "domain": "lunheim-health.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 411,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000233",
+        "name": "Rhefeld Retail AG",
+        "domain": "rhefeld-retail.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2023,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000234",
+        "name": "Jorstein Retail AG",
+        "domain": "jorstein-retail.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 445,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000235",
+        "name": "Ostwald Maschinenbau AB",
+        "domain": "ostwald-maschinenbau.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 357,
+        "country": "Sweden",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000236",
+        "name": "Marholm Chemicals AG",
+        "domain": "marholm-chemicals.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 731,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000237",
+        "name": "Talstad Foods GmbH",
+        "domain": "talstad-foods.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 839,
+        "country": "Austria",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000238",
+        "name": "Granholm Maschinenbau plc",
+        "domain": "granholm-maschinenbau.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 1201,
+        "country": "United Kingdom",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000239",
+        "name": "Palholm Retail plc",
+        "domain": "palholm-retail.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 348,
+        "country": "United Kingdom",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000240",
+        "name": "Quellberg Foods AB",
+        "domain": "quellberg-foods.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 313,
+        "country": "Sweden",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000241",
+        "name": "Marholm Foods GmbH",
+        "domain": "marholm-foods.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1597,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000242",
+        "name": "Veltal Media GmbH",
+        "domain": "veltal-media.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 4413,
+        "country": "Germany",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000243",
+        "name": "Heltal Textiles AG",
+        "domain": "heltal-textiles.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 535,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000244",
+        "name": "Alhain Textiles AG",
+        "domain": "alhain-textiles.ch",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 4977,
+        "country": "Switzerland",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000245",
+        "name": "Rheholm Textiles SE",
+        "domain": "rheholm-textiles.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 257,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000246",
+        "name": "Lunwald Foods plc",
+        "domain": "lunwald-foods.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 3285,
+        "country": "United Kingdom",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000247",
+        "name": "Kalheim Systems GmbH",
+        "domain": "kalheim-systems.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 32,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000248",
+        "name": "Kalbach Media AG",
+        "domain": "kalbach-media.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 796,
+        "country": "Germany",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000249",
+        "name": "Quellmark Systems AG",
+        "domain": "quellmark-systems.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 311,
+        "country": "Austria",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000250",
+        "name": "Bernhain Retail GmbH",
+        "domain": "bernhain-retail.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 349,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000251",
+        "name": "Solmark Mobility GmbH",
+        "domain": "solmark-mobility.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 520,
+        "country": "Austria",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000252",
+        "name": "Velstad Mobility plc",
+        "domain": "velstad-mobility.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 211,
+        "country": "United Kingdom",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000253",
+        "name": "Alkamp Energie GmbH",
+        "domain": "alkamp-energie.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 182,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000254",
+        "name": "Talhain Health AG",
+        "domain": "talhain-health.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 208,
+        "country": "Austria",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000255",
+        "name": "Jorstad Foods AB",
+        "domain": "jorstad-foods.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 283,
+        "country": "Sweden",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000256",
+        "name": "Marholm Textiles AB",
+        "domain": "marholm-textiles.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 226,
+        "country": "Sweden",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000257",
+        "name": "Kallund Maschinenbau GmbH",
+        "domain": "kallund-maschinenbau.at",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 153,
+        "country": "Austria",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000258",
+        "name": "Istmark Foods GmbH",
+        "domain": "istmark-foods.at",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 551,
+        "country": "Austria",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000259",
+        "name": "Ulmholm Foods GmbH",
+        "domain": "ulmholm-foods.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 267,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000260",
+        "name": "Bernkamp Logistik Ltd",
+        "domain": "bernkamp-logistik.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1912,
+        "country": "United Kingdom",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000261",
+        "name": "Helwald Pharma GmbH",
+        "domain": "helwald-pharma.de",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1513,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000262",
+        "name": "Falheim Mobility AG",
+        "domain": "falheim-mobility.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 500,
+        "country": "Austria",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000263",
+        "name": "Weswerk Pharma GmbH",
+        "domain": "weswerk-pharma.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 76,
+        "country": "Austria",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000264",
+        "name": "Ulmbach Energie GmbH",
+        "domain": "ulmbach-energie.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2292,
+        "country": "Germany",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000265",
+        "name": "Alhain Health AB",
+        "domain": "alhain-health.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 70,
+        "country": "Sweden",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000266",
+        "name": "Iststein Pharma AG",
+        "domain": "iststein-pharma.at",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 154,
+        "country": "Austria",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000267",
+        "name": "Quellwerk Media AB",
+        "domain": "quellwerk-media.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 977,
+        "country": "Sweden",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000268",
+        "name": "Soldorf Health GmbH & Co. KG",
+        "domain": "soldorf-health.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 231,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000269",
+        "name": "Lunbach Maschinenbau AB",
+        "domain": "lunbach-maschinenbau.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 208,
+        "country": "Sweden",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000270",
+        "name": "Helberg Systems GmbH",
+        "domain": "helberg-systems.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 442,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000271",
+        "name": "Veldorf Textiles AG",
+        "domain": "veldorf-textiles.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 831,
+        "country": "Switzerland",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000272",
+        "name": "Bernfeld Chemicals GmbH",
+        "domain": "bernfeld-chemicals.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 321,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000273",
+        "name": "Velfeld Health GmbH",
+        "domain": "velfeld-health.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 581,
+        "country": "Austria",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000274",
+        "name": "Lunwerk Pharma GmbH",
+        "domain": "lunwerk-pharma.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 366,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000275",
+        "name": "Ostfeld Maschinenbau GmbH",
+        "domain": "ostfeld-maschinenbau.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 464,
+        "country": "Austria",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000276",
+        "name": "Quellmark Foods Ltd",
+        "domain": "quellmark-foods.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 746,
+        "country": "United Kingdom",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000277",
+        "name": "Helstad Media SE",
+        "domain": "helstad-media.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 148,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000278",
+        "name": "Paltal Maschinenbau GmbH",
+        "domain": "paltal-maschinenbau.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 286,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000279",
+        "name": "Velstad Retail SE",
+        "domain": "velstad-retail.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 150,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000280",
+        "name": "Eishain Retail GmbH",
+        "domain": "eishain-retail.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 951,
+        "country": "Austria",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000281",
+        "name": "Corberg Maschinenbau AG",
+        "domain": "corberg-maschinenbau.at",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 443,
+        "country": "Austria",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000282",
+        "name": "Quellwerk Retail AG",
+        "domain": "quellwerk-retail.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 368,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000283",
+        "name": "Rhestein Energie AG",
+        "domain": "rhestein-energie.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 487,
+        "country": "Austria",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000284",
+        "name": "Isthain Maschinenbau GmbH",
+        "domain": "isthain-maschinenbau.at",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2128,
+        "country": "Austria",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000285",
+        "name": "Istberg Media AB",
+        "domain": "istberg-media.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 397,
+        "country": "Sweden",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000286",
+        "name": "Falstein Retail GmbH",
+        "domain": "falstein-retail.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 766,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000287",
+        "name": "Helberg Chemicals AG",
+        "domain": "helberg-chemicals.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 533,
+        "country": "Austria",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000288",
+        "name": "Falbach Textiles GmbH",
+        "domain": "falbach-textiles.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1465,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000289",
+        "name": "Helvik Retail GmbH",
+        "domain": "helvik-retail.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 289,
+        "country": "Austria",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000290",
+        "name": "Talhain Energie AG",
+        "domain": "talhain-energie.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 87,
+        "country": "Austria",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000291",
+        "name": "Heltal Systems Ltd",
+        "domain": "heltal-systems.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2577,
+        "country": "United Kingdom",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000292",
+        "name": "Weslund Pharma GmbH",
+        "domain": "weslund-pharma.at",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 7947,
+        "country": "Austria",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000293",
+        "name": "Taltal Textiles AG",
+        "domain": "taltal-textiles.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 215,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000294",
+        "name": "Falstein Textiles AB",
+        "domain": "falstein-textiles.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 424,
+        "country": "Sweden",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000295",
+        "name": "Lunfeld Energie Ltd",
+        "domain": "lunfeld-energie.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 133,
+        "country": "United Kingdom",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000296",
+        "name": "Faltal Mobility GmbH & Co. KG",
+        "domain": "faltal-mobility.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 348,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000297",
+        "name": "Faltal Systems GmbH",
+        "domain": "faltal-systems.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 554,
+        "country": "Austria",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000298",
+        "name": "Talheim Mobility plc",
+        "domain": "talheim-mobility.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 337,
+        "country": "United Kingdom",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000299",
+        "name": "Jormark Pharma GmbH & Co. KG",
+        "domain": "jormark-pharma.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 961,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000300",
+        "name": "Osthain Media AB",
+        "domain": "osthain-media.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 25,
+        "country": "Sweden",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000301",
+        "name": "Zenfeld Mobility GmbH",
+        "domain": "zenfeld-mobility.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 185,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000302",
+        "name": "Jorhain Chemicals AG",
+        "domain": "jorhain-chemicals.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 172,
+        "country": "Austria",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000303",
+        "name": "Zenwerk Textiles GmbH",
+        "domain": "zenwerk-textiles.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 235,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000304",
+        "name": "Granwald Systems Ltd",
+        "domain": "granwald-systems.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1510,
+        "country": "United Kingdom",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000305",
+        "name": "Rhewald Mobility AG",
+        "domain": "rhewald-mobility.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 820,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000306",
+        "name": "Zenkamp Health AB",
+        "domain": "zenkamp-health.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 379,
+        "country": "Sweden",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000307",
+        "name": "Marstein Retail AB",
+        "domain": "marstein-retail.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 1912,
+        "country": "Sweden",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000308",
+        "name": "Helmark Logistik Ltd",
+        "domain": "helmark-logistik.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2353,
+        "country": "United Kingdom",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000309",
+        "name": "Zenholm Pharma Ltd",
+        "domain": "zenholm-pharma.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 53,
+        "country": "United Kingdom",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000310",
+        "name": "Wesfeld Logistik AG",
+        "domain": "wesfeld-logistik.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 355,
+        "country": "Austria",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000311",
+        "name": "Ulmstad Media Ltd",
+        "domain": "ulmstad-media.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2365,
+        "country": "United Kingdom",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000312",
+        "name": "Bernkamp Logistik AB",
+        "domain": "bernkamp-logistik.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2800,
+        "country": "Sweden",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000313",
+        "name": "Normark Energie GmbH",
+        "domain": "normark-energie.at",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 292,
+        "country": "Austria",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000314",
+        "name": "Falholm Maschinenbau AG",
+        "domain": "falholm-maschinenbau.at",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 712,
+        "country": "Austria",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000315",
+        "name": "Wesheim Pharma AB",
+        "domain": "wesheim-pharma.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 130,
+        "country": "Sweden",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000316",
+        "name": "Helmark Maschinenbau AB",
+        "domain": "helmark-maschinenbau.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 776,
+        "country": "Sweden",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000317",
+        "name": "Dorholm Textiles AG",
+        "domain": "dorholm-textiles.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 123,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000318",
+        "name": "Istlund Health SA",
+        "domain": "istlund-health.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 34,
+        "country": "Switzerland",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000319",
+        "name": "Kalwerk Logistik SA",
+        "domain": "kalwerk-logistik.ch",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2016,
+        "country": "Switzerland",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000320",
+        "name": "Corheim Energie AB",
+        "domain": "corheim-energie.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 524,
+        "country": "Sweden",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000321",
+        "name": "Marholm Retail AG",
+        "domain": "marholm-retail.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 919,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000322",
+        "name": "Jorstein Textiles AG",
+        "domain": "jorstein-textiles.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 160,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000323",
+        "name": "Kaldorf Textiles GmbH & Co. KG",
+        "domain": "kaldorf-textiles.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 779,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000324",
+        "name": "Istwald Systems AG",
+        "domain": "istwald-systems.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 397,
+        "country": "Germany",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000325",
+        "name": "Osthain Pharma AB",
+        "domain": "osthain-pharma.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 884,
+        "country": "Sweden",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000326",
+        "name": "Velholm Mobility plc",
+        "domain": "velholm-mobility.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1032,
+        "country": "United Kingdom",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000327",
+        "name": "Jortal Textiles GmbH",
+        "domain": "jortal-textiles.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 176,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000328",
+        "name": "Ulmhain Energie GmbH",
+        "domain": "ulmhain-energie.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 481,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000329",
+        "name": "Falbach Mobility AG",
+        "domain": "falbach-mobility.ch",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 2747,
+        "country": "Switzerland",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000330",
+        "name": "Zental Chemicals AG",
+        "domain": "zental-chemicals.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 398,
+        "country": "Switzerland",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000331",
+        "name": "Helvik Health plc",
+        "domain": "helvik-health.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 638,
+        "country": "United Kingdom",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000332",
+        "name": "Lunwald Logistik GmbH",
+        "domain": "lunwald-logistik.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 97,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000333",
+        "name": "Quelltal Chemicals AB",
+        "domain": "quelltal-chemicals.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1046,
+        "country": "Sweden",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000334",
+        "name": "Istwald Systems Ltd",
+        "domain": "istwald-systems.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 88,
+        "country": "United Kingdom",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000335",
+        "name": "Martal Systems Ltd",
+        "domain": "martal-systems.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 314,
+        "country": "United Kingdom",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000336",
+        "name": "Alfeld Textiles AB",
+        "domain": "alfeld-textiles.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 222,
+        "country": "Sweden",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000337",
+        "name": "Luntal Maschinenbau SA",
+        "domain": "luntal-maschinenbau.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 61,
+        "country": "Switzerland",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000338",
+        "name": "Helmark Logistik SA",
+        "domain": "helmark-logistik.ch",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 942,
+        "country": "Switzerland",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000339",
+        "name": "Lunmark Foods AG",
+        "domain": "lunmark-foods.de",
+        "ownerId": "anna.becker@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 2567,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000340",
+        "name": "Dorstein Foods SA",
+        "domain": "dorstein-foods.ch",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 249,
+        "country": "Switzerland",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000341",
+        "name": "Norholm Chemicals SE",
+        "domain": "norholm-chemicals.de",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 305,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000342",
+        "name": "Dorberg Pharma SA",
+        "domain": "dorberg-pharma.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 619,
+        "country": "Switzerland",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000343",
+        "name": "Jordorf Systems plc",
+        "domain": "jordorf-systems.co.uk",
+        "ownerId": "oliver.grant@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 3663,
+        "country": "United Kingdom",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000344",
+        "name": "Falheim Pharma AB",
+        "domain": "falheim-pharma.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 313,
+        "country": "Sweden",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000345",
+        "name": "Ostwerk Textiles AG",
+        "domain": "ostwerk-textiles.de",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 836,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000346",
+        "name": "Talbach Pharma AB",
+        "domain": "talbach-pharma.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 58,
+        "country": "Sweden",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000347",
+        "name": "Helvik Systems AG",
+        "domain": "helvik-systems.ch",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 34,
+        "country": "Switzerland",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000348",
+        "name": "Solholm Maschinenbau SA",
+        "domain": "solholm-maschinenbau.ch",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1227,
+        "country": "Switzerland",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000349",
+        "name": "Granfeld Textiles AB",
+        "domain": "granfeld-textiles.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 2370,
+        "country": "Sweden",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000350",
+        "name": "Norkamp Mobility GmbH",
+        "domain": "norkamp-mobility.de",
+        "ownerId": "markus.weber@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 73,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000351",
+        "name": "Mardorf Pharma AB",
+        "domain": "mardorf-pharma.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 220,
+        "country": "Sweden",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000352",
+        "name": "Ostkamp Media AG",
+        "domain": "ostkamp-media.ch",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 41,
+        "country": "Switzerland",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000353",
+        "name": "Velberg Health Ltd",
+        "domain": "velberg-health.co.uk",
+        "ownerId": "emma.hale@northwind.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 229,
+        "country": "United Kingdom",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000354",
+        "name": "Lunwald Foods AB",
+        "domain": "lunwald-foods.se",
+        "ownerId": "sofia.lind@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 258,
+        "country": "Sweden",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000355",
+        "name": "Bernhain Systems SA",
+        "domain": "bernhain-systems.ch",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 132,
+        "country": "Switzerland",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000356",
+        "name": "Alvik Systems AG",
+        "domain": "alvik-systems.at",
+        "ownerId": "lea.wolf@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 557,
+        "country": "Austria",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000357",
+        "name": "Helvik Media GmbH",
+        "domain": "helvik-media.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 964,
+        "country": "Austria",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000358",
+        "name": "Falwald Pharma GmbH & Co. KG",
+        "domain": "falwald-pharma.de",
+        "ownerId": "nina.hoff@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 96,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000359",
+        "name": "Granberg Energie GmbH",
+        "domain": "granberg-energie.at",
+        "ownerId": "tim.braun@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 305,
+        "country": "Austria",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000360",
+        "name": "Kalwald Pharma AG",
+        "domain": "kalwald-pharma.de",
+        "ownerId": "jonas.koch@northwind.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 5472,
+        "country": "Germany",
+        "industry": "Media"
+      }
+    ],
+    "defaultOwner": {
+      "type": "Queue",
+      "id": "Inbound_Nurture"
+    },
+    "reviewQueue": "Inbound_Review",
+    "routeToAccountOwnerWhen": [
+      "Customer",
+      "OpenOpportunity"
+    ],
+    "users": {
+      "anna.becker@northwind.example": {
+        "name": "Anna Becker",
+        "role": "AE Strategic DACH"
+      },
+      "jonas.koch@northwind.example": {
+        "name": "Jonas Koch",
+        "role": "AE Strategic DACH"
+      },
+      "markus.weber@northwind.example": {
+        "name": "Markus Weber",
+        "role": "AE Public Sector DACH"
+      },
+      "lea.wolf@northwind.example": {
+        "name": "Lea Wolf",
+        "role": "AE Midmarket DACH"
+      },
+      "tim.braun@northwind.example": {
+        "name": "Tim Braun",
+        "role": "AE Midmarket DACH"
+      },
+      "nina.hoff@northwind.example": {
+        "name": "Nina Hoff",
+        "role": "AE Midmarket DACH"
+      },
+      "sofia.lind@northwind.example": {
+        "name": "Sofia Lind",
+        "role": "AE Nordics"
+      },
+      "oliver.grant@northwind.example": {
+        "name": "Oliver Grant",
+        "role": "AE UK & Ireland"
+      },
+      "emma.hale@northwind.example": {
+        "name": "Emma Hale",
+        "role": "AE UK & Ireland"
+      },
+      "petra.lang@northwind.example": {
+        "name": "Petra Lang",
+        "role": "Partner Manager"
+      },
+      "inbound.sdr@northwind.example": {
+        "name": "Inbound SDR team",
+        "role": "SDR"
+      }
+    },
+    "queues": {
+      "Strategic_DACH": [
+        "anna.becker@northwind.example",
+        "jonas.koch@northwind.example"
+      ],
+      "Midmarket_DACH": [
+        "lea.wolf@northwind.example",
+        "tim.braun@northwind.example",
+        "nina.hoff@northwind.example"
+      ],
+      "Nordics": [
+        "sofia.lind@northwind.example"
+      ],
+      "UKI": [
+        "oliver.grant@northwind.example",
+        "emma.hale@northwind.example"
+      ],
+      "Partner_Desk": [
+        "petra.lang@northwind.example"
+      ],
+      "Inbound_Nurture": [
+        "inbound.sdr@northwind.example"
+      ],
+      "Freemail_Hold": [
+        "inbound.sdr@northwind.example"
+      ],
+      "Healthcare_Payroll": [
+        "nina.hoff@northwind.example"
+      ],
+      "Inbound_Review": [
+        "inbound.sdr@northwind.example"
+      ]
+    },
+    "leadSource": "Web Chat",
+    "sampleDomains": [
+      {
+        "domain": "ulmholm-mobility.de",
+        "name": "Ulmholm Mobility GmbH & Co. KG",
+        "type": "Customer",
+        "openOpportunity": false
+      },
+      {
+        "domain": "sollund-mobility.de",
+        "name": "Sollund Mobility GmbH",
+        "type": "Customer",
+        "openOpportunity": false
+      },
+      {
+        "domain": "istbach-mobility.de",
+        "name": "Istbach Mobility AG",
+        "type": "Customer",
+        "openOpportunity": false
+      },
+      {
+        "domain": "wesberg-systems.at",
+        "name": "Wesberg Systems GmbH",
+        "type": "Customer",
+        "openOpportunity": false
+      }
     ]
   },
   "conversations": [

@@ -1,0 +1,17 @@
+{
+  "compilerOptions": {
+    "target": "ES2022",
+    "lib": ["ES2023", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "allowImportingTsExtensions": true,
+    "noEmit": true,
+    "skipLibCheck": true,
+    "types": [],
+    "paths": { "@core/*": ["../src/core/*"] }
+  },
+  "include": ["src", "../src/core/routing", "../src/core/salesforce/types.ts", "../src/core/salesforce/accounts.ts", "../src/core/salesforce/evaluate.ts", "../src/core/salesforce/formula.ts", "../src/core/salesforce/booleanFilter.ts"]
+}

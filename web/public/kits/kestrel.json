@@ -16,7 +16,7 @@
       {
         "order": 1,
         "owner": "Queue Enterprise_DE",
-        "when": "Country equals Germany [(1 OR 2) AND 3] Country equals Austria [(1 OR 2) AND 3] NumberOfEmployees greaterOrEqual 500",
+        "when": "(1) Country equals Germany; (2) Country equals Austria; (3) NumberOfEmployees greaterOrEqual 500; filter (1 OR 2) AND 3",
         "status": "imported",
         "note": ""
       },
@@ -51,6 +51,1967 @@
     ],
     "warnings": [],
     "inactiveRules": []
+  },
+  "router": {
+    "rule": {
+      "name": "Website Leads",
+      "active": true,
+      "entries": [
+        {
+          "order": 1,
+          "assignedTo": {
+            "type": "Queue",
+            "id": "Enterprise_DE"
+          },
+          "criteria": [
+            {
+              "index": 1,
+              "field": "Country",
+              "operation": "equals",
+              "values": [
+                "Germany"
+              ]
+            },
+            {
+              "index": 2,
+              "field": "Country",
+              "operation": "equals",
+              "values": [
+                "Austria"
+              ]
+            },
+            {
+              "index": 3,
+              "field": "NumberOfEmployees",
+              "operation": "greaterOrEqual",
+              "values": [
+                "500"
+              ]
+            }
+          ],
+          "booleanFilter": "(1 OR 2) AND 3"
+        },
+        {
+          "order": 2,
+          "assignedTo": {
+            "type": "Queue",
+            "id": "Mittelstand_DE"
+          },
+          "criteria": [
+            {
+              "index": 1,
+              "field": "Country",
+              "operation": "equals",
+              "values": [
+                "Germany",
+                "Austria"
+              ]
+            }
+          ]
+        },
+        {
+          "order": 3,
+          "assignedTo": {
+            "type": "Queue",
+            "id": "Benelux"
+          },
+          "criteria": [
+            {
+              "index": 1,
+              "field": "Country",
+              "operation": "equals",
+              "values": [
+                "Netherlands",
+                "Belgium"
+              ]
+            }
+          ]
+        },
+        {
+          "order": 4,
+          "assignedTo": {
+            "type": "User",
+            "id": "marta.nowak@kestrel.example"
+          },
+          "criteria": [
+            {
+              "index": 1,
+              "field": "Country",
+              "operation": "equals",
+              "values": [
+                "Poland"
+              ]
+            }
+          ]
+        },
+        {
+          "order": 5,
+          "assignedTo": {
+            "type": "Queue",
+            "id": "Carrier_Partners"
+          },
+          "criteria": [
+            {
+              "index": 1,
+              "field": "Company_Type__c",
+              "operation": "within",
+              "values": [
+                "Carrier"
+              ],
+              "unsupported": "criterion 1 uses operation 'within'"
+            }
+          ],
+          "partial": [
+            "criterion 1 uses operation 'within'"
+          ]
+        }
+      ]
+    },
+    "accounts": [
+      {
+        "id": "001NW000001",
+        "name": "Solfeld Mobility B.V.",
+        "domain": "solfeld-mobility.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 48,
+        "country": "Netherlands",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000002",
+        "name": "Faltal Pharma B.V.",
+        "domain": "faltal-pharma.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2121,
+        "country": "Netherlands",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000003",
+        "name": "Eisstad Maschinenbau SE",
+        "domain": "eisstad-maschinenbau.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 1152,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000004",
+        "name": "Alstad Chemicals B.V.",
+        "domain": "alstad-chemicals.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 296,
+        "country": "Netherlands",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000005",
+        "name": "Bernstein Logistik SE",
+        "domain": "bernstein-logistik.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 107,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000006",
+        "name": "Falkamp Media GmbH",
+        "domain": "falkamp-media.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1337,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000007",
+        "name": "Marlund Health B.V.",
+        "domain": "marlund-health.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 837,
+        "country": "Netherlands",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000008",
+        "name": "Lunbach Media GmbH",
+        "domain": "lunbach-media.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 248,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000009",
+        "name": "Kalbach Textiles sp. z o.o.",
+        "domain": "kalbach-textiles.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 257,
+        "country": "Poland",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000010",
+        "name": "Marstad Health B.V.",
+        "domain": "marstad-health.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2077,
+        "country": "Netherlands",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000011",
+        "name": "Jormark Media SE",
+        "domain": "jormark-media.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 84,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000012",
+        "name": "Zenfeld Health sp. z o.o.",
+        "domain": "zenfeld-health.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 48,
+        "country": "Poland",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000013",
+        "name": "Helvik Textiles sp. z o.o.",
+        "domain": "helvik-textiles.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 497,
+        "country": "Poland",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000014",
+        "name": "Solhain Systems sp. z o.o.",
+        "domain": "solhain-systems.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 250,
+        "country": "Poland",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000015",
+        "name": "Eiswald Maschinenbau B.V.",
+        "domain": "eiswald-maschinenbau.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1168,
+        "country": "Netherlands",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000016",
+        "name": "Norkamp Foods sp. z o.o.",
+        "domain": "norkamp-foods.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1900,
+        "country": "Poland",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000017",
+        "name": "Marholm Health GmbH",
+        "domain": "marholm-health.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 88,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000018",
+        "name": "Marmark Systems B.V.",
+        "domain": "marmark-systems.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 2569,
+        "country": "Netherlands",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000019",
+        "name": "Velstad Retail sp. z o.o.",
+        "domain": "velstad-retail.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 209,
+        "country": "Poland",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000020",
+        "name": "Marwerk Systems GmbH",
+        "domain": "marwerk-systems.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 2988,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000021",
+        "name": "Corkamp Retail B.V.",
+        "domain": "corkamp-retail.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 3611,
+        "country": "Netherlands",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000022",
+        "name": "Dorheim Energie SE",
+        "domain": "dorheim-energie.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1135,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000023",
+        "name": "Marmark Logistik sp. z o.o.",
+        "domain": "marmark-logistik.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 1234,
+        "country": "Poland",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000024",
+        "name": "Zenmark Energie sp. z o.o.",
+        "domain": "zenmark-energie.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 87,
+        "country": "Poland",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000025",
+        "name": "Corbach Energie SE",
+        "domain": "corbach-energie.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1983,
+        "country": "Germany",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000026",
+        "name": "Dorwald Health B.V.",
+        "domain": "dorwald-health.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 190,
+        "country": "Netherlands",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000027",
+        "name": "Quellkamp Energie GmbH",
+        "domain": "quellkamp-energie.de",
+        "ownerId": "paul.richter@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 903,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000028",
+        "name": "Talwerk Media sp. z o.o.",
+        "domain": "talwerk-media.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 187,
+        "country": "Poland",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000029",
+        "name": "Falheim Chemicals sp. z o.o.",
+        "domain": "falheim-chemicals.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 266,
+        "country": "Poland",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000030",
+        "name": "Lunberg Media B.V.",
+        "domain": "lunberg-media.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 366,
+        "country": "Netherlands",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000031",
+        "name": "Istfeld Energie B.V.",
+        "domain": "istfeld-energie.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 357,
+        "country": "Netherlands",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000032",
+        "name": "Alstad Mobility sp. z o.o.",
+        "domain": "alstad-mobility.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 1184,
+        "country": "Poland",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000033",
+        "name": "Faldorf Media sp. z o.o.",
+        "domain": "faldorf-media.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 146,
+        "country": "Poland",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000034",
+        "name": "Talfeld Health sp. z o.o.",
+        "domain": "talfeld-health.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 238,
+        "country": "Poland",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000035",
+        "name": "Zenhain Pharma SE",
+        "domain": "zenhain-pharma.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 921,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000036",
+        "name": "Almark Chemicals GmbH",
+        "domain": "almark-chemicals.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 85,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000037",
+        "name": "Dorlund Foods GmbH",
+        "domain": "dorlund-foods.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 253,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000038",
+        "name": "Ulmheim Chemicals sp. z o.o.",
+        "domain": "ulmheim-chemicals.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 556,
+        "country": "Poland",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000039",
+        "name": "Ulmheim Systems B.V.",
+        "domain": "ulmheim-systems.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 87,
+        "country": "Netherlands",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000040",
+        "name": "Granwerk Foods GmbH",
+        "domain": "granwerk-foods.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 1321,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000041",
+        "name": "Norstein Mobility SE",
+        "domain": "norstein-mobility.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 526,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000042",
+        "name": "Alhain Systems sp. z o.o.",
+        "domain": "alhain-systems.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 433,
+        "country": "Poland",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000043",
+        "name": "Helbach Mobility B.V.",
+        "domain": "helbach-mobility.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 5725,
+        "country": "Netherlands",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000044",
+        "name": "Quellvik Mobility SE",
+        "domain": "quellvik-mobility.de",
+        "ownerId": "paul.richter@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 130,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000045",
+        "name": "Istwald Health B.V.",
+        "domain": "istwald-health.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 71,
+        "country": "Netherlands",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000046",
+        "name": "Solstein Foods B.V.",
+        "domain": "solstein-foods.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1309,
+        "country": "Netherlands",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000047",
+        "name": "Taldorf Pharma B.V.",
+        "domain": "taldorf-pharma.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 539,
+        "country": "Netherlands",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000048",
+        "name": "Eisbach Chemicals SE",
+        "domain": "eisbach-chemicals.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 147,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000049",
+        "name": "Quellvik Energie GmbH",
+        "domain": "quellvik-energie.de",
+        "ownerId": "paul.richter@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 146,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000050",
+        "name": "Palberg Health sp. z o.o.",
+        "domain": "palberg-health.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1065,
+        "country": "Poland",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000051",
+        "name": "Bernheim Retail B.V.",
+        "domain": "bernheim-retail.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 430,
+        "country": "Netherlands",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000052",
+        "name": "Granbach Mobility B.V.",
+        "domain": "granbach-mobility.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 841,
+        "country": "Netherlands",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000053",
+        "name": "Jorwerk Chemicals GmbH",
+        "domain": "jorwerk-chemicals.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1242,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000054",
+        "name": "Talhain Energie B.V.",
+        "domain": "talhain-energie.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 295,
+        "country": "Netherlands",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000055",
+        "name": "Eiswald Chemicals B.V.",
+        "domain": "eiswald-chemicals.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 283,
+        "country": "Netherlands",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000056",
+        "name": "Norbach Mobility GmbH",
+        "domain": "norbach-mobility.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2847,
+        "country": "Germany",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000057",
+        "name": "Helmark Chemicals B.V.",
+        "domain": "helmark-chemicals.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 315,
+        "country": "Netherlands",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000058",
+        "name": "Dorheim Textiles SE",
+        "domain": "dorheim-textiles.de",
+        "ownerId": "paul.richter@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 305,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000059",
+        "name": "Corvik Logistik SE",
+        "domain": "corvik-logistik.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 5696,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000060",
+        "name": "Jorvik Logistik GmbH",
+        "domain": "jorvik-logistik.de",
+        "ownerId": "paul.richter@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 738,
+        "country": "Germany",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000061",
+        "name": "Wesdorf Media sp. z o.o.",
+        "domain": "wesdorf-media.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 269,
+        "country": "Poland",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000062",
+        "name": "Rhemark Health sp. z o.o.",
+        "domain": "rhemark-health.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 2393,
+        "country": "Poland",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000063",
+        "name": "Helmark Foods GmbH",
+        "domain": "helmark-foods.de",
+        "ownerId": "paul.richter@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 687,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000064",
+        "name": "Ostkamp Systems GmbH",
+        "domain": "ostkamp-systems.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 157,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000065",
+        "name": "Solberg Health SE",
+        "domain": "solberg-health.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 99,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000066",
+        "name": "Palkamp Energie B.V.",
+        "domain": "palkamp-energie.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 114,
+        "country": "Netherlands",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000067",
+        "name": "Dorstein Retail B.V.",
+        "domain": "dorstein-retail.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 432,
+        "country": "Netherlands",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000068",
+        "name": "Paltal Chemicals SE",
+        "domain": "paltal-chemicals.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 198,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000069",
+        "name": "Lunstein Logistik B.V.",
+        "domain": "lunstein-logistik.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 960,
+        "country": "Netherlands",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000070",
+        "name": "Jorfeld Foods B.V.",
+        "domain": "jorfeld-foods.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 218,
+        "country": "Netherlands",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000071",
+        "name": "Lunwerk Pharma sp. z o.o.",
+        "domain": "lunwerk-pharma.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 257,
+        "country": "Poland",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000072",
+        "name": "Solbach Textiles sp. z o.o.",
+        "domain": "solbach-textiles.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 219,
+        "country": "Poland",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000073",
+        "name": "Granholm Energie GmbH",
+        "domain": "granholm-energie.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1421,
+        "country": "Germany",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000074",
+        "name": "Palwerk Textiles B.V.",
+        "domain": "palwerk-textiles.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 643,
+        "country": "Netherlands",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000075",
+        "name": "Quellvik Logistik B.V.",
+        "domain": "quellvik-logistik.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 4865,
+        "country": "Netherlands",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000076",
+        "name": "Sollund Mobility GmbH",
+        "domain": "sollund-mobility.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 2095,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000077",
+        "name": "Talfeld Energie SE",
+        "domain": "talfeld-energie.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 70,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000078",
+        "name": "Norfeld Maschinenbau GmbH",
+        "domain": "norfeld-maschinenbau.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 69,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000079",
+        "name": "Dortal Textiles B.V.",
+        "domain": "dortal-textiles.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 238,
+        "country": "Netherlands",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000080",
+        "name": "Rhewald Chemicals sp. z o.o.",
+        "domain": "rhewald-chemicals.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 410,
+        "country": "Poland",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000081",
+        "name": "Marfeld Mobility sp. z o.o.",
+        "domain": "marfeld-mobility.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 620,
+        "country": "Poland",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000082",
+        "name": "Paldorf Chemicals GmbH",
+        "domain": "paldorf-chemicals.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 150,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000083",
+        "name": "Zenvik Pharma B.V.",
+        "domain": "zenvik-pharma.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 279,
+        "country": "Netherlands",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000084",
+        "name": "Lunmark Mobility GmbH",
+        "domain": "lunmark-mobility.de",
+        "ownerId": "paul.richter@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 433,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000085",
+        "name": "Corhain Chemicals B.V.",
+        "domain": "corhain-chemicals.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 243,
+        "country": "Netherlands",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000086",
+        "name": "Rhedorf Chemicals B.V.",
+        "domain": "rhedorf-chemicals.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 222,
+        "country": "Netherlands",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000087",
+        "name": "Vellund Energie sp. z o.o.",
+        "domain": "vellund-energie.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 3161,
+        "country": "Poland",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000088",
+        "name": "Bernfeld Textiles SE",
+        "domain": "bernfeld-textiles.de",
+        "ownerId": "paul.richter@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 147,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000089",
+        "name": "Weshain Systems SE",
+        "domain": "weshain-systems.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 134,
+        "country": "Germany",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000090",
+        "name": "Helbach Systems B.V.",
+        "domain": "helbach-systems.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 156,
+        "country": "Netherlands",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000091",
+        "name": "Solwerk Health sp. z o.o.",
+        "domain": "solwerk-health.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1047,
+        "country": "Poland",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000092",
+        "name": "Helwerk Energie sp. z o.o.",
+        "domain": "helwerk-energie.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 226,
+        "country": "Poland",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000093",
+        "name": "Bernbach Retail B.V.",
+        "domain": "bernbach-retail.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 705,
+        "country": "Netherlands",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000094",
+        "name": "Alwerk Systems B.V.",
+        "domain": "alwerk-systems.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1017,
+        "country": "Netherlands",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000095",
+        "name": "Norkamp Pharma sp. z o.o.",
+        "domain": "norkamp-pharma.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 42,
+        "country": "Poland",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000096",
+        "name": "Istlund Retail sp. z o.o.",
+        "domain": "istlund-retail.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 88,
+        "country": "Poland",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000097",
+        "name": "Quellheim Mobility B.V.",
+        "domain": "quellheim-mobility.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 360,
+        "country": "Netherlands",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000098",
+        "name": "Quellbach Pharma sp. z o.o.",
+        "domain": "quellbach-pharma.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 754,
+        "country": "Poland",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000099",
+        "name": "Helstad Energie B.V.",
+        "domain": "helstad-energie.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 107,
+        "country": "Netherlands",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000100",
+        "name": "Ulmheim Energie GmbH",
+        "domain": "ulmheim-energie.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 366,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000101",
+        "name": "Wesbach Retail sp. z o.o.",
+        "domain": "wesbach-retail.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1445,
+        "country": "Poland",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000102",
+        "name": "Eisvik Maschinenbau B.V.",
+        "domain": "eisvik-maschinenbau.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 405,
+        "country": "Netherlands",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000103",
+        "name": "Zenfeld Media sp. z o.o.",
+        "domain": "zenfeld-media.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 180,
+        "country": "Poland",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000104",
+        "name": "Soltal Systems SE",
+        "domain": "soltal-systems.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 963,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000105",
+        "name": "Talheim Retail B.V.",
+        "domain": "talheim-retail.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 3634,
+        "country": "Netherlands",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000106",
+        "name": "Sollund Mobility sp. z o.o.",
+        "domain": "sollund-mobility.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 270,
+        "country": "Poland",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000107",
+        "name": "Wesfeld Pharma GmbH",
+        "domain": "wesfeld-pharma.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 319,
+        "country": "Germany",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000108",
+        "name": "Bernwald Mobility sp. z o.o.",
+        "domain": "bernwald-mobility.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 655,
+        "country": "Poland",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000109",
+        "name": "Weskamp Foods B.V.",
+        "domain": "weskamp-foods.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 409,
+        "country": "Netherlands",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000110",
+        "name": "Helvik Maschinenbau GmbH",
+        "domain": "helvik-maschinenbau.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 6989,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000111",
+        "name": "Kalwerk Media SE",
+        "domain": "kalwerk-media.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 181,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000112",
+        "name": "Osthain Systems sp. z o.o.",
+        "domain": "osthain-systems.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 246,
+        "country": "Poland",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000113",
+        "name": "Quellwald Maschinenbau SE",
+        "domain": "quellwald-maschinenbau.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 136,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000114",
+        "name": "Bernlund Retail sp. z o.o.",
+        "domain": "bernlund-retail.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 1063,
+        "country": "Poland",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000115",
+        "name": "Corvik Energie B.V.",
+        "domain": "corvik-energie.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 515,
+        "country": "Netherlands",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000116",
+        "name": "Cormark Pharma GmbH",
+        "domain": "cormark-pharma.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 547,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000117",
+        "name": "Lunberg Energie SE",
+        "domain": "lunberg-energie.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 1297,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000118",
+        "name": "Cortal Energie B.V.",
+        "domain": "cortal-energie.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 153,
+        "country": "Netherlands",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000119",
+        "name": "Ulmdorf Pharma B.V.",
+        "domain": "ulmdorf-pharma.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 337,
+        "country": "Netherlands",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000120",
+        "name": "Palkamp Retail sp. z o.o.",
+        "domain": "palkamp-retail.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 637,
+        "country": "Poland",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000121",
+        "name": "Kalholm Energie sp. z o.o.",
+        "domain": "kalholm-energie.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 4238,
+        "country": "Poland",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000122",
+        "name": "Eislund Mobility sp. z o.o.",
+        "domain": "eislund-mobility.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 234,
+        "country": "Poland",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000123",
+        "name": "Kalberg Pharma SE",
+        "domain": "kalberg-pharma.de",
+        "ownerId": "paul.richter@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 437,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000124",
+        "name": "Eismark Health SE",
+        "domain": "eismark-health.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 73,
+        "country": "Germany",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000125",
+        "name": "Helkamp Mobility B.V.",
+        "domain": "helkamp-mobility.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1866,
+        "country": "Netherlands",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000126",
+        "name": "Jorfeld Media B.V.",
+        "domain": "jorfeld-media.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 371,
+        "country": "Netherlands",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000127",
+        "name": "Ulmdorf Chemicals GmbH",
+        "domain": "ulmdorf-chemicals.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 2210,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000128",
+        "name": "Albach Retail sp. z o.o.",
+        "domain": "albach-retail.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 3538,
+        "country": "Poland",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000129",
+        "name": "Helstein Health B.V.",
+        "domain": "helstein-health.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 579,
+        "country": "Netherlands",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000130",
+        "name": "Altal Health B.V.",
+        "domain": "altal-health.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 380,
+        "country": "Netherlands",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000131",
+        "name": "Norheim Foods B.V.",
+        "domain": "norheim-foods.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 143,
+        "country": "Netherlands",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000132",
+        "name": "Talkamp Pharma B.V.",
+        "domain": "talkamp-pharma.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 290,
+        "country": "Netherlands",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000133",
+        "name": "Dorberg Media SE",
+        "domain": "dorberg-media.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 260,
+        "country": "Germany",
+        "industry": "Media"
+      },
+      {
+        "id": "001NW000134",
+        "name": "Alheim Mobility sp. z o.o.",
+        "domain": "alheim-mobility.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 16,
+        "country": "Poland",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000135",
+        "name": "Norberg Media sp. z o.o.",
+        "domain": "norberg-media.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 257,
+        "country": "Poland",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000136",
+        "name": "Marhain Health SE",
+        "domain": "marhain-health.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 717,
+        "country": "Germany",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000137",
+        "name": "Jorfeld Chemicals sp. z o.o.",
+        "domain": "jorfeld-chemicals.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 2515,
+        "country": "Poland",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000138",
+        "name": "Rhewald Media GmbH",
+        "domain": "rhewald-media.de",
+        "ownerId": "paul.richter@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 784,
+        "country": "Germany",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000139",
+        "name": "Falhain Pharma GmbH",
+        "domain": "falhain-pharma.de",
+        "ownerId": "paul.richter@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 165,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000140",
+        "name": "Helberg Retail B.V.",
+        "domain": "helberg-retail.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 282,
+        "country": "Netherlands",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000141",
+        "name": "Norlund Chemicals sp. z o.o.",
+        "domain": "norlund-chemicals.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 67,
+        "country": "Poland",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000142",
+        "name": "Weskamp Chemicals SE",
+        "domain": "weskamp-chemicals.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 740,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000143",
+        "name": "Granhain Foods GmbH",
+        "domain": "granhain-foods.de",
+        "ownerId": "paul.richter@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 166,
+        "country": "Germany",
+        "industry": "Financial Services"
+      },
+      {
+        "id": "001NW000144",
+        "name": "Velheim Energie sp. z o.o.",
+        "domain": "velheim-energie.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 589,
+        "country": "Poland",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000145",
+        "name": "Ulmfeld Systems GmbH",
+        "domain": "ulmfeld-systems.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 142,
+        "country": "Germany",
+        "industry": "Education"
+      },
+      {
+        "id": "001NW000146",
+        "name": "Palholm Maschinenbau B.V.",
+        "domain": "palholm-maschinenbau.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 183,
+        "country": "Netherlands",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000147",
+        "name": "Sollund Media SE",
+        "domain": "sollund-media.de",
+        "ownerId": "henrik.vogt@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 2203,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000148",
+        "name": "Falbach Systems sp. z o.o.",
+        "domain": "falbach-systems.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 374,
+        "country": "Poland",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000149",
+        "name": "Lunfeld Retail sp. z o.o.",
+        "domain": "lunfeld-retail.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1243,
+        "country": "Poland",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000150",
+        "name": "Hellund Chemicals GmbH",
+        "domain": "hellund-chemicals.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 75,
+        "country": "Germany",
+        "industry": "Energy"
+      },
+      {
+        "id": "001NW000151",
+        "name": "Ostmark Retail sp. z o.o.",
+        "domain": "ostmark-retail.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 455,
+        "country": "Poland",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000152",
+        "name": "Talvik Energie sp. z o.o.",
+        "domain": "talvik-energie.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 96,
+        "country": "Poland",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000153",
+        "name": "Alberg Textiles sp. z o.o.",
+        "domain": "alberg-textiles.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 62,
+        "country": "Poland",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000154",
+        "name": "Lunlund Mobility B.V.",
+        "domain": "lunlund-mobility.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 1408,
+        "country": "Netherlands",
+        "industry": "Government"
+      },
+      {
+        "id": "001NW000155",
+        "name": "Dorwerk Logistik sp. z o.o.",
+        "domain": "dorwerk-logistik.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 667,
+        "country": "Poland",
+        "industry": "Technology"
+      },
+      {
+        "id": "001NW000156",
+        "name": "Oststad Textiles sp. z o.o.",
+        "domain": "oststad-textiles.pl",
+        "ownerId": "marta.nowak@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 5365,
+        "country": "Poland",
+        "industry": "Retail"
+      },
+      {
+        "id": "001NW000157",
+        "name": "Corberg Energie B.V.",
+        "domain": "corberg-energie.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Customer",
+        "openOpportunity": false,
+        "employees": 1071,
+        "country": "Netherlands",
+        "industry": "Healthcare"
+      },
+      {
+        "id": "001NW000158",
+        "name": "Dorheim Mobility GmbH",
+        "domain": "dorheim-mobility.de",
+        "ownerId": "clara.neumann@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 347,
+        "country": "Germany",
+        "industry": "Manufacturing"
+      },
+      {
+        "id": "001NW000159",
+        "name": "Jorfeld Health GmbH",
+        "domain": "jorfeld-health.de",
+        "ownerId": "paul.richter@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": true,
+        "employees": 568,
+        "country": "Germany",
+        "industry": "Logistics"
+      },
+      {
+        "id": "001NW000160",
+        "name": "Falwerk Chemicals B.V.",
+        "domain": "falwerk-chemicals.nl",
+        "ownerId": "sanne.devries@kestrel.example",
+        "type": "Prospect",
+        "openOpportunity": false,
+        "employees": 792,
+        "country": "Netherlands",
+        "industry": "Education"
+      }
+    ],
+    "defaultOwner": {
+      "type": "Queue",
+      "id": "Website_Inbound"
+    },
+    "reviewQueue": "Inbound_Review",
+    "routeToAccountOwnerWhen": [
+      "Customer",
+      "OpenOpportunity"
+    ],
+    "users": {
+      "henrik.vogt@kestrel.example": {
+        "name": "Henrik Vogt",
+        "role": "AE Enterprise DACH"
+      },
+      "clara.neumann@kestrel.example": {
+        "name": "Clara Neumann",
+        "role": "AE Mittelstand"
+      },
+      "paul.richter@kestrel.example": {
+        "name": "Paul Richter",
+        "role": "AE Mittelstand"
+      },
+      "sanne.devries@kestrel.example": {
+        "name": "Sanne de Vries",
+        "role": "AE Benelux"
+      },
+      "marta.nowak@kestrel.example": {
+        "name": "Marta Nowak",
+        "role": "AE Poland"
+      },
+      "inbound@kestrel.example": {
+        "name": "Inbound team",
+        "role": "SDR"
+      }
+    },
+    "queues": {
+      "Enterprise_DE": [
+        "henrik.vogt@kestrel.example"
+      ],
+      "Mittelstand_DE": [
+        "clara.neumann@kestrel.example",
+        "paul.richter@kestrel.example"
+      ],
+      "Benelux": [
+        "sanne.devries@kestrel.example"
+      ],
+      "Carrier_Partners": [
+        "inbound@kestrel.example"
+      ],
+      "Website_Inbound": [
+        "inbound@kestrel.example"
+      ],
+      "Inbound_Review": [
+        "inbound@kestrel.example"
+      ]
+    },
+    "leadSource": "Web Chat",
+    "sampleDomains": [
+      {
+        "domain": "faltal-pharma.nl",
+        "name": "Faltal Pharma B.V.",
+        "type": "Customer",
+        "openOpportunity": false
+      },
+      {
+        "domain": "eisstad-maschinenbau.de",
+        "name": "Eisstad Maschinenbau SE",
+        "type": "Prospect",
+        "openOpportunity": true
+      },
+      {
+        "domain": "alstad-chemicals.nl",
+        "name": "Alstad Chemicals B.V.",
+        "type": "Customer",
+        "openOpportunity": false
+      },
+      {
+        "domain": "marlund-health.nl",
+        "name": "Marlund Health B.V.",
+        "type": "Customer",
+        "openOpportunity": false
+      }
+    ]
   },
   "conversations": [
     {

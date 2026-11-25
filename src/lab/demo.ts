@@ -87,7 +87,11 @@ export async function buildDemoKit(prospect: string, cfg: PlatformConfig, root =
   const plan = kit.rule.entries.map((e) => ({
     order: e.order,
     owner: `${e.assignedTo.type} ${e.assignedTo.id}`,
-    when: e.formulaSource ? `formula: ${e.formulaSource}` : e.criteria.map((c) => `${c.field} ${c.operation} ${c.values.join(", ")}`).join(e.booleanFilter ? ` [${e.booleanFilter}] ` : " AND "),
+    when: e.formulaSource
+      ? `formula: ${e.formulaSource}`
+      : e.booleanFilter
+        ? `${e.criteria.map((c) => `(${c.index}) ${c.field} ${c.operation} ${c.values.join(", ")}`).join("; ")}; filter ${e.booleanFilter}`
+        : e.criteria.map((c) => `${c.field} ${c.operation} ${c.values.join(", ")}`).join(" AND "),
     status: e.refusal ? "refused" : e.partial ? "partial" : "imported",
     note: e.refusal ?? e.partial?.join("; ") ?? "",
   }));
@@ -102,6 +106,18 @@ export async function buildDemoKit(prospect: string, cfg: PlatformConfig, root =
     passages: kit.passages.length,
     evidenceItems: kit.evidence.length,
     routingPlan: { rule: kit.rule.name, entries: plan, warnings: kit.rules.warnings, inactiveRules: kit.rules.rules.filter((r) => !r.active).map((r) => r.name) },
+    // What the console needs to run the real core router in the browser.
+    router: {
+      rule: kit.rule,
+      accounts: kit.accounts.rows,
+      defaultOwner: kit.org.defaultLeadOwner,
+      reviewQueue: cfg.routing.reviewQueue,
+      routeToAccountOwnerWhen: kit.playbook.rulesOfEngagement.routeToAccountOwnerWhen,
+      users: kit.org.users,
+      queues: kit.org.queues,
+      leadSource: kit.playbook.salesforce.leadSource,
+      sampleDomains: kit.accounts.rows.filter((a) => a.type === "Customer" || a.openOpportunity).slice(0, 4).map((a) => ({ domain: a.domain, name: a.name, type: a.type, openOpportunity: a.openOpportunity })),
+    },
     conversations,
     questionnaire,
     voiceOfCustomer: voc,
